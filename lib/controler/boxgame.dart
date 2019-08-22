@@ -1,60 +1,120 @@
+import 'dart:math';
+
+import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:log_man/model/agilefly.dart';
+import 'package:log_man/model/droolerfly.dart';
+import 'package:log_man/model/entidade.dart';
+import 'package:log_man/model/housefly.dart';
+import 'package:log_man/model/hungryfly.dart';
+import 'package:log_man/model/machofly.dart';
+import 'package:log_man/util/tela.dart';
+import 'package:log_man/view/back.dart';
+import 'package:log_man/view/menu.dart';
+import 'package:log_man/view/spawner.dart';
+import 'package:log_man/view/startbutton.dart';
 
-class BoxGame extends Game{
-
+class BoxGame extends Game {
   Size screenSize;
-  bool inJogo = false;
+  double tileSize;
+  Random rnd;
 
-  @override
-  void render(Canvas canvas) { //metodo para desenhar 
-    Rect bgRect = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
-    Paint bgPaint = Paint();
-    bgPaint.color = Color(0xff000000);
-    canvas.drawRect(bgRect, bgPaint); 
+  Backyard background;
+  List<Entidade> flies;
+  StartButton startButton;
 
-    double screenCenterX = screenSize.width / 2;
-    double screenCenterY = screenSize.height / 2;
-    Rect boxRect = Rect.fromLTWH(
-      screenCenterX - 75,
-      screenCenterY - 75,
-      150,
-      150
-    );
-    Paint boxPaint = Paint();
-    if (inJogo) {
-      boxPaint.color = Color(0xff00ff00);
-    } else {
-      boxPaint.color = Color(Colors.red.value);
+  FlySpawner spawner;
+
+  Tela activeView = Tela.home;
+  MenuState menu;
+
+  BoxGame(this.menu) {
+    initialize();
+  }
+
+  void initialize() async {
+    rnd = Random();
+    flies = List<Entidade>();
+    resize(await Flame.util.initialDimensions());
+
+    background = Backyard(this);
+    startButton = StartButton(this);
+
+    spawner = FlySpawner(this);
+  }
+
+  void spawnFly() {
+    double x = rnd.nextDouble() * (screenSize.width - (tileSize * 2.025));
+    double y = rnd.nextDouble() * (screenSize.height - (tileSize * 2.025));
+
+    switch (rnd.nextInt(5)) {
+      case 0:
+        flies.add(HouseFly(this, x, y));
+        break;
+      case 1:
+        flies.add(DroolerFly(this, x, y));
+        break;
+      case 2:
+        flies.add(AgileFly(this, x, y));
+        break;
+      case 3:
+        flies.add(MachoFly(this, x, y));
+        break;
+      case 4:
+        flies.add(HungryFly(this, x, y));
+        break;
     }
-    canvas.drawRect(boxRect, boxPaint);
   }
 
-  @override
-  void update(double t) { //metodo para desenhar
-    // TODO: implement update
-  }
-  
-  void onTapDown(TapDownDetails d) {
-    double screenCenterX = screenSize.width / 2;
-    double screenCenterY = screenSize.height / 2;
-    if (d.globalPosition.dx >= screenCenterX - 75
-      && d.globalPosition.dx <= screenCenterX + 75
-      && d.globalPosition.dy >= screenCenterY - 75
-      && d.globalPosition.dy <= screenCenterY + 75
-    ) {
-      if(inJogo)
-        inJogo = false;
-      else
-        inJogo = true;
+  void render(Canvas canvas) {
+    background.render(canvas);
+
+    flies.forEach((Entidade fly) => fly.render(canvas));
+
+    if (activeView == Tela.home || activeView == Tela.lost) {
+      startButton.render(canvas);
     }
   }
 
-  @override
+  void update(double t) {
+    spawner.update(t);
+    flies.forEach((Entidade fly) => fly.update(t));
+    flies.removeWhere((Entidade fly) => fly.isOffScreen);
+  }
+
   void resize(Size size) {
     screenSize = size;
-    super.resize(size);
+    tileSize = screenSize.width / 9;
   }
 
+  void onTapDown(TapDownDetails d) {
+    bool isHandled = false;
+
+    // start button
+    if (!isHandled && startButton.rect.contains(d.globalPosition)) {
+      if (activeView == Tela.home || activeView == Tela.lost) {
+        startButton.onTapDown();
+        isHandled = true;
+      }
+    }
+
+    // flies
+    if (!isHandled) {
+      bool didHitAFly = false;
+      flies.forEach((Entidade fly) {
+        if (fly.flyRect.contains(d.globalPosition)) {
+          fly.onTapDown();
+          isHandled = true;
+          didHitAFly = true;
+        }
+      });
+      
+      if (activeView == Tela.playing && !didHitAFly) {
+        activeView = Tela.lost;
+        menu.transicao(Tela.principal);
+      }
+    }
+  }
 }

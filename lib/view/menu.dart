@@ -1,107 +1,129 @@
-
+import 'package:flame/flame.dart';
+import 'package:flame/util.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'principal.dart';
+import 'package:log_man/controler/boxgame.dart';
+import 'package:log_man/util/tela.dart';
+import 'package:log_man/view/ajuda.dart';
+
+import 'package:log_man/view/config.dart';
+import 'package:log_man/view/fase.dart';
+import 'package:log_man/view/info.dart';
+import 'package:log_man/view/principal.dart';
 
 class Menu extends StatefulWidget {
+  MenuState menuState;
+
   @override
   State<StatefulWidget> createState() {
-    return MenuState();
+    menuState = MenuState();
+    return menuState;
   }
 }
 
 class MenuState extends State<Menu> {
-
-  int index;
+  //variaveis
+  Tela tela;
   String titulo;
-
+  //telas
+  BoxGame game;
   Principal principal;
+  Fase fase;
+  Config config;
+  Ajuda ajuda;
+  Info info;
 
   @override
   void initState() {
-    index = 0;
-    titulo = "LogMan";
-    principal = Principal();
+    init();
     super.initState();
   }
 
-  // O método build reconstrói a árvore de widegts se houver mudanças
-  // e permite o hot reload
+  void init() async {
+    //função assíncrona
+    titulo = "LogMan";
+    tela = Tela.principal;
+    //telas de suporte
+    principal = Principal(this);
+    fase = Fase(this);
+    config = Config(this);
+    ajuda = Ajuda(this);
+    info = Info(this);
+    //tela jogo
+    game = BoxGame(this);
+
+    Util flameUtil = Util();
+    await flameUtil.fullScreen(); //Tela cheia
+    await flameUtil.setOrientation(
+        DeviceOrientation.portraitUp); //define a rotação da tela
+
+    TapGestureRecognizer tapper = TapGestureRecognizer();
+    tapper.onTapDown = game.onTapDown;
+    flameUtil.addGestureRecognizer(tapper); //adiciono o evento
+
+    //carrega as imagens em cache
+    Flame.images.loadAll(<String>[
+      'bg/backyard.png',
+      'flies/agile-fly-1.png',
+      'flies/agile-fly-2.png',
+      'flies/agile-fly-dead.png',
+      'flies/drooler-fly-1.png',
+      'flies/drooler-fly-2.png',
+      'flies/drooler-fly-dead.png',
+      'flies/house-fly-1.png',
+      'flies/house-fly-2.png',
+      'flies/house-fly-dead.png',
+      'flies/hungry-fly-1.png',
+      'flies/hungry-fly-2.png',
+      'flies/hungry-fly-dead.png',
+      'flies/macho-fly-1.png',
+      'flies/macho-fly-2.png',
+      'flies/macho-fly-dead.png',
+      'bg/lose-splash.png',
+      'branding/title.png',
+      'ui/dialog-credits.png',
+      'ui/dialog-help.png',
+      'ui/icon-credits.png',
+      'ui/icon-help.png',
+      'ui/start-button.png',
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
-
-    // Agora ao ínves de um Container estamos usando o widget MaterialApp
-    // o qual é configurado para dar à nossa app um tema Material
     return Scaffold(
-      // Vamos passar um widget AppBar widget para a propriedade appBar do Scaffold
-        backgroundColor: Colors.lightBlue,
-        appBar: AppBar(
-          // A prop. AppBar usa um widget Text widget para a sua prop. title
-          title: Text(titulo),
-          backgroundColor: Colors.lightBlue,
-        ),
-//        drawer: Drawer(
-//          child: ListView(
-//              padding: EdgeInsets.zero,
-//              children: <Widget>[
-//                DrawerHeader( //menu hamburguer
-//                  child: Text('Log Man', style: TextStyle(fontSize: 20, color: Colors.white),),
-//                  decoration: BoxDecoration(
-//                    color: Colors.lightBlue,
-//                  ),
-//                ),
-//                ListTile( //lista de opções
-//                    title: Text("Principal"),
-//                    onTap: () {
-//                      setState(() {
-//                        titulo = "Bandeiras LGBT";
-//                        index = 0;
-//                      });
-//                      Navigator.pop(context);
-//                    }
-//                ),
-//                ListTile(
-//                    title: Text("Sobre"),
-//                    onTap: () {
-//                      setState(() {
-//                        titulo = "Sobre";
-//                        index = 1;
-//                      });
-//                      Navigator.pop(context);
-//                    }
-//                ),
-//                ListTile(
-//                    title: Text("Sair"),
-//                    onTap: () {
-//                      setState(() {
-//                        index = 2;
-//                      });
-//                      Navigator.pop(context);
-//                    }
-//                ),
-//              ]),
-//        ),
-
-        body: Container(
-          padding: EdgeInsets.all(10.0),
-          child: Center(
-            child: mudarTela(),
-          ),
-        )
+      backgroundColor: Colors.lightBlue,
+      body: mudarTela(),
     );
   }
 
+  //faz a mudança das telas
   Widget mudarTela() {
-    switch (principal.tela) {
+    switch (tela.index) {
       case 0:
         return principal;
       case 1:
-        return Container();
+        return fase;
       case 2:
-        SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-        return null;
+        return game.widget;
+      case 3:
+        return config;
+      case 4:
+        return ajuda;
+      case 5:
+        return info;
+      case 6:
+        SystemChannels.platform
+            .invokeMethod('SystemNavigator.pop'); //sai da aplicação
     }
     return null;
   }
 
+  //modifica o valor da tela escolhida
+  void transicao(Tela valor) {
+    setState(() {
+      tela = valor;
+    });
+  }
 }
