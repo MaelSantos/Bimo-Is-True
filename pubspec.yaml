@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   path_provider: ^1.1.0
   flame: ^0.15.1
+  tiled: ^0.2.1
 
 
 dev_dependencies:
@@ -44,31 +45,12 @@ flutter:
     - assets/icons/cancelar.png
     - assets/icons/parar.png
     - assets/icons/pausar.png
+    - assets/tiled/mapa_1.tmx
     - assets/icon.png
     - assets/fundo.jpg
-    - assets/images/bg/backyard.png
-    - assets/images/flies/agile-fly-1.png
-    - assets/images/flies/agile-fly-2.png
-    - assets/images/flies/agile-fly-dead.png
-    - assets/images/flies/drooler-fly-1.png
-    - assets/images/flies/drooler-fly-2.png
-    - assets/images/flies/drooler-fly-dead.png
-    - assets/images/flies/house-fly-1.png
-    - assets/images/flies/house-fly-2.png
-    - assets/images/flies/house-fly-dead.png
-    - assets/images/flies/hungry-fly-1.png
-    - assets/images/flies/hungry-fly-2.png
-    - assets/images/flies/hungry-fly-dead.png
-    - assets/images/flies/macho-fly-1.png
-    - assets/images/flies/macho-fly-2.png
-    - assets/images/flies/macho-fly-dead.png
-    - assets/images/bg/lose-splash.png
-    - assets/images/branding/title.png
-    - assets/images/ui/dialog-credits.png
-    - assets/images/ui/dialog-help.png
-    - assets/images/ui/icon-credits.png
-    - assets/images/ui/icon-help.png
-    - assets/images/ui/start-button.png
+    - assets/images/sprite/bege_padrao.png
+    - assets/images/sprite/bege_direita1.png
+    - assets/images/sprite/bege_direita2.png
 
 flutter_icons:
  android: "launcher_icon"

@@ -1,11 +1,30 @@
 //imports do flutter
+import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+import 'package:flame/components/tiled_component.dart';
+import 'package:flame/game.dart';
 
 //meus imports
 import 'view/menu.dart';
 
 void main() async {
+
+  // carrega as imagens em cache
+    Flame.images.loadAll(<String>[
+      "sprite/bege_padrao.png",
+      "sprite/bege_direita1.png",
+      "sprite/bege_direita2.png",
+    ]);
+
+  // final TiledGame game = TiledGame();
+  // runApp(game.widget);
   runApp(MyApp()); //rodo a aplicação
+}
+
+class TiledGame extends BaseGame {
+  TiledGame() {
+    add(TiledComponent("mapa_1.tmx"));
+  }
 }
 
 class MyApp extends StatelessWidget {

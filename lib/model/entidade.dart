@@ -2,59 +2,34 @@ import 'dart:ui';
 
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
-import 'package:log_man/controler/boxgame.dart';
+import 'package:log_man/controler/game.dart';
+import 'package:log_man/util/movimento.dart';
 
 class Entidade extends SpriteComponent {
   bool isVivo = false;
   bool isOffScreen = false;
+  double get speed => 3;
 
   final BoxGame game;
-  Rect flyRect;
+  Rect entidadeRect;
 
-  List<Sprite> flyingSprite;
-  Sprite deadSprite;
-  double flyingSpriteIndex = 0;
-  Offset targetLocation;
+  List<Sprite> sprites;
+  Sprite spriteFim;
+  double aparencia = 0;
 
-  Entidade(this.game) {
-    setTargetLocation();
-  }
-
-  double get speed => game.tileSize * 3;
+  Entidade(this.game);
 
   @override
   void render(Canvas c) {
     if (isVivo) {
-      deadSprite.renderRect(c, flyRect.inflate(2));
+      spriteFim.renderRect(c, entidadeRect.inflate(2));
     } else {
-      flyingSprite[flyingSpriteIndex.toInt()].renderRect(c, flyRect.inflate(2));
+      sprites[aparencia.toInt()].renderRect(c, entidadeRect.inflate(2));
     }
   }
 
   @override
   void update(double t) {
-    if (isVivo) {
-      flyRect = flyRect.translate(
-          0, game.tileSize * 12 * t); //12 representa a velocidade
-      if (flyRect.top > game.screenSize.height) {
-        isOffScreen = true;
-      }
-    }
-
-    flyingSpriteIndex += 30 * t; //como são dois quadros por segundo então: 2 / 60 = 30
-    if (flyingSpriteIndex >= 2) {
-      flyingSpriteIndex -= 2; //muda o valor da sprite
-    }
-    double stepDistance = speed * t;
-    Offset toTarget = targetLocation - Offset(flyRect.left, flyRect.top);
-    if (stepDistance < toTarget.distance) {
-      Offset stepToTarget =
-          Offset.fromDirection(toTarget.direction, stepDistance);
-      flyRect = flyRect.shift(stepToTarget);
-    } else {
-      flyRect = flyRect.shift(toTarget);
-      setTargetLocation();
-    }
     super.update(t);
   }
 
@@ -67,16 +42,29 @@ class Entidade extends SpriteComponent {
   void resize(Size size) {}
 
   void onTapDown() {
-    isVivo = true;
-    // game.spawnFly();
+    // isVivo = true;
+    mover(Movimento.cima);
   }
 
-  void setTargetLocation() {
-    double x = game.rnd.nextDouble() *
-        (game.screenSize.width - (game.tileSize * 2.025));
-    double y = game.rnd.nextDouble() *
-        (game.screenSize.height - (game.tileSize * 2.025));
-    targetLocation = Offset(x, y);
+  void mover(Movimento m) {
+    if (m == Movimento.cima)
+      entidadeRect = entidadeRect.translate(0, -speed); //cima
+    if (m == Movimento.baixo)
+      entidadeRect = entidadeRect.translate(0, speed); //baixo
+    if (m == Movimento.esquerda)
+      entidadeRect = entidadeRect.translate(-speed, 0); //esquerda
+    if (m == Movimento.direita)
+      entidadeRect = entidadeRect.translate(speed, 0); //direita
+  }
+
+  void animar()
+  {
+    if(aparencia > 0){
+      aparencia = 0;
+    }
+    else{
+      aparencia = 1;
+    }
   }
 
   void colisao(Entidade entidade) {

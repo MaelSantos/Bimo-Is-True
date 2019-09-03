@@ -26,7 +26,7 @@ class Fase extends StatelessWidget {
             children: [
               FlatButton(
                   onPressed: () {
-                    menu.transicao(Tela.principal);
+                    menu.transicao(Tela.jogo);
                   },
                   child: Image.asset("assets/icons/home.png")),
               Text("Fase 1")

@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
-import 'package:log_man/controler/boxgame.dart';
+import 'package:log_man/controler/game.dart';
 
 class Backyard {
   final BoxGame game;
