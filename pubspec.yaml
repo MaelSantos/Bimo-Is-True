@@ -45,12 +45,13 @@ flutter:
     - assets/icons/cancelar.png
     - assets/icons/parar.png
     - assets/icons/pausar.png
-    - assets/tiled/mapa_1.tmx
     - assets/icon.png
     - assets/fundo.jpg
     - assets/images/sprite/bege_padrao.png
     - assets/images/sprite/bege_direita1.png
     - assets/images/sprite/bege_direita2.png
+    - assets/tiles/mapa_1.tmx
+    - assets/tiles/teste.tmx
 
 flutter_icons:
  android: "launcher_icon"

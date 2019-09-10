@@ -12,10 +12,10 @@ class Principal extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       alignment: Alignment.center,
       constraints: BoxConstraints.expand(),
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/fundo.jpg"),
-              repeat: ImageRepeat.repeat)),
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         image: AssetImage("assets/fundo.jpg"),
+      //         repeat: ImageRepeat.repeat)),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

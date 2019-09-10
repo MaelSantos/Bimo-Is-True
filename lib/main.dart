@@ -22,8 +22,10 @@ void main() async {
 }
 
 class TiledGame extends BaseGame {
+
   TiledGame() {
-    add(TiledComponent("mapa_1.tmx"));
+    add(TiledComponent("teste.tmx"));
+    // add(TiledComponent("mapa_1.tmx"));
   }
 }
 
