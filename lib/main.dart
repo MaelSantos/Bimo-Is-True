@@ -3,6 +3,7 @@ import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/game.dart';
+import 'package:log_man/view/entrada.dart';
 
 //meus imports
 import 'view/menu.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
             body1: TextStyle(color: Colors.white), //define a cor padrão dos textos
           )
         ),
-        
-        home: Menu());
+        home: Entrada(), 
+        routes: {'/Menu': (BuildContext context) => Menu(),});
+
   }
 }
