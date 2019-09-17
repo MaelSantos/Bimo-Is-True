@@ -24,7 +24,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/iniciar.png
-    - assets/icons/iniciar2.png
     - assets/icons/config.png
     - assets/icons/ajuda.png
     - assets/icons/info.png
@@ -45,6 +44,7 @@ flutter:
     - assets/icons/cancelar.png
     - assets/icons/parar.png
     - assets/icons/pausar.png
+    - assets/icons/porta.png
     - assets/icon.png
     - assets/fundo.jpg
     - assets/images/sprite/bege_padrao.png

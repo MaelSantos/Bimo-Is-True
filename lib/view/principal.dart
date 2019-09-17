@@ -44,9 +44,9 @@ class Principal extends StatelessWidget {
             ),
             FlatButton(
                 onPressed: () {
-                  menu.transicao(Tela.sair);
+                  menu.transicao(Tela.login);
                 },
-                child: Image.asset("assets/icons/sair.png")),
+                child: Image.asset("assets/icons/porta.png")),
           ],
         ),
       ),

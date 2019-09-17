@@ -1,5 +1,7 @@
 enum Tela {
 
+  login,
+  cadastro,
   principal,
   fase,
   jogo,

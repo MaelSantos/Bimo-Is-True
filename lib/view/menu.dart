@@ -6,10 +6,12 @@ import 'package:flutter/services.dart';
 import 'package:log_man/controler/game.dart';
 import 'package:log_man/util/tela.dart';
 import 'package:log_man/view/ajuda.dart';
+import 'package:log_man/view/cadastro.dart';
 
 import 'package:log_man/view/config.dart';
 import 'package:log_man/view/fase.dart';
 import 'package:log_man/view/info.dart';
+import 'package:log_man/view/login.dart';
 import 'package:log_man/view/principal.dart';
 
 class Menu extends StatefulWidget {
@@ -28,6 +30,8 @@ class MenuState extends State<Menu> {
   String titulo;
   //telas
   BoxGame game;
+  Login login;
+  Cadastro cadastro;
   Principal principal;
   Fase fase;
   Config config;
@@ -43,8 +47,10 @@ class MenuState extends State<Menu> {
   void init() async {
     //função assíncrona
     titulo = "LogMan";
-    tela = Tela.principal;
+    tela = Tela.login;
     //telas de suporte
+    login = Login(this);
+    cadastro = Cadastro(this);
     principal = Principal(this);
     fase = Fase(this);
     config = Config(this);
@@ -67,6 +73,7 @@ class MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlue,
+      // bottomNavigationBar: ,
       body: mudarTela(),
     );
   }
@@ -75,18 +82,22 @@ class MenuState extends State<Menu> {
   Widget mudarTela() {
     switch (tela.index) {
       case 0:
-        return principal;
+        return login;
       case 1:
-        return fase;
+        return cadastro;
       case 2:
-        return game.widget;
+        return principal;
       case 3:
-        return config;
+        return fase;
       case 4:
-        return ajuda;
+        return game.widget;
       case 5:
-        return info;
+        return config;
       case 6:
+        return ajuda;
+      case 7:
+        return info;
+      case 8:
         SystemChannels.platform
             .invokeMethod('SystemNavigator.pop'); //sai da aplicação
     }

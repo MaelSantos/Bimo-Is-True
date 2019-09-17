@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Sep 03 14:20:12 BRT 2019
+#Mon Sep 16 15:46:48 BRT 2019
 5.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 22.path=flutter_assets/assets/icons/confirmar.png
 32.set=NATIVE_RESOURCE
@@ -10,7 +10,7 @@
 9.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 21.set=ASSET
 39.set=ASSET
-26.path=flutter_assets/assets/tiles/teste.tmx
+26.path=flutter_assets/assets/images/sprite/bege_direita2.png
 6.baseType=DIRECTORY
 36.path=flutter_assets/assets/fundo.jpg
 10.set=ASSET
@@ -48,7 +48,7 @@
 31.set=ASSET
 39.baseType=DIRECTORY
 20.baseType=DIRECTORY
-27.path=flutter_assets/assets/icons/musicaOff.png
+27.path=flutter_assets/assets/tiles/teste.tmx
 37.path=flutter_assets/assets/images/sprite/bege_padrao.png
 20.set=ASSET
 38.set=ASSET
@@ -85,12 +85,12 @@ count=41
 30.path=flutter_assets/AssetManifest.json
 7.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/transforms/mergeJniLibs/debug/0
 19.set=ASSET
-24.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
+24.path=flutter_assets/assets/icons/porta.png
 34.path=flutter_assets/assets/icons/salvar.png
 3.set=ASSET
 18.path=flutter_assets/assets/icons/menos.png
 20.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
-28.path=flutter_assets/assets/icon.png
+28.path=flutter_assets/assets/icons/musicaOff.png
 30.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 10.path=flutter_assets/isolate_snapshot_data
 13.baseType=DIRECTORY
@@ -130,12 +130,12 @@ count=41
 11.set=ASSET
 29.set=ASSET
 3.baseType=DIRECTORY
-25.path=flutter_assets/assets/images/sprite/bege_direita2.png
+25.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
 35.path=flutter_assets/assets/images/sprite/bege_direita1.png
 18.set=ASSET
 19.path=flutter_assets/assets/icons/cancelar.png
 21.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
-29.path=flutter_assets/assets/icons/iniciar2.png
+29.path=flutter_assets/assets/icon.png
 31.base=/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 11.path=flutter_assets/assets/icons/baixo.png
 2.set=NATIVE_RESOURCE
