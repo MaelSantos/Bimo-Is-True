@@ -3,7 +3,7 @@ import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/game.dart';
-import 'package:log_man/view/entrada.dart';
+import 'package:tableblocktrue/view/entrada.dart';
 
 //meus imports
 import 'view/menu.dart';

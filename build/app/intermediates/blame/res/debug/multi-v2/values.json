@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/mael/Documentos/Projetos Mobile/LogMan/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/mael/Documentos/Projetos Mobile/tableblocktrue/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/mael/Documentos/Projetos Mobile/LogMan/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/mael/Documentos/Projetos Mobile/tableblocktrue/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

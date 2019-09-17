@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:log_man/util/tela.dart';
-import 'package:log_man/view/menu.dart';
+import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/menu.dart';
 
 class Principal extends StatelessWidget {
   MenuState menu;

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LogMan.iml" filepath="$PROJECT_DIR$/.idea/LogMan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tableblocktrue.iml" filepath="$PROJECT_DIR$/tableblocktrue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/tableblocktrue_android.iml" filepath="$PROJECT_DIR$/android/tableblocktrue_android.iml" />
     </modules>
   </component>
 </project>

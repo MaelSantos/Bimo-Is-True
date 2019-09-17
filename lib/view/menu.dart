@@ -3,16 +3,16 @@ import 'package:flame/util.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:log_man/controler/game.dart';
-import 'package:log_man/util/tela.dart';
-import 'package:log_man/view/ajuda.dart';
-import 'package:log_man/view/cadastro.dart';
+import 'package:tableblocktrue/controler/game.dart';
+import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/ajuda.dart';
+import 'package:tableblocktrue/view/cadastro.dart';
 
-import 'package:log_man/view/config.dart';
-import 'package:log_man/view/fase.dart';
-import 'package:log_man/view/info.dart';
-import 'package:log_man/view/login.dart';
-import 'package:log_man/view/principal.dart';
+import 'package:tableblocktrue/view/config.dart';
+import 'package:tableblocktrue/view/fase.dart';
+import 'package:tableblocktrue/view/info.dart';
+import 'package:tableblocktrue/view/login.dart';
+import 'package:tableblocktrue/view/principal.dart';
 
 class Menu extends StatefulWidget {
   MenuState menuState;

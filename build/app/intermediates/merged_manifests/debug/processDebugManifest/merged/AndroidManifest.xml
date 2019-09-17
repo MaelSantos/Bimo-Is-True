@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.edu.logman.log_man"
+    package="com.example.tableblocktrue"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -22,10 +22,10 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:debuggable="true"
-        android:icon="@mipmap/launcher_icon"
-        android:label="LogMan" >
+        android:icon="@mipmap/ic_launcher"
+        android:label="Table Block True" >
         <activity
-            android:name="br.edu.logman.log_man.MainActivity"
+            android:name="com.example.tableblocktrue.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"

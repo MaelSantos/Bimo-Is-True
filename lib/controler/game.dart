@@ -4,10 +4,10 @@ import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:log_man/model/alien.dart';
-import 'package:log_man/util/movimento.dart';
-import 'package:log_man/util/tela.dart';
-import 'package:log_man/view/menu.dart';
+import 'package:tableblocktrue/model/alien.dart';
+import 'package:tableblocktrue/util/movimento.dart';
+import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/menu.dart';
 
 class BoxGame extends Game {
   Size screenSize;
