@@ -45,6 +45,9 @@ flutter:
     - assets/icons/parar.png
     - assets/icons/pausar.png
     - assets/icons/porta.png
+    - assets/icons/velocidade.png
+    - assets/icons/audioOn.png
+    - assets/icons/audioOff.png
     - assets/icon.png
     - assets/fundo.jpg
     - assets/images/sprite/bege_padrao.png
