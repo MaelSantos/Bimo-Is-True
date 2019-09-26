@@ -8,7 +8,7 @@ class Alien extends Entidade {
   
   Alien(BoxGame game, double x, double y) : super(game) {
 
-    entidadeRect = Rect.fromLTWH(x, y, game.tileSize * 1.5, game.tileSize * 1.5);
+    entidadeRect = Rect.fromLTWH(x, y, 30, 30);
 
     sprites = List();
     sprites.add(Sprite('sprite/bege_direita1.png'));

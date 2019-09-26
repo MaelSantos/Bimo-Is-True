@@ -1,22 +1,26 @@
 import 'dart:math';
 
+import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
+import 'package:tableblocktrue/model/camada.dart';
 import 'package:tableblocktrue/util/movimento.dart';
-import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/inventario.dart';
 import 'package:tableblocktrue/view/menu.dart';
+import 'package:tableblocktrue/view/tile_map.dart';
 
-class BoxGame extends Game {
+class BoxGame extends BaseGame {
+
   Size screenSize;
   double tileSize;
   Random rnd;
 
-  Alien _alien;
+  Alien alien;
+  TiledComponent mapa;
 
-  // Tela tela = Tela.principal;
   MenuState menu;
 
   BoxGame(this.menu) {
@@ -26,7 +30,9 @@ class BoxGame extends Game {
   void initialize() async {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-    _alien = Alien(this, screenSize.width / 2, screenSize.height / 2);
+    alien = Alien(this, screenSize.width / 2, screenSize.height / 2);
+    mapa = TiledComponent("mapa.tmx");
+    add(mapa);
   }
 
   void spawnFly() {
@@ -53,11 +59,13 @@ class BoxGame extends Game {
   }
 
   void render(Canvas canvas) {
-    _alien.render(canvas);
+    super.render(canvas);
+    alien.render(canvas);
   }
 
   void update(double t) {
-    _alien.update(t);
+    super.update(t);
+    alien.update(t);
   }
 
   void resize(Size size) {
@@ -66,7 +74,7 @@ class BoxGame extends Game {
   }
 
   void onTapDown(TapDownDetails d) {
-    _alien.animar();
-    _alien.mover(Movimento.cima);
+    alien.animar();
+    alien.mover(Movimento.cima);
   }
 }

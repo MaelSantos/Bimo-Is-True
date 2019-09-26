@@ -11,8 +11,9 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   path_provider: ^1.1.0
-  flame: ^0.15.1
+  flame: ^0.15.2
   tiled: ^0.2.1
+  tiler: any
 
 
 dev_dependencies:
@@ -21,6 +22,11 @@ dev_dependencies:
   flutter_launcher_icons: "^0.7.2"
 
 flutter:
+  fonts:
+    - family: Special
+      fonts:
+        - asset: assets/fonts/SpecialElite.ttf
+
   uses-material-design: true
   assets:
     - assets/icons/iniciar.png
@@ -53,8 +59,12 @@ flutter:
     - assets/images/sprite/bege_padrao.png
     - assets/images/sprite/bege_direita1.png
     - assets/images/sprite/bege_direita2.png
-    - assets/tiles/mapa_1.tmx
-    - assets/tiles/teste.tmx
+    - assets/images/sprite/tileset.png
+    - assets/images/mapa.png
+    - assets/tiles/mapa.json
+    - assets/tiles/mapa.tmx
+    - assets/tiles/mapa2.tmx
+    - assets/tiles/tileset.tsx
 
 flutter_icons:
  android: "launcher_icon"

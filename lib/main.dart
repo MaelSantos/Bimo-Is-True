@@ -1,8 +1,6 @@
 //imports do flutter
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
-import 'package:flame/components/tiled_component.dart';
-import 'package:flame/game.dart';
 import 'package:tableblocktrue/view/entrada.dart';
 
 //meus imports
@@ -14,18 +12,18 @@ void main() async {
     "sprite/bege_padrao.png",
     "sprite/bege_direita1.png",
     "sprite/bege_direita2.png",
+    "sprite/tileset.png",
   ]);
 
-  // final TiledGame game = TiledGame();
-  // runApp(game.widget);
   runApp(MyApp()); //rodo a aplicação
-}
 
-class TiledGame extends BaseGame {
-  TiledGame() {
-    add(TiledComponent("teste.tmx"));
-    // add(TiledComponent("mapa_1.tmx"));
-  }
+  // String tmxBody =  "..." ;
+  // var parser = new TileMapParser();
+  // TileMap map = parser.parse(tmxBody);
+
+  // map.tilesets[0].image
+
+  // runApp(map);
 }
 
 class MyApp extends StatelessWidget {
@@ -35,13 +33,15 @@ class MyApp extends StatelessWidget {
         // O widget Scaffold define o layouta da home
         theme: ThemeData(
             primarySwatch: Colors.blue,
-            fontFamily: "Times", //define a fonte familia do texto
+            fontFamily: "Special", //define a fonte familia do texto
             textTheme: TextTheme(
               body1: TextStyle(
-                  color: Colors.white, fontSize: 16), //define a cor padrão dos textos
+                  color: Colors.white,
+                  fontSize: 16), //define a cor padrão dos textos
             )),
         home: Entrada(),
-        routes: {'/Menu': (BuildContext context) => Menu(),
+        routes: {
+          '/Menu': (BuildContext context) => Menu(),
         });
   }
 }

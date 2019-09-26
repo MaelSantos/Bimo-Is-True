@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
-class FileUtil{
+class FileUtil {
 
   static Future<String> get getFilePath async{
     final diretorio = await getApplicationDocumentsDirectory();

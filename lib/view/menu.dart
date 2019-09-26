@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tableblocktrue/controler/game.dart';
+import 'package:tableblocktrue/model/camada.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/ajuda.dart';
 import 'package:tableblocktrue/view/cadastro.dart';
@@ -11,6 +12,7 @@ import 'package:tableblocktrue/view/cadastro.dart';
 import 'package:tableblocktrue/view/config.dart';
 import 'package:tableblocktrue/view/fase.dart';
 import 'package:tableblocktrue/view/info.dart';
+import 'package:tableblocktrue/view/inventario.dart';
 import 'package:tableblocktrue/view/login.dart';
 import 'package:tableblocktrue/view/principal.dart';
 
@@ -30,6 +32,7 @@ class MenuState extends State<Menu> {
   String titulo;
   //telas
   BoxGame game;
+  Inventario inventario;
   Login login;
   Cadastro cadastro;
   Principal principal;
@@ -58,6 +61,7 @@ class MenuState extends State<Menu> {
     info = Info(this);
     //tela jogo
     game = BoxGame(this);
+    inventario = Inventario(this, game.alien);
 
     Util flameUtil = Util();
     await flameUtil.fullScreen(); //Tela cheia
@@ -90,7 +94,17 @@ class MenuState extends State<Menu> {
       case 3:
         return fase;
       case 4:
-        return game.widget;
+        return 
+        game.widget;
+        // Container(
+        //   child: Column(
+        //     children: [
+              // game.widget,
+              // Camada("assets/tiles/mapa.json", this, inventario),
+              // inventario,
+        //     ],
+        //   ),
+        // );
       case 5:
         return config;
       case 6:
