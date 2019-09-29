@@ -49,12 +49,14 @@ class Entidade extends SpriteComponent {
   void mover(Movimento m) {
     if (m == Movimento.cima)
       entidadeRect = entidadeRect.translate(0, -speed); //cima
-    if (m == Movimento.baixo)
+    else if (m == Movimento.baixo)
       entidadeRect = entidadeRect.translate(0, speed); //baixo
-    if (m == Movimento.esquerda)
+    else if (m == Movimento.esquerda)
       entidadeRect = entidadeRect.translate(-speed, 0); //esquerda
-    if (m == Movimento.direita)
+    else if (m == Movimento.direita)
       entidadeRect = entidadeRect.translate(speed, 0); //direita
+
+    animar();
   }
 
   void animar()

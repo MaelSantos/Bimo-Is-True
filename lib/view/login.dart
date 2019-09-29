@@ -16,7 +16,7 @@ class Login extends StatelessWidget {
             // decoration: BoxDecoration(
             //     image: DecorationImage(
             //         image: AssetImage("assets/fundo.jpg"),
-            //         repeat: ImageRepeat.repeat)),
+            //         repeat: ImageRepeat.repeat,)),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -44,17 +44,17 @@ class Login extends StatelessWidget {
                           onPressed: () {
                             menu.transicao(Tela.principal);
                           },
-                          child: Image.asset("assets/icons/confirmar.png")),
+                          child: Image.asset("assets/images/icons/confirmar.png")),
                       FlatButton(
                           onPressed: () {
                             menu.transicao(Tela.cadastro);
                           },
-                          child: Image.asset("assets/icons/mais.png")),
+                          child: Image.asset("assets/images/icons/mais.png")),
                       FlatButton(
                           onPressed: () {
                             menu.transicao(Tela.sair);
                           },
-                          child: Image.asset("assets/icons/sair.png")),
+                          child: Image.asset("assets/images/icons/sair.png")),
                     ],
                   )
                 ],

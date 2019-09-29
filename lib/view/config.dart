@@ -30,19 +30,19 @@ class ConfigState extends State<Config> {
     inVolume = true;
 
     if (inVolume)
-      musica = Image.asset("assets/icons/musicaOn.png");
+      musica = Image.asset("assets/images/icons/musicaOn.png");
     else
-      musica = Image.asset("assets/icons/musicaOff.png");
+      musica = Image.asset("assets/images/icons/musicaOff.png");
 
     if (velocidade > 50.0)
-      veloci = Image.asset("assets/icons/velocidade.png");
+      veloci = Image.asset("assets/images/icons/velocidade.png");
     else
-      veloci = Image.asset("assets/icons/iniciar.png");
+      veloci = Image.asset("assets/images/icons/iniciar.png");
 
     if (volume != 0)
-      audio = Image.asset("assets/icons/audioOn.png");
+      audio = Image.asset("assets/images/icons/audioOn.png");
     else
-      audio = Image.asset("assets/icons/audioOff.png");
+      audio = Image.asset("assets/images/icons/audioOff.png");
   }
 
   @override
@@ -52,7 +52,7 @@ class ConfigState extends State<Config> {
       constraints: BoxConstraints.expand(),
       // decoration: BoxDecoration(
       //     image: DecorationImage(
-      //         image: AssetImage("assets/fundo.jpg"),
+      //         image: AssetImage("assets/images/fundo.jpg"),
       //         repeat: ImageRepeat.repeat)),
       child: Center(
           child: Column(
@@ -73,9 +73,9 @@ class ConfigState extends State<Config> {
                   setState(() {
                     volume = va;
                     if (va != 0)
-                      audio = Image.asset("assets/icons/audioOn.png");
+                      audio = Image.asset("assets/images/icons/audioOn.png");
                     else
-                      audio = Image.asset("assets/icons/audioOff.png");
+                      audio = Image.asset("assets/images/icons/audioOff.png");
                   });
                 },
               ),
@@ -95,9 +95,9 @@ class ConfigState extends State<Config> {
                   setState(() {
                     velocidade = va;
                     if (va > 50.0)
-                      veloci = Image.asset("assets/icons/velocidade.png");
+                      veloci = Image.asset("assets/images/icons/velocidade.png");
                     else
-                      veloci = Image.asset("assets/icons/iniciar.png");
+                      veloci = Image.asset("assets/images/icons/iniciar.png");
                   });
                 },
               ),
@@ -108,10 +108,10 @@ class ConfigState extends State<Config> {
               setState(() {});
 
               if (inVolume) {
-                musica = Image.asset("assets/icons/musicaOn.png");
+                musica = Image.asset("assets/images/icons/musicaOn.png");
                 inVolume = false;
               } else {
-                musica = Image.asset("assets/icons/musicaOff.png");
+                musica = Image.asset("assets/images/icons/musicaOff.png");
                 inVolume = true;
               }
             },
@@ -121,7 +121,7 @@ class ConfigState extends State<Config> {
               onPressed: () {
                 menu.transicao(Tela.principal);
               },
-              child: Image.asset("assets/icons/home.png")),
+              child: Image.asset("assets/images/icons/home.png")),
         ],
       )),
     );

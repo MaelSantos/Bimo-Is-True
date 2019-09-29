@@ -26,7 +26,7 @@ class Sobre extends StatelessWidget {
               onPressed: () {
                 menu.transicao(Tela.principal);
               },
-              child: Image.asset("assets/icons/home.png")),
+              child: Image.asset("assets/images/icons/home.png")),
         ],
       )),
     );

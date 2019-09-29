@@ -4,7 +4,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tableblocktrue/controler/game.dart';
-import 'package:tableblocktrue/model/camada.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/ajuda.dart';
 import 'package:tableblocktrue/view/cadastro.dart';
@@ -71,6 +70,10 @@ class MenuState extends State<Menu> {
     TapGestureRecognizer tapper = TapGestureRecognizer();
     tapper.onTapDown = game.onTapDown;
     flameUtil.addGestureRecognizer(tapper); //adiciono o evento
+
+    // MultiTapGestureRecognizer multiTap = MultiTapGestureRecognizer();
+    // multiTap.onLongTapDown = game.onLongTapDown;
+    // flameUtil.addGestureRecognizer(multiTap);
   }
 
   @override
@@ -94,17 +97,7 @@ class MenuState extends State<Menu> {
       case 3:
         return fase;
       case 4:
-        return 
-        game.widget;
-        // Container(
-        //   child: Column(
-        //     children: [
-              // game.widget,
-              // Camada("assets/tiles/mapa.json", this, inventario),
-              // inventario,
-        //     ],
-        //   ),
-        // );
+        return game.widget;
       case 5:
         return config;
       case 6:

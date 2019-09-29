@@ -15,8 +15,9 @@ class Cadastro extends StatelessWidget {
             constraints: BoxConstraints.expand(),
             // decoration: BoxDecoration(
             //     image: DecorationImage(
-            //         image: AssetImage("assets/fundo.jpg"),
-            //         repeat: ImageRepeat.repeat)),
+            //         image: AssetImage("assets/fundo.png"),
+            //         repeat: ImageRepeat.repeat
+            //         )),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -62,12 +63,12 @@ class Cadastro extends StatelessWidget {
                           onPressed: () {
                             menu.transicao(Tela.principal);
                           },
-                          child: Image.asset("assets/icons/confirmar.png")),
+                          child: Image.asset("assets/images/icons/confirmar.png")),
                       FlatButton(
                           onPressed: () {
                             menu.transicao(Tela.login);
                           },
-                          child: Image.asset("assets/icons/cancelar.png")),
+                          child: Image.asset("assets/images/icons/cancelar.png")),
                     ],
                   )
                 ],

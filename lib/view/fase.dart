@@ -14,7 +14,7 @@ class Fase extends StatelessWidget {
       constraints: BoxConstraints.expand(),
       // decoration: BoxDecoration(
       //     image: DecorationImage(
-      //         image: AssetImage("assets/fundo.jpg"),
+      //         image: AssetImage("assets/images/fundo.jpg"),
       //         repeat: ImageRepeat.repeat)),
       child: Center(
           child: ListView(
@@ -28,7 +28,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.jogo);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/livre.png")),
               Text("Fase 1")
             ],
           ),
@@ -40,7 +40,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 2")
             ],
           ),
@@ -52,7 +52,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 3")
             ],
           ),
@@ -64,7 +64,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 4")
             ],
           ),
@@ -76,7 +76,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 5")
             ],
           ),
@@ -88,7 +88,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 6")
             ],
           ),
@@ -100,7 +100,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 7")
             ],
           ),
@@ -112,7 +112,7 @@ class Fase extends StatelessWidget {
                   onPressed: () {
                     menu.transicao(Tela.principal);
                   },
-                  child: Image.asset("assets/icons/home.png")),
+                  child: Image.asset("assets/images/icons/bloqueado.png")),
               Text("Fase 8")
             ],
           ),

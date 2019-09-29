@@ -25,28 +25,28 @@ class Principal extends StatelessWidget {
                 onPressed: () {
                   menu.transicao(Tela.fase);
                 },
-                child: Image.asset("assets/icons/iniciar.png")),
+                child: Image.asset("assets/images/icons/iniciar.png")),
             FlatButton(
                 onPressed: () {
                   menu.transicao(Tela.config);
                 },
-                child: Image.asset("assets/icons/config.png")),
+                child: Image.asset("assets/images/icons/config.png")),
             FlatButton(
                 onPressed: () {
                   menu.transicao(Tela.ajuda);
                 },
-                child: Image.asset("assets/icons/ajuda.png")),
+                child: Image.asset("assets/images/icons/ajuda.png")),
             FlatButton(
               onPressed: () {
                 menu.transicao(Tela.info);
               },
-              child: Image.asset("assets/icons/info.png"),
+              child: Image.asset("assets/images/icons/info.png"),
             ),
             FlatButton(
                 onPressed: () {
                   menu.transicao(Tela.login);
                 },
-                child: Image.asset("assets/icons/porta.png")),
+                child: Image.asset("assets/images/icons/porta.png")),
           ],
         ),
       ),

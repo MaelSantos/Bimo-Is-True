@@ -1,10 +1,10 @@
 //imports do flutter
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/view/entrada.dart';
 
 //meus imports
 import 'view/menu.dart';
+import 'package:tableblocktrue/view/entrada.dart';
 
 void main() async {
   // carrega as imagens em cache
@@ -12,18 +12,15 @@ void main() async {
     "sprite/bege_padrao.png",
     "sprite/bege_direita1.png",
     "sprite/bege_direita2.png",
-    "sprite/tileset.png",
+    "icons/atencao.png",
+    "icons/cima.png",
+    "icons/baixo.png",
+    "icons/direita.png",
+    "icons/esquerda.png",
+    "icons/voltar.png",
   ]);
 
   runApp(MyApp()); //rodo a aplicação
-
-  // String tmxBody =  "..." ;
-  // var parser = new TileMapParser();
-  // TileMap map = parser.parse(tmxBody);
-
-  // map.tilesets[0].image
-
-  // runApp(map);
 }
 
 class MyApp extends StatelessWidget {

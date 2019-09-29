@@ -25,7 +25,7 @@ class Inventario extends StatelessWidget {
                     onPressed: () {
                       _alien.mover(Movimento.esquerda);
                     },
-                    child: Image.asset("assets/icons/esquerda.png")),
+                    child: Image.asset("assets/images/icons/esquerda.png")),
               ]),
               Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -35,12 +35,12 @@ class Inventario extends StatelessWidget {
                     onPressed: () {
                       _alien.mover(Movimento.cima);
                     },
-                    child: Image.asset("assets/icons/cima.png")),
+                    child: Image.asset("assets/images/icons/cima.png")),
                     FlatButton(
                     onPressed: () {
                       _alien.mover(Movimento.baixo);
                     },
-                    child: Image.asset("assets/icons/baixo.png")),
+                    child: Image.asset("assets/images/icons/baixo.png")),
               ]),
               Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,14 +50,14 @@ class Inventario extends StatelessWidget {
                     onPressed: () {
                       _alien.mover(Movimento.direita);
                     },
-                    child: Image.asset("assets/icons/direita.png")),
+                    child: Image.asset("assets/images/icons/direita.png")),
                     
               ]),
               FlatButton(
                     onPressed: () {
                       menu.transicao(Tela.principal);
                     },
-                    child: Image.asset("assets/icons/voltar.png")),
+                    child: Image.asset("assets/images/icons/voltar.png")),
         ],
       
     );
