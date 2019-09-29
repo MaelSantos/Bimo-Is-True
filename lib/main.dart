@@ -13,11 +13,9 @@ void main() async {
     "sprite/bege_direita1.png",
     "sprite/bege_direita2.png",
     "icons/atencao.png",
-    "icons/cima.png",
-    "icons/baixo.png",
-    "icons/direita.png",
-    "icons/esquerda.png",
     "icons/voltar.png",
+    "joystick_background.png",
+    "joystick_knob.png"
   ]);
 
   runApp(MyApp()); //rodo a aplicação

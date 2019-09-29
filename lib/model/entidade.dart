@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flame/components/component.dart';
@@ -8,7 +9,7 @@ import 'package:tableblocktrue/util/movimento.dart';
 class Entidade extends SpriteComponent {
   bool isVivo = false;
   bool isOffScreen = false;
-  double get speed => 3;
+  double get velocidade => 7;
 
   final BoxGame game;
   Rect entidadeRect;
@@ -16,6 +17,9 @@ class Entidade extends SpriteComponent {
   List<Sprite> sprites;
   Sprite spriteFim;
   double aparencia = 0;
+
+  bool move = false;
+  double angulo = 0.0;
 
   Entidade(this.game);
 
@@ -31,6 +35,18 @@ class Entidade extends SpriteComponent {
   @override
   void update(double t) {
     super.update(t);
+    if (move) {
+      double nextX = (velocidade * t) * cos(angulo);
+      double nextY = (velocidade * t) * sin(angulo);
+      Offset nextPoint = Offset(nextX * velocidade, nextY * velocidade);
+
+      Offset diffBase = Offset(
+          entidadeRect.center.dx + nextPoint.dx,
+          entidadeRect.center.dy + nextPoint.dy) - entidadeRect.center;
+      entidadeRect = entidadeRect.shift(diffBase);
+
+      animar();
+    }
   }
 
   @override
@@ -48,13 +64,13 @@ class Entidade extends SpriteComponent {
 
   void mover(Movimento m) {
     if (m == Movimento.cima)
-      entidadeRect = entidadeRect.translate(0, -speed); //cima
+      entidadeRect = entidadeRect.translate(0, -velocidade); //cima
     else if (m == Movimento.baixo)
-      entidadeRect = entidadeRect.translate(0, speed); //baixo
+      entidadeRect = entidadeRect.translate(0, velocidade); //baixo
     else if (m == Movimento.esquerda)
-      entidadeRect = entidadeRect.translate(-speed, 0); //esquerda
+      entidadeRect = entidadeRect.translate(-velocidade, 0); //esquerda
     else if (m == Movimento.direita)
-      entidadeRect = entidadeRect.translate(speed, 0); //direita
+      entidadeRect = entidadeRect.translate(velocidade, 0); //direita
 
     animar();
   }

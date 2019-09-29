@@ -1,4 +1,3 @@
-
 import 'package:flame/util.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +29,9 @@ class MenuState extends State<Menu> {
   Tela tela;
   String titulo;
   //telas
+  GestureDetector detector;
   BoxGame game;
+
   Inventario inventario;
   Login login;
   Cadastro cadastro;
@@ -61,6 +62,14 @@ class MenuState extends State<Menu> {
     //tela jogo
     game = BoxGame(this);
     inventario = Inventario(this, game.alien);
+
+    detector = GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onPanStart: game.onPanStart,
+      onPanUpdate: game.onPanUpdate,
+      onPanEnd: game.onPanEnd,
+      child: game.widget,
+    );
 
     Util flameUtil = Util();
     await flameUtil.fullScreen(); //Tela cheia
@@ -97,7 +106,7 @@ class MenuState extends State<Menu> {
       case 3:
         return fase;
       case 4:
-        return game.widget;
+        return detector;
       case 5:
         return config;
       case 6:
