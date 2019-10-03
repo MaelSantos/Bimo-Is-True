@@ -1,6 +1,7 @@
 //imports do flutter
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+import 'package:tableblocktrue/view/login.dart';
 
 //meus imports
 import 'view/menu.dart';
@@ -22,6 +23,15 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+
+  Menu menu;
+  Login login;
+
+  MyApp(){
+    menu = Menu();
+    login = Login();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +46,8 @@ class MyApp extends StatelessWidget {
             )),
         home: Entrada(),
         routes: {
-          '/Menu': (BuildContext context) => Menu(),
+          '/Menu': (BuildContext context) => menu,
+          '/Login': (BuildContext context) => login,
         });
   }
 }

@@ -8,7 +8,10 @@ class Principal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      backgroundColor: Colors.lightBlue,
+      // bottomNavigationBar: ,
+      body: Container(
       padding: EdgeInsets.all(10.0),
       alignment: Alignment.center,
       constraints: BoxConstraints.expand(),
@@ -26,6 +29,16 @@ class Principal extends StatelessWidget {
                   menu.transicao(Tela.fase);
                 },
                 child: Image.asset("assets/images/icons/iniciar.png")),
+            FlatButton(
+                onPressed: () {
+                  menu.transicao(Tela.config);
+                },
+                child: Image.asset("assets/images/icons/mais.png")),
+            FlatButton(
+                onPressed: () {
+                  menu.transicao(Tela.config);
+                },
+                child: Image.asset("assets/images/icons/pessoa.png")),
             FlatButton(
                 onPressed: () {
                   menu.transicao(Tela.config);
@@ -50,6 +63,6 @@ class Principal extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

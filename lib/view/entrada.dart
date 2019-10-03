@@ -9,7 +9,7 @@ class Entrada extends StatefulWidget {
 
 class EntradaState extends State<Entrada> {
   void navigationToNextPage() {
-    Navigator.pushReplacementNamed(context, '/Menu');
+    Navigator.pushReplacementNamed(context, '/Login');
   }
 
   startSplashScreenTimer() async {
@@ -27,8 +27,9 @@ class EntradaState extends State<Entrada> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
-    return Container(
-        child: Center(
+    return Scaffold(
+        backgroundColor: Colors.blue,
+        body: Center(
           child: Image.asset("assets/icon.png", fit: BoxFit.fill))
           );
   }

@@ -10,7 +10,10 @@ class Ajuda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      backgroundColor: Colors.lightBlue,
+      // bottomNavigationBar: ,
+      body: Container(
       padding: EdgeInsets.all(10.0),
       constraints: BoxConstraints.expand(),
       // decoration: BoxDecoration(
@@ -30,6 +33,6 @@ class Ajuda extends StatelessWidget {
               child: Image.asset("assets/images/icons/home.png")),
         ],
       )),
-    );
+    ));
   }
 }

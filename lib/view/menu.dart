@@ -5,13 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:tableblocktrue/controler/game.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/ajuda.dart';
-import 'package:tableblocktrue/view/cadastro.dart';
 
 import 'package:tableblocktrue/view/config.dart';
 import 'package:tableblocktrue/view/fase.dart';
 import 'package:tableblocktrue/view/info.dart';
 import 'package:tableblocktrue/view/inventario.dart';
-import 'package:tableblocktrue/view/login.dart';
 import 'package:tableblocktrue/view/principal.dart';
 
 class Menu extends StatefulWidget {
@@ -29,12 +27,10 @@ class MenuState extends State<Menu> {
   Tela tela;
   String titulo;
   //telas
-  GestureDetector detector;
+  Scaffold detector;
   BoxGame game;
 
   Inventario inventario;
-  Login login;
-  Cadastro cadastro;
   Principal principal;
   Fase fase;
   Config config;
@@ -49,11 +45,9 @@ class MenuState extends State<Menu> {
 
   void init() async {
     //função assíncrona
-    titulo = "LogMan";
+    titulo = "Table Block True";
     tela = Tela.login;
     //telas de suporte
-    login = Login(this);
-    cadastro = Cadastro(this);
     principal = Principal(this);
     fase = Fase(this);
     config = Config(this);
@@ -63,13 +57,15 @@ class MenuState extends State<Menu> {
     game = BoxGame(this);
     inventario = Inventario(this, game.alien);
 
-    detector = GestureDetector(
+    detector = Scaffold(
+      backgroundColor: Colors.lightBlue,
+      body: GestureDetector(
       behavior: HitTestBehavior.opaque,
       onPanStart: game.onPanStart,
       onPanUpdate: game.onPanUpdate,
       onPanEnd: game.onPanEnd,
       child: game.widget,
-    );
+    ));
 
     Util flameUtil = Util();
     await flameUtil.fullScreen(); //Tela cheia
@@ -90,40 +86,48 @@ class MenuState extends State<Menu> {
     return Scaffold(
       backgroundColor: Colors.lightBlue,
       // bottomNavigationBar: ,
-      body: mudarTela(),
+      body: principal,
     );
   }
 
   //faz a mudança das telas
-  Widget mudarTela() {
+  void mudarTela() {
     switch (tela.index) {
       case 0:
-        return login;
-      case 1:
-        return cadastro;
+        Navigator.pushReplacementNamed(context, '/Login');
+        break;
       case 2:
-        return principal;
+        Navigator.pop(context);
+        break;
       case 3:
-        return fase;
+        Navigator.push(context, MaterialPageRoute(builder: (context) => fase));
+        break;
       case 4:
-        return detector;
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => detector));
+        break;
       case 5:
-        return config;
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => config));
+        break;
       case 6:
-        return ajuda;
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ajuda));
+        break;
       case 7:
-        return info;
+        Navigator.push(context, MaterialPageRoute(builder: (context) => info));
+        break;
       case 8:
-        SystemChannels.platform
-            .invokeMethod('SystemNavigator.pop'); //sai da aplicação
+      Navigator.popAndPushNamed(context, "/Menu");
+        // SystemChannels.platform
+        //     .invokeMethod('SystemNavigator.pop'); //sai da aplicação
     }
-    return null;
   }
 
   //modifica o valor da tela escolhida
   void transicao(Tela valor) {
     setState(() {
       tela = valor;
+      mudarTela();
     });
   }
 }

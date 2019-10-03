@@ -57,6 +57,7 @@ flutter:
     - assets/images/icons/bloqueado.png
     - assets/images/icons/livre.png
     - assets/images/icons/atencao.png
+    - assets/images/icons/pessoa.png
     - assets/icon.png
     - assets/fundo.jpg
     - assets/fundo.png

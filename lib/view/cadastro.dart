@@ -4,13 +4,13 @@ import 'package:tableblocktrue/util/tela.dart';
 import 'menu.dart';
 
 class Cadastro extends StatelessWidget {
-  MenuState menu;
-
-  Cadastro(this.menu);
-
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        backgroundColor: Colors.lightBlue,
+        // bottomNavigationBar: ,
+        // appBar: AppBar(),
+        body: Container(
             padding: EdgeInsets.all(30.0),
             constraints: BoxConstraints.expand(),
             // decoration: BoxDecoration(
@@ -22,7 +22,6 @@ class Cadastro extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: [
                   Text("Cadastro"),
                   TextField(
@@ -61,18 +60,20 @@ class Cadastro extends StatelessWidget {
                     children: [
                       FlatButton(
                           onPressed: () {
-                            menu.transicao(Tela.principal);
+                            Navigator.pushReplacementNamed(context, '/Menu');
                           },
-                          child: Image.asset("assets/images/icons/confirmar.png")),
+                          child:
+                              Image.asset("assets/images/icons/confirmar.png")),
                       FlatButton(
                           onPressed: () {
-                            menu.transicao(Tela.login);
+                            Navigator.pop(context, "Login");
                           },
-                          child: Image.asset("assets/images/icons/cancelar.png")),
+                          child:
+                              Image.asset("assets/images/icons/cancelar.png")),
                     ],
                   )
                 ],
               ),
-            ));
+            )));
   }
 }

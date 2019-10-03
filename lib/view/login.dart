@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/cadastro.dart';
 
 import 'menu.dart';
 
 class Login extends StatelessWidget {
-  MenuState menu;
 
-  Login(this.menu);
+  Cadastro _cadastro;
+
+  Login(){
+    _cadastro = Cadastro();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        backgroundColor: Colors.lightBlue,
+        // bottomNavigationBar: ,
+        body: Container(
             padding: EdgeInsets.all(30.0),
             constraints: BoxConstraints.expand(),
             // decoration: BoxDecoration(
@@ -21,7 +29,6 @@ class Login extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: [
                   Text("Login"),
                   TextField(
@@ -42,23 +49,28 @@ class Login extends StatelessWidget {
                     children: [
                       FlatButton(
                           onPressed: () {
-                            menu.transicao(Tela.principal);
+                            Navigator.pushReplacementNamed(context, '/Menu');
                           },
-                          child: Image.asset("assets/images/icons/confirmar.png")),
+                          child:
+                              Image.asset("assets/images/icons/confirmar.png")),
                       FlatButton(
                           onPressed: () {
-                            menu.transicao(Tela.cadastro);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => _cadastro));
                           },
                           child: Image.asset("assets/images/icons/mais.png")),
                       FlatButton(
                           onPressed: () {
-                            menu.transicao(Tela.sair);
+                            SystemChannels.platform.invokeMethod(
+                                'SystemNavigator.pop'); //sai da aplicação
                           },
                           child: Image.asset("assets/images/icons/sair.png")),
                     ],
                   )
                 ],
               ),
-            ));
+            )));
   }
 }

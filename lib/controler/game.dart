@@ -12,7 +12,6 @@ import 'package:tableblocktrue/view/joystick.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
 class BoxGame extends BaseGame {
-
   Size screenSize;
   double tileSize;
   Random rnd;
@@ -35,10 +34,11 @@ class BoxGame extends BaseGame {
     mapa = TiledComponent("mapa.tmx");
     add(mapa);
 
-    btnVoltar  = ButtonComponent(this,  20, 0,"icons/voltar.png", onPressed: () {menu.transicao(Tela.principal);});
+    btnVoltar = ButtonComponent(this, 20, 0, "icons/voltar.png", onPressed: () {
+      menu.transicao(Tela.sair);
+    });
 
     joystick = Joystick(this);
-
   }
 
   void spawnFly() {
@@ -97,5 +97,4 @@ class BoxGame extends BaseGame {
   void onPanEnd(DragEndDetails details) {
     joystick.onPanEnd(details);
   }
-
 }
