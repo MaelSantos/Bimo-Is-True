@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flame/position.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/gestures.dart';
-import 'package:tableblocktrue/controler/game.dart';
+import 'package:tableblocktrue/controller/game.dart';
 
 class ButtonComponent {
   final BoxGame game;

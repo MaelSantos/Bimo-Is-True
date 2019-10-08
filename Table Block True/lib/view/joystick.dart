@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:math';
 
-import 'package:tableblocktrue/controler/game.dart';
+import 'package:tableblocktrue/controller/game.dart';
 
 class Joystick {
 

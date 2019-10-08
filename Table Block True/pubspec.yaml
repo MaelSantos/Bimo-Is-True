@@ -13,7 +13,8 @@ dependencies:
   path_provider: ^1.1.0
   flame: ^0.15.2
   tiled: ^0.2.1
-  tiler: any
+  http: ^0.12.0+2
+  sqflite: any
 
 
 dev_dependencies:

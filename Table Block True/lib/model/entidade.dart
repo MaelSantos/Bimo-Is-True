@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
-import 'package:tableblocktrue/controler/game.dart';
+import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/util/movimento.dart';
 
 class Entidade extends SpriteComponent {

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flame/sprite.dart';
-import 'package:tableblocktrue/controler/game.dart';
+import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/entidade.dart';
 
 class Alien extends Entidade {

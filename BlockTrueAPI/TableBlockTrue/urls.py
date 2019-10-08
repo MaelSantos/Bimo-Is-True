@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.urls import path
 
-from . import views
+from TableBlockTrue.views import *
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', index, name='index'),
+    path('login/', login, name='login'),
+    path('cadastro/', cadastro, name='cadastro'),
 ]
