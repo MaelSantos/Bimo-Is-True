@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/beans/usuario.dart';
 import 'package:tableblocktrue/view/cadastro.dart';
+import 'package:tableblocktrue/webservice/web_service.dart';
 
 import 'menu.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => LoginState();
+}
 
+class LoginState extends State<Login> {
   Cadastro _cadastro;
+  TextEditingController controladorLogin;
+  TextEditingController controladorSenha;
+  bool flagErro;
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  Login(){
+  @override
+  void initState() {
+
+    super.initState();
     _cadastro = Cadastro();
+
+    controladorLogin = TextEditingController();
+    controladorSenha = TextEditingController();
+    flagErro = false;
+    // _formKey = GlobalKey<FormState>();
   }
 
   @override
@@ -31,13 +48,33 @@ class Login extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("Login"),
-                  TextField(
+                  TextFormField(
+                    controller: controladorLogin,
+                    validator: (value) {
+                      value = value.trim();
+                      if (value.isEmpty) {
+                        return "Campo Obrigatório";
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.person),
                         hintText: 'Informe o login'),
                   ),
-                  TextField(
+                  TextFormField(
+                    controller: controladorSenha,
+                    validator: (value) {
+                      value = value.trim();
+                      if (value.isEmpty) {
+                        return "CAMPO OBIRGATÓRIO";
+                      }
+                      if (flagErro) {
+                        return "login ou senha inválido";
+                      }
+                      return null;
+                    },
+                    obscureText: true,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.lock),
@@ -49,7 +86,13 @@ class Login extends StatelessWidget {
                     children: [
                       FlatButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(context, '/Menu');
+                            flagErro = false;
+                            // if (_formKey.currentState.validate()) {
+                              Usuario user = Usuario();
+                              user.login = controladorLogin.text.trim();
+                              user.senha = controladorSenha.text.trim();
+                              _showDashBoard(usuario: user);
+                            // }
                           },
                           child:
                               Image.asset("assets/images/icons/confirmar.png")),
@@ -72,5 +115,19 @@ class Login extends StatelessWidget {
                 ],
               ),
             )));
+  }
+
+  void _showDashBoard({Usuario usuario}) async {
+    print("SHOW");
+    Usuario user = await WebService.getUsuarioLoginSenha(usuario);
+    if (user == null) {
+      flagErro = true;
+      // _formKey.currentState.validate();
+    } else {
+      user.ativo = true;
+      user.save();
+      print("ok");
+      Navigator.pushReplacementNamed(context, '/Menu');
+    }
   }
 }

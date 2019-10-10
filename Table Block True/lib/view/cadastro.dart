@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/util/tela.dart';
-
-import 'menu.dart';
 
 class Cadastro extends StatelessWidget {
   @override
@@ -24,31 +21,31 @@ class Cadastro extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("Cadastro"),
-                  TextField(
+                  TextFormField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.person),
                         hintText: 'Informe seu nome'),
                   ),
-                  TextField(
+                  TextFormField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.email),
                         hintText: 'Informe seu email'),
                   ),
-                  TextField(
+                  TextFormField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.account_box),
                         hintText: 'Informe o login'),
                   ),
-                  TextField(
+                  TextFormField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.lock),
                         hintText: 'Informe a senha'),
                   ),
-                  TextField(
+                  TextFormField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.lock),

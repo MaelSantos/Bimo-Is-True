@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/mael/Documentos/Projetos Mobile/Table Block True/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/mael/Documentos/Projetos Mobile/Table Block True/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
