@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Oct 10 10:09:27 BRT 2019
+#Thu Oct 10 10:48:47 BRT 2019
 5.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 42.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 22.path=flutter_assets/LICENSE

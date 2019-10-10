@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:tableblocktrue/view/componentes/text_component.dart';
 
 class Cadastro extends StatelessWidget {
+  TextCustom tfdNome, tfdEmail, tfdLogin, tfdSenha, tfdConfirmar;
+
+  Cadastro() {
+    tfdNome = TextCustom("Informe seu nome");
+    tfdEmail = TextCustom("Informe o email");
+    tfdLogin = TextCustom("Informe o login");
+    tfdSenha = TextCustom("Informe a senha");
+    tfdConfirmar = TextCustom("Confirme sua senha");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,36 +32,11 @@ class Cadastro extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("Cadastro"),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(Icons.person),
-                        hintText: 'Informe seu nome'),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(Icons.email),
-                        hintText: 'Informe seu email'),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(Icons.account_box),
-                        hintText: 'Informe o login'),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(Icons.lock),
-                        hintText: 'Informe a senha'),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(Icons.lock),
-                        hintText: 'Confirme sua senha'),
-                  ),
+                  tfdNome,
+                  tfdEmail,
+                  tfdLogin,
+                  tfdSenha,
+                  tfdConfirmar,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

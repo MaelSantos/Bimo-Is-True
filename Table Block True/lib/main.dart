@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             textTheme: TextTheme(
               body1: TextStyle(
                   color: Colors.white,
-                  fontSize: 16), //define a cor padrão dos textos
+                  fontSize: 19), //define a cor padrão dos textos
             )),
         home: Entrada(),
         routes: {

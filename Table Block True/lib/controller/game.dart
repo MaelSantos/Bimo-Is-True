@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/view/button-component.dart';
+import 'package:tableblocktrue/view/componentes/button_component.dart';
 import 'package:tableblocktrue/view/joystick.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
