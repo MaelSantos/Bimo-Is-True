@@ -9,15 +9,13 @@ import 'package:flutter/material.dart';
 // }
 
 class TextCustom extends StatelessWidget {
-
   TextEditingController controlador;
   String texto;
-  bool erro;
+  bool erro, isPassword;
   String mensagemErro;
   Icon icone;
 
-  TextCustom(this.texto, {this.mensagemErro="Dados invalidos", IconData iconData = Icons.person}) {
-
+  TextCustom(this.texto,{this.isPassword = false, this.mensagemErro = "Dados invalidos", IconData iconData = Icons.person}) {
     icone = Icon(iconData);
     erro = false;
     controlador = TextEditingController();
@@ -32,12 +30,11 @@ class TextCustom extends StatelessWidget {
 
   String validar(String value) {
     value = value.trim();
-    if (value.isEmpty) {
-      return "Campo Obrigatório";
-    }
-    else if(erro)
-    {
+    if (erro) {
+      erro = false;
       return mensagemErro;
+    } else if (value.isEmpty) {
+      return "Campo Obrigatório";
     }
     return null;
   }
@@ -59,10 +56,9 @@ class TextCustom extends StatelessWidget {
             child: TextFormField(
               controller: controlador,
               validator: validar,
+              obscureText: isPassword,
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  icon: icone,
-                  hintText: texto),
+                  border: InputBorder.none, icon: icone, hintText: texto),
             ),
           )
         ]));

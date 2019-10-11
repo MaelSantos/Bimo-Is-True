@@ -16,8 +16,7 @@ class LoginState extends State<Login> {
   Cadastro _cadastro;
   TextEditingController controladorLogin;
   TextEditingController controladorSenha;
-  bool flagErro;
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> _formKey;
 
   TextCustom tfdLogin, tfdSenha;
 
@@ -26,11 +25,8 @@ class LoginState extends State<Login> {
     super.initState();
     _cadastro = Cadastro();
     tfdLogin = TextCustom("Informe o Login");
-    tfdSenha = TextCustom("Informe a Senha");
+    tfdSenha = TextCustom("Informe a Senha", isPassword: true, mensagemErro: "Login ou senha incorretos",);
 
-    controladorLogin = TextEditingController();
-    controladorSenha = TextEditingController();
-    flagErro = false;
     _formKey = GlobalKey<FormState>();
   }
 
@@ -62,14 +58,11 @@ class LoginState extends State<Login> {
                       children: [
                         FlatButton(
                             onPressed: () {
-                              flagErro = false;
                               if (_formKey.currentState.validate()) {
                                 Usuario user = Usuario();
                                 user.login = tfdLogin.text;
                                 user.senha = tfdSenha.text;
-                                // user.login = controladorLogin.text.trim();
-                                // user.senha = controladorSenha.text.trim();
-                                _showDashBoard(usuario: user);
+                                _showMenu(usuario: user);
                               }
                             },
                             child: Image.asset(
@@ -94,16 +87,14 @@ class LoginState extends State<Login> {
                 )))));
   }
 
-  void _showDashBoard({Usuario usuario}) async {
+  void _showMenu({Usuario usuario}) async {
     Usuario user = await WebService.getUsuarioLoginSenha(usuario);
     if (user == null) {
       tfdSenha.erro = true;
-      // flagErro = true;
       _formKey.currentState.validate();
     } else {
       user.ativo = true;
       // user.save();
-      print("ok");
       Navigator.pushReplacementNamed(context, '/Menu');
     }
   }
