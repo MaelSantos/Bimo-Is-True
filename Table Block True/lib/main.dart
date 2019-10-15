@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         // O widget Scaffold define o layouta da home
         theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.lightBlue,
             fontFamily: "Special", //define a fonte familia do texto
             textTheme: TextTheme(
               body1: TextStyle(

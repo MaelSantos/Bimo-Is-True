@@ -34,7 +34,6 @@ class LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.lightBlue,
-        // bottomNavigationBar: ,
         body: Form(
             key: _formKey,
             child: Container(

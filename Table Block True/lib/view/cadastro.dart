@@ -28,8 +28,6 @@ class Cadastro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.lightBlue,
-        // bottomNavigationBar: ,
-        // appBar: AppBar(),
         body: Form(
             key: _formKey,
             child: Container(

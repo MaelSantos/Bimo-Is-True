@@ -15,6 +15,7 @@ class BoxGame extends BaseGame {
   Size screenSize;
   double tileSize;
   Random rnd;
+  List<Offset> colisoes;
 
   Alien alien;
   TiledComponent mapa;
@@ -25,6 +26,9 @@ class BoxGame extends BaseGame {
 
   BoxGame(this.menu) {
     initialize();
+    mapa.map.layers[1].tiles.forEach((t) {
+      colisoes.add(Offset(t.x.toDouble(), t.y.toDouble()));
+    });
   }
 
   void initialize() async {
@@ -39,6 +43,7 @@ class BoxGame extends BaseGame {
     });
 
     joystick = Joystick(this);
+    colisoes = List();
   }
 
   void spawnFly() {
@@ -74,7 +79,13 @@ class BoxGame extends BaseGame {
   void update(double t) {
     super.update(t);
     joystick.update(t);
-    alien.update(t);
+    colisoes.forEach((c) {
+      if (!alien.entidadeRect.contains(c)) {
+        alien.update(t);
+      }
+    });
+    // alien.x = 100;
+    // alien.y = 10;
   }
 
   void resize(Size size) {
