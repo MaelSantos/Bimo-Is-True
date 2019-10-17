@@ -1,21 +1,22 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/button_component.dart';
 import 'package:tableblocktrue/view/joystick.dart';
 import 'package:tableblocktrue/view/menu.dart';
+import 'package:tiled/tiled.dart';
 
 class BoxGame extends BaseGame {
   Size screenSize;
   double tileSize;
   Random rnd;
-  List<Offset> colisoes;
+  List<Rect> colisoes;
 
   Alien alien;
   TiledComponent mapa;
@@ -26,15 +27,12 @@ class BoxGame extends BaseGame {
 
   BoxGame(this.menu) {
     initialize();
-    mapa.map.layers[1].tiles.forEach((t) {
-      colisoes.add(Offset(t.x.toDouble(), t.y.toDouble()));
-    });
   }
 
   void initialize() async {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-    alien = Alien(this, screenSize.width / 2, screenSize.height / 2);
+    alien = Alien(this, 25, 20);
     mapa = TiledComponent("mapa.tmx");
     add(mapa);
 
@@ -44,6 +42,10 @@ class BoxGame extends BaseGame {
 
     joystick = Joystick(this);
     colisoes = List();
+
+    _addCollision(mapa);
+
+    alien.colisoes = colisoes;
   }
 
   void spawnFly() {
@@ -69,23 +71,23 @@ class BoxGame extends BaseGame {
     // }
   }
 
+  @override
   void render(Canvas canvas) {
     super.render(canvas);
     alien.render(canvas);
     joystick.render(canvas);
     btnVoltar.render(canvas);
+
+    // alien.colisoes.forEach((c) {
+    //   canvas.drawRect(c, Paint());
+    // });
   }
 
+  @override
   void update(double t) {
     super.update(t);
     joystick.update(t);
-    colisoes.forEach((c) {
-      if (!alien.entidadeRect.contains(c)) {
-        alien.update(t);
-      }
-    });
-    // alien.x = 100;
-    // alien.y = 10;
+    alien.update(t);
   }
 
   void resize(Size size) {
@@ -107,5 +109,19 @@ class BoxGame extends BaseGame {
 
   void onPanEnd(DragEndDetails details) {
     joystick.onPanEnd(details);
+  }
+
+  void _addCollision(TiledComponent tiledMap) async {
+    final ObjectGroup obj = await tiledMap.getObjectGroupFromLayer("colisao");
+
+    if (obj == null) {
+      return;
+    }
+    for (TmxObject obj in obj.tmxObjects) {
+      Rect r = Rect.fromLTWH(obj.x.toDouble(), obj.y.toDouble(),
+          obj.width.toDouble(), obj.height.toDouble());
+
+      colisoes.add(r);
+    }
   }
 }

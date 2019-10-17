@@ -1,3 +1,4 @@
+import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +7,7 @@ import 'dart:math';
 
 import 'package:tableblocktrue/controller/game.dart';
 
-class Joystick {
-
+class Joystick extends SpriteComponent {
   final BoxGame game;
 
   double backgroundAspectRatio = 2.5;
@@ -33,27 +33,16 @@ class Joystick {
     // image of the joystick
     var radius = (game.tileSize * backgroundAspectRatio) / 2;
 
-    Offset osBackground = Offset(
-        radius + (radius / 2) + 115,
-        game.screenSize.height - (radius + (radius / 2) + 80)
-    );
-    backgroundRect = Rect.fromCircle(
-        center: osBackground,
-        radius: radius
-    );
+    Offset osBackground = Offset(radius + (radius / 2) + 115,
+        game.screenSize.height - (radius + (radius / 2) + 80));
+    backgroundRect = Rect.fromCircle(center: osBackground, radius: radius);
 
     // The circle radius calculation that will contain the knob
     // image of the joystick
     radius = (game.tileSize * knobAspectRatio) / 2;
 
-    Offset osKnob = Offset(
-        backgroundRect.center.dx,
-        backgroundRect.center.dy
-    );
-    knobRect = Rect.fromCircle(
-        center: osKnob,
-        radius: radius
-    );
+    Offset osKnob = Offset(backgroundRect.center.dx, backgroundRect.center.dy);
+    knobRect = Rect.fromCircle(center: osKnob, radius: radius);
     dragPosition = knobRect.center;
   }
 
@@ -64,12 +53,10 @@ class Joystick {
 
   void update(double t) {
     if (dragging) {
-      double _radAngle = atan2(
-          dragPosition.dy - backgroundRect.center.dy,
+      double _radAngle = atan2(dragPosition.dy - backgroundRect.center.dy,
           dragPosition.dx - backgroundRect.center.dx);
 
-      // Update playerShip's player rad angle
-      // game.playerShip.lastMoveRadAngle = _radAngle;
+      // Atualiza o angulo do personagem de acordo com o joystick
       game.alien.angulo = _radAngle;
 
       // Distance between the center of joystick background & drag position
@@ -88,11 +75,10 @@ class Joystick {
       double nextY = dist * sin(_radAngle);
       Offset nextPoint = Offset(nextX, nextY);
 
-      Offset diff = Offset(
-          backgroundRect.center.dx + nextPoint.dx,
-          backgroundRect.center.dy + nextPoint.dy) - knobRect.center;
+      Offset diff = Offset(backgroundRect.center.dx + nextPoint.dx,
+              backgroundRect.center.dy + nextPoint.dy) -
+          knobRect.center;
       knobRect = knobRect.shift(diff);
-
     } else {
       // The drag position is, at this moment, that of the center of the
       // background of the joystick. It calculates the difference between this
@@ -106,7 +92,7 @@ class Joystick {
   void onPanStart(DragStartDetails details) {
     if (knobRect.contains(details.globalPosition)) {
       dragging = true;
-      // game.playerShip.move = true;
+
       game.alien.move = true;
     }
   }
@@ -119,11 +105,8 @@ class Joystick {
 
   void onPanEnd(DragEndDetails details) {
     dragging = false;
-    // Reset drag position to the center of joystick background
     dragPosition = backgroundRect.center;
-    // Stop move player ship
-    // game.playerShip.move = false;
+
     game.alien.move = false;
   }
-
 }

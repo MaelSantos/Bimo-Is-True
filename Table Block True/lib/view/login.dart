@@ -87,14 +87,15 @@ class LoginState extends State<Login> {
   }
 
   void _showMenu({Usuario usuario}) async {
-    Usuario user = await WebService.getUsuarioLoginSenha(usuario);
-    if (user == null) {
-      tfdSenha.erro = true;
-      _formKey.currentState.validate();
-    } else {
-      user.ativo = true;
-      // user.save();
-      Navigator.pushReplacementNamed(context, '/Menu');
-    }
+    // Usuario user = await WebService.getUsuarioLoginSenha(usuario);
+    // if (user == null) {
+    //   tfdSenha.erro = true;
+    //   _formKey.currentState.validate();
+    // } else {
+    //   user.ativo = true;
+    //   // user.save();
+    //   Navigator.pushReplacementNamed(context, '/Menu');
+    // }
+    Navigator.pushReplacementNamed(context, '/Menu');
   }
 }

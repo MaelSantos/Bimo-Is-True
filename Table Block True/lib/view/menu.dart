@@ -9,7 +9,6 @@ import 'package:tableblocktrue/view/ajuda.dart';
 import 'package:tableblocktrue/view/config.dart';
 import 'package:tableblocktrue/view/fase.dart';
 import 'package:tableblocktrue/view/info.dart';
-import 'package:tableblocktrue/view/inventario.dart';
 import 'package:tableblocktrue/view/principal.dart';
 
 class Menu extends StatefulWidget {
@@ -30,7 +29,6 @@ class MenuState extends State<Menu> {
   Scaffold detector;
   BoxGame game;
 
-  Inventario inventario;
   Principal principal;
   Fase fase;
   Config config;
@@ -55,7 +53,6 @@ class MenuState extends State<Menu> {
     info = Info(this);
     //tela jogo
     game = BoxGame(this);
-    inventario = Inventario(this, game.alien);
 
     detector = Scaffold(
       backgroundColor: Colors.lightBlue,
