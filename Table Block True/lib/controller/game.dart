@@ -1,11 +1,15 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flame/animation.dart';
+import 'package:flame/components/animation_component.dart';
+import 'package:flame/components/component.dart';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
+import 'package:tableblocktrue/model/colisao.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/button_component.dart';
 import 'package:tableblocktrue/view/joystick.dart';
@@ -16,7 +20,7 @@ class BoxGame extends BaseGame {
   Size screenSize;
   double tileSize;
   Random rnd;
-  List<Rect> colisoes;
+  List<Colisao> colisoes;
 
   Alien alien;
   TiledComponent mapa;
@@ -79,7 +83,7 @@ class BoxGame extends BaseGame {
     btnVoltar.render(canvas);
 
     // alien.colisoes.forEach((c) {
-    //   canvas.drawRect(c, Paint());
+    //   canvas.drawRect(c.toRect(), Paint());
     // });
   }
 
@@ -88,8 +92,14 @@ class BoxGame extends BaseGame {
     super.update(t);
     joystick.update(t);
     alien.update(t);
+
+    //atualiza posição da camera
+    camera.x = min((mapa.map.tileWidth * 32) - screenSize.width,
+        max(0, alien.entidadeRect.left - screenSize.width / 2));
+
   }
 
+  @override
   void resize(Size size) {
     screenSize = size;
     tileSize = screenSize.width / 9;
@@ -118,10 +128,14 @@ class BoxGame extends BaseGame {
       return;
     }
     for (TmxObject obj in obj.tmxObjects) {
-      Rect r = Rect.fromLTWH(obj.x.toDouble(), obj.y.toDouble(),
-          obj.width.toDouble(), obj.height.toDouble());
+      Colisao colisao = Colisao(this,
+          x: obj.x.toDouble(),
+          y: obj.y.toDouble(),
+          largura: obj.width.toDouble(),
+          altura: obj.height.toDouble());
 
-      colisoes.add(r);
+      colisoes.add(colisao);
+      add(colisao);
     }
   }
 }

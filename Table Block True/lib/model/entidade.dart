@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
 import 'package:tableblocktrue/controller/game.dart';
-import 'package:tableblocktrue/util/movimento.dart';
+import 'package:tableblocktrue/model/colisao.dart';
 
 class Entidade extends SpriteComponent {
   bool isVivo = false;
@@ -20,7 +20,7 @@ class Entidade extends SpriteComponent {
   bool move = false;
   double angulo = 0.0;
 
-  List<Rect> colisoes;
+  List<Colisao> colisoes;
 
   Entidade(this.game);
 
@@ -39,14 +39,20 @@ class Entidade extends SpriteComponent {
     if (move) {
       double nextX = (velocidade * t) * cos(angulo);
       double nextY = (velocidade * t) * sin(angulo);
+
       Offset nextPoint = Offset(nextX * velocidade, nextY * velocidade);
 
       Offset diffBase = Offset(entidadeRect.center.dx + nextPoint.dx,
               entidadeRect.center.dy + nextPoint.dy) -
           entidadeRect.center;
 
-      if(!collision(colisoes, diffBase))
-      entidadeRect = entidadeRect.shift(diffBase);
+      print("X Entidade: ${entidadeRect.center.dx}");
+      print("Camera: ${game.camera.x}");
+      print("Largura: ${game.screenSize.width}");
+
+      //atualiza posição do personagem
+      if (!collision(colisoes, diffBase)) // verifica as colisões
+        entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
 
       animar();
     }
@@ -97,13 +103,23 @@ class Entidade extends SpriteComponent {
   //   return false;
   // }
 
-  bool collision(List<Rect> collision, Offset ponto) {
+  // bool collision(List<Rect> collision, Offset ponto) {
+  //   Rect deslocamento = entidadeRect.shift(ponto);
 
+  //   for (Rect r in collision) {
+  //     if (deslocamento.overlaps(r)) return true;
+  //   }
+  //   return false;
+  // }
+
+  bool collision(List<Colisao> collision, Offset ponto) {
     Rect deslocamento = entidadeRect.shift(ponto);
 
-    for(Rect r in collision){
-      if(deslocamento.overlaps(r))
+    for (Colisao r in collision) {
+      if (deslocamento.overlaps(r.toRect())) {
+        print("Posição da colisão: ${r.x}");
         return true;
+      }
     }
     return false;
   }
