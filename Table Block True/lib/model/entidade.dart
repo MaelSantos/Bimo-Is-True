@@ -22,7 +22,9 @@ class Entidade extends SpriteComponent {
 
   List<Colisao> colisoes;
 
-  Entidade(this.game);
+  Entidade(this.game){
+    colisoes = List();
+  }
 
   @override
   void render(Canvas c) {
@@ -45,10 +47,6 @@ class Entidade extends SpriteComponent {
       Offset diffBase = Offset(entidadeRect.center.dx + nextPoint.dx,
               entidadeRect.center.dy + nextPoint.dy) -
           entidadeRect.center;
-
-      print("X Entidade: ${entidadeRect.center.dx}");
-      print("Camera: ${game.camera.x}");
-      print("Largura: ${game.screenSize.width}");
 
       //atualiza posição do personagem
       if (!collision(colisoes, diffBase)) // verifica as colisões
@@ -82,44 +80,11 @@ class Entidade extends SpriteComponent {
   //   // entidade.isVivo = isVivo;
   // }
 
-  // Future<bool> colisao(Rect c) async {
-  //   colid = entidadeRect.contains(c.bottomCenter) ||
-  //       entidadeRect.contains(c.bottomLeft) ||
-  //       entidadeRect.contains(c.bottomRight) ||
-  //       entidadeRect.contains(c.topCenter) ||
-  //       entidadeRect.contains(c.topLeft) ||
-  //       entidadeRect.contains(c.topRight);
-  //   print(colid);
-
-  //   return colid;
-
-  // }
-
-  // bool collision(List<Rect> collision) {
-  //   for(Rect r in collision){
-  //     if(entidadeRect.overlaps(r))
-  //       return true;
-  //   }
-  //   return false;
-  // }
-
-  // bool collision(List<Rect> collision, Offset ponto) {
-  //   Rect deslocamento = entidadeRect.shift(ponto);
-
-  //   for (Rect r in collision) {
-  //     if (deslocamento.overlaps(r)) return true;
-  //   }
-  //   return false;
-  // }
-
   bool collision(List<Colisao> collision, Offset ponto) {
     Rect deslocamento = entidadeRect.shift(ponto);
 
     for (Colisao r in collision) {
-      if (deslocamento.overlaps(r.toRect())) {
-        print("Posição da colisão: ${r.x}");
-        return true;
-      }
+      if (deslocamento.overlaps(r.toRect())) return true;
     }
     return false;
   }

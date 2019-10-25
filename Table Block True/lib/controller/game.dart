@@ -1,15 +1,13 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:flame/animation.dart';
-import 'package:flame/components/animation_component.dart';
-import 'package:flame/components/component.dart';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/colisao.dart';
+import 'package:tableblocktrue/model/preposicao.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/button_component.dart';
 import 'package:tableblocktrue/view/joystick.dart';
@@ -20,9 +18,9 @@ class BoxGame extends BaseGame {
   Size screenSize;
   double tileSize;
   Random rnd;
-  List<Colisao> colisoes;
 
   Alien alien;
+  List<Preposicao> _preposicoes;
   TiledComponent mapa;
   ButtonComponent btnVoltar;
   Joystick joystick;
@@ -45,42 +43,24 @@ class BoxGame extends BaseGame {
     });
 
     joystick = Joystick(this);
-    colisoes = List();
 
+    _preposicoes = List();
     _addCollision(mapa);
 
-    alien.colisoes = colisoes;
-  }
-
-  void spawnFly() {
-    double x = rnd.nextDouble() * (screenSize.width - (tileSize * 2.025));
-    double y = rnd.nextDouble() * (screenSize.height - (tileSize * 2.025));
-
-    // switch (rnd.nextInt(5)) {
-    //   case 0:
-    //     flies.add(HouseFly(this, x, y));
-    //     break;
-    //   case 1:
-    //     flies.add(DroolerFly(this, x, y));
-    //     break;
-    //   case 2:
-    //     flies.add(AgileFly(this, x, y));
-    //     break;
-    //   case 3:
-    //     flies.add(MachoFly(this, x, y));
-    //     break;
-    //   case 4:
-    //     flies.add(HungryFly(this, x, y));
-    //     break;
-    // }
+    print(alien.colisoes);
   }
 
   @override
   void render(Canvas canvas) {
     super.render(canvas);
-    alien.render(canvas);
     joystick.render(canvas);
     btnVoltar.render(canvas);
+
+    _preposicoes.forEach((f) {
+      f.render(canvas);
+    });
+
+    alien.render(canvas);
 
     // alien.colisoes.forEach((c) {
     //   canvas.drawRect(c.toRect(), Paint());
@@ -93,10 +73,15 @@ class BoxGame extends BaseGame {
     joystick.update(t);
     alien.update(t);
 
-    //atualiza posição da camera
-    camera.x = min((mapa.map.tileWidth * 32) - screenSize.width,
-        max(0, alien.entidadeRect.left - screenSize.width / 2));
+    _preposicoes.forEach((f) {
+      f.update(t);
+    });
 
+    //atualiza posição da camera
+    if (mapa.map != null) {
+      camera.x = min((mapa.map.tileWidth * 32) - screenSize.width,
+          max(0, alien.entidadeRect.left - screenSize.width / 2));
+    }
   }
 
   @override
@@ -121,6 +106,66 @@ class BoxGame extends BaseGame {
     joystick.onPanEnd(details);
   }
 
+  void gerarPreposicao() {
+    // if(_preposicoes.isNotEmpty)
+    //   _preposicoes.clear();"
+
+    for (var i = 0; i < 5; i++) {
+      List l = gerarPosicao();
+      print(l[0]);
+      _preposicoes.add(Preposicao(this, l[0], l[1]));
+    }
+
+    // switch (rnd.nextInt(5)) {
+    //   case 0:
+    //     flies.add(HouseFly(this, x, y));
+    //     break;
+    //   case 1:
+    //     flies.add(DroolerFly(this, x, y));
+    //     break;
+    //   case 2:
+    //     flies.add(AgileFly(this, x, y));
+    //     break;
+    //   case 3:
+    //     flies.add(MachoFly(this, x, y));
+    //     break;
+    //   case 4:
+    //     flies.add(HungryFly(this, x, y));
+    //     break;
+    // }
+  }
+
+  List gerarPosicao() {
+    List i = List();
+    bool colid = true;
+
+    while (true) {
+      colid = true;
+      double x = rnd.nextDouble() * (screenSize.width - (tileSize));
+      double y = rnd.nextDouble() * (16 * 32) - 50;
+
+      Rect r = Rect.fromLTWH(x, y, 50, 50);
+
+      for (Colisao c in alien.colisoes) {
+        if (r.overlaps(c.toRect())) {
+          colid = false;
+        }
+      }
+
+      for (Preposicao p in _preposicoes) {
+        if (r.overlaps(p.ponto)) {
+          colid = false;
+        }
+      }
+
+      if (colid) {
+        i.add(x);
+        i.add(y);
+      }
+      if (i.isNotEmpty) return i;
+    }
+  }
+
   void _addCollision(TiledComponent tiledMap) async {
     final ObjectGroup obj = await tiledMap.getObjectGroupFromLayer("colisao");
 
@@ -134,8 +179,10 @@ class BoxGame extends BaseGame {
           largura: obj.width.toDouble(),
           altura: obj.height.toDouble());
 
-      colisoes.add(colisao);
+      alien.colisoes.add(colisao);
       add(colisao);
     }
+
+    gerarPreposicao();
   }
 }
