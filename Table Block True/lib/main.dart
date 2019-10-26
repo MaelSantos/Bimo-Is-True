@@ -10,13 +10,14 @@ import 'package:tableblocktrue/view/entrada.dart';
 void main() async {
   // carrega as imagens em cache
   Flame.images.loadAll(<String>[
-    "sprite/bege_padrao.png",
-    "sprite/bege_direita1.png",
-    "sprite/bege_direita2.png",
+    "sprite/play_0.png",
+    "sprite/play_1.png",
+    "sprite/play_2.png",
     "icons/atencao.png",
     "icons/voltar.png",
     "joystick_background.png",
-    "joystick_knob.png"
+    "joystick_knob.png",
+    "bloco.png"
   ]);
 
   runApp(MyApp()); //rodo a aplicação

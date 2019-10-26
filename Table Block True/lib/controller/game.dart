@@ -34,8 +34,8 @@ class BoxGame extends BaseGame {
   void initialize() async {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-    alien = Alien(this, 25, 20);
-    mapa = TiledComponent("mapa.tmx");
+    alien = Alien(this, 35, 40);
+    mapa = TiledComponent("map1.tmx");
     add(mapa);
 
     btnVoltar = ButtonComponent(this, 20, 0, "icons/voltar.png", onPressed: () {
@@ -113,7 +113,7 @@ class BoxGame extends BaseGame {
     for (var i = 0; i < 5; i++) {
       List l = gerarPosicao();
       print(l[0]);
-      _preposicoes.add(Preposicao(this, l[0], l[1]));
+      _preposicoes.add(Preposicao(this, alien, l[0], l[1]));
     }
 
     // switch (rnd.nextInt(5)) {

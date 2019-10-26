@@ -62,13 +62,16 @@ flutter:
     - assets/icon.png
     - assets/fundo.jpg
     - assets/fundo.png
-    - assets/images/sprite/bege_padrao.png
-    - assets/images/sprite/bege_direita1.png
-    - assets/images/sprite/bege_direita2.png
-    - assets/images/mapa.png
     - assets/tiles/mapa.tmx
+    - assets/images/blocos.png
+    - assets/images/bloco.png
+    - assets/images/blockx64.png
+    - assets/tiles/map1.tmx
     - assets/images/joystick_background.png
     - assets/images/joystick_knob.png
+    - assets/images/sprite/play_0.png
+    - assets/images/sprite/play_1.png
+    - assets/images/sprite/play_2.png
 
 flutter_icons:
  android: "launcher_icon"

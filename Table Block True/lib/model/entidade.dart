@@ -22,16 +22,18 @@ class Entidade extends SpriteComponent {
 
   List<Colisao> colisoes;
 
-  Entidade(this.game){
+  Entidade(this.game) {
     colisoes = List();
   }
 
   @override
-  void render(Canvas c) {
+  void render(Canvas canvas) {
     if (isVivo) {
-      spriteFim.renderRect(c, entidadeRect.inflate(2));
+      spriteFim.renderRect(canvas, entidadeRect);
     } else {
-      sprites[aparencia.toInt()].renderRect(c, entidadeRect.inflate(2));
+      // canvas.drawRect(entidadeRect, Paint());
+      // Future.delayed(const Duration(seconds: 1), () => 
+      sprites[aparencia.toInt()].renderRect(canvas, entidadeRect);
     }
   }
 
