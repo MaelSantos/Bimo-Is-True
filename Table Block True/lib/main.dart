@@ -15,6 +15,8 @@ void main() async {
     "sprite/play_2.png",
     "icons/atencao.png",
     "icons/voltar.png",
+    "icons/segurar.png",
+    "icons/soltar.png",
     "joystick_background.png",
     "joystick_knob.png",
     "bloco.png"

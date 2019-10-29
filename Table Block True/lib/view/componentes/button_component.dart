@@ -14,18 +14,19 @@ class ButtonComponent {
   final Function onPressed;
 
   ButtonComponent(this.game, this.x, this.y, String caminho, {this.onPressed}) {
-    resize();
 
     try {
       sprite = Sprite(caminho);
     } catch (e) {
       sprite = Sprite('icons/atencao.png');
     }
+
+    rect = Rect.fromLTWH(this.x, this.y, 70, 70);
   }
 
   void render(Canvas canvas) {
     sprite.renderRect(canvas, rect);
-    // sprite.renderPosition(canvas, Position(100, 100));
+    // sprite.renderPosition(canvas, Position(x, y));
   }
 
   void update(double t) {
@@ -33,13 +34,12 @@ class ButtonComponent {
   }
 
   void resize() {
-    rect = Rect.fromLTWH(
-      game.screenSize.width * 0.75 + x,
-      game.screenSize.height * 0.75 + y,
-      game.tileSize * 1.75,
-      game.tileSize * 1.75,
-    );
-
+    // rect = Rect.fromLTWH(
+    //   game.screenSize.width * 0.75 + x,
+    //   game.screenSize.height * 0.75 + y,
+    //   game.tileSize * 1.75,
+    //   game.tileSize * 1.75,
+    // );
   }
 
   void onTapDown(TapDownDetails d) {

@@ -4,15 +4,18 @@ import 'dart:ui';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
+import 'package:flame/sprite.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/colisao.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
+import 'package:tableblocktrue/model/proposicao.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/button_component.dart';
 import 'package:tableblocktrue/view/joystick.dart';
 import 'package:tableblocktrue/view/menu.dart';
 import 'package:tiled/tiled.dart';
+import 'package:flutter/material.dart';
 
 class BoxGame extends BaseGame {
   Size screenSize;
@@ -20,9 +23,10 @@ class BoxGame extends BaseGame {
   Random rnd;
 
   Alien alien;
+  Proposicao _proposicao;
   List<Preposicao> _preposicoes;
   TiledComponent mapa;
-  ButtonComponent btnVoltar;
+  ButtonComponent btnVoltar, btnSegurar;
   Joystick joystick;
 
   MenuState menu;
@@ -34,20 +38,35 @@ class BoxGame extends BaseGame {
   void initialize() async {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-    alien = Alien(this, 35, 40);
+    alien = Alien(this, 40, 40);
     mapa = TiledComponent("map1.tmx");
     add(mapa);
 
-    btnVoltar = ButtonComponent(this, 20, 0, "icons/voltar.png", onPressed: () {
+    btnVoltar = ButtonComponent(this, 300, 630, "icons/voltar.png", onPressed: () {
       menu.transicao(Tela.sair);
+    });
+
+    btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png", onPressed: () {
+      if (alien.segurando) {
+        btnSegurar.sprite = Sprite("icons/soltar.png");
+        alien.segurando = false;
+        print("segurando");
+      } else {
+        btnSegurar.sprite = Sprite("icons/segurar.png");
+        alien.segurando = true;
+        print("soltando");
+      }
+      print(alien.segurando);
     });
 
     joystick = Joystick(this);
 
+    _proposicao = Proposicao(this, alien, 150, 490);
+
     _preposicoes = List();
     _addCollision(mapa);
 
-    print(alien.colisoes);
+    camera.x = -5;
   }
 
   @override
@@ -55,7 +74,8 @@ class BoxGame extends BaseGame {
     super.render(canvas);
     joystick.render(canvas);
     btnVoltar.render(canvas);
-
+    btnSegurar.render(canvas);
+    _proposicao.render(canvas);
     _preposicoes.forEach((f) {
       f.render(canvas);
     });
@@ -71,17 +91,17 @@ class BoxGame extends BaseGame {
   void update(double t) {
     super.update(t);
     joystick.update(t);
-    alien.update(t);
-
+    _proposicao.update(t);
     _preposicoes.forEach((f) {
       f.update(t);
     });
 
+    alien.update(t);
     //atualiza posição da camera
-    if (mapa.map != null) {
-      camera.x = min((mapa.map.tileWidth * 32) - screenSize.width,
-          max(0, alien.entidadeRect.left - screenSize.width / 2));
-    }
+    // if (mapa.map != null) {
+    //   camera.x = min((mapa.map.tileWidth * 32) - screenSize.width,
+    //       max(0, alien.entidadeRect.left - screenSize.width / 2));
+    // }
   }
 
   @override
@@ -91,6 +111,7 @@ class BoxGame extends BaseGame {
   }
 
   void onTapDown(TapDownDetails d) {
+    btnSegurar.onTapDown(d);
     btnVoltar.onTapDown(d);
   }
 
@@ -112,8 +133,7 @@ class BoxGame extends BaseGame {
 
     for (var i = 0; i < 5; i++) {
       List l = gerarPosicao();
-      print(l[0]);
-      _preposicoes.add(Preposicao(this, alien, l[0], l[1]));
+      _preposicoes.add(Preposicao(this, alien, l[0], l[1], i));
     }
 
     // switch (rnd.nextInt(5)) {
@@ -158,6 +178,10 @@ class BoxGame extends BaseGame {
         }
       }
 
+      if (r.overlaps(alien.entidadeRect)) colid = false;
+
+      if (r.overlaps(_proposicao.ponto)) colid = false;
+
       if (colid) {
         i.add(x);
         i.add(y);
@@ -184,5 +208,7 @@ class BoxGame extends BaseGame {
     }
 
     gerarPreposicao();
+    alien.preposicoes = _preposicoes;
+    _proposicao.preposicoes = _preposicoes;
   }
 }

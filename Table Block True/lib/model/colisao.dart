@@ -17,6 +17,7 @@ class Colisao extends PositionComponent{
   @override
   void render(Canvas c) {
     // c.drawRect(Rect.fromLTWH(x , y, width, height), Paint());
+    // c.drawRect(toRect(), Paint());
   }
 
   @override

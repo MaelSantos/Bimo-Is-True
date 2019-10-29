@@ -34,7 +34,7 @@ class Joystick extends SpriteComponent {
     var radius = (game.tileSize * backgroundAspectRatio) / 2;
 
     Offset osBackground = Offset(radius + (radius / 2) + 115,
-        game.screenSize.height - (radius + (radius / 2) + 80));
+        game.screenSize.height - (radius + (radius / 2) + 30));
     backgroundRect = Rect.fromCircle(center: osBackground, radius: radius);
 
     // The circle radius calculation that will contain the knob

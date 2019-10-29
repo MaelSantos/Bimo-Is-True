@@ -5,10 +5,11 @@ import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/colisao.dart';
+import 'package:tableblocktrue/model/preposicao.dart';
 
 class Entidade extends SpriteComponent {
   bool isVivo = false;
-  double get velocidade => 7;
+  double get velocidade => 9;
 
   final BoxGame game;
 
@@ -21,6 +22,7 @@ class Entidade extends SpriteComponent {
   double angulo = 0.0;
 
   List<Colisao> colisoes;
+  List<Preposicao> preposicoes;
 
   Entidade(this.game) {
     colisoes = List();
@@ -32,7 +34,7 @@ class Entidade extends SpriteComponent {
       spriteFim.renderRect(canvas, entidadeRect);
     } else {
       // canvas.drawRect(entidadeRect, Paint());
-      // Future.delayed(const Duration(seconds: 1), () => 
+      // Future.delayed(const Duration(seconds: 1), () =>
       sprites[aparencia.toInt()].renderRect(canvas, entidadeRect);
     }
   }
@@ -88,6 +90,11 @@ class Entidade extends SpriteComponent {
     for (Colisao r in collision) {
       if (deslocamento.overlaps(r.toRect())) return true;
     }
+
+    // for (Preposicao p in preposicoes) {
+    //   if (entidadeRect.overlaps(p.ponto)) return true;
+    // }
+
     return false;
   }
 }
