@@ -34,12 +34,6 @@ class ButtonComponent {
   }
 
   void resize() {
-    // rect = Rect.fromLTWH(
-    //   game.screenSize.width * 0.75 + x,
-    //   game.screenSize.height * 0.75 + y,
-    //   game.tileSize * 1.75,
-    //   game.tileSize * 1.75,
-    // );
   }
 
   void onTapDown(TapDownDetails d) {

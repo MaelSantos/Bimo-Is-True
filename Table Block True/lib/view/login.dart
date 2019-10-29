@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tableblocktrue/beans/usuario.dart';
+import 'package:tableblocktrue/view/alerta.dart';
 import 'package:tableblocktrue/view/cadastro.dart';
 import 'package:tableblocktrue/view/componentes/text_component.dart';
 import 'package:tableblocktrue/webservice/web_service.dart';
@@ -25,7 +26,11 @@ class LoginState extends State<Login> {
     super.initState();
     _cadastro = Cadastro();
     tfdLogin = TextCustom("Informe o Login");
-    tfdSenha = TextCustom("Informe a Senha", isPassword: true, mensagemErro: "Login ou senha incorretos",);
+    tfdSenha = TextCustom(
+      "Informe a Senha",
+      isPassword: true,
+      mensagemErro: "Login ou senha incorretos",
+    );
 
     _formKey = GlobalKey<FormState>();
   }
@@ -76,8 +81,13 @@ class LoginState extends State<Login> {
                             child: Image.asset("assets/images/icons/mais.png")),
                         FlatButton(
                             onPressed: () {
-                              SystemChannels.platform.invokeMethod(
-                                  'SystemNavigator.pop'); //sai da aplicação
+                              Alerta.alert(
+                                  context, "Sair ?", "Deseja realmente sair?",
+                                  function: () {
+                                SystemChannels.platform
+                                    .invokeMethod('SystemNavigator.pop'); //sai da aplicação
+                              });
+                              
                             },
                             child: Image.asset("assets/images/icons/sair.png")),
                       ],

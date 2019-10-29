@@ -9,5 +9,6 @@ enum Tela {
   ajuda,
   info,
   sair,
+  alerta,
 
 }

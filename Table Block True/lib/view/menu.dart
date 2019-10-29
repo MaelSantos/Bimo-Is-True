@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/ajuda.dart';
+import 'package:tableblocktrue/view/alerta.dart';
 
 import 'package:tableblocktrue/view/config.dart';
 import 'package:tableblocktrue/view/fase.dart';
@@ -55,14 +56,14 @@ class MenuState extends State<Menu> {
     game = BoxGame(this);
 
     detector = Scaffold(
-      backgroundColor: Colors.lightBlue,
-      body: GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onPanStart: game.onPanStart,
-      onPanUpdate: game.onPanUpdate,
-      onPanEnd: game.onPanEnd,
-      child: game.widget,
-    ));
+        backgroundColor: Colors.lightBlue,
+        body: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onPanStart: game.onPanStart,
+          onPanUpdate: game.onPanUpdate,
+          onPanEnd: game.onPanEnd,
+          child: game.widget,
+        ));
 
     Util flameUtil = Util();
     await flameUtil.fullScreen(); //Tela cheia
@@ -114,9 +115,16 @@ class MenuState extends State<Menu> {
         Navigator.push(context, MaterialPageRoute(builder: (context) => info));
         break;
       case 8:
-      Navigator.popAndPushNamed(context, "/Menu");
-        // SystemChannels.platform
-        //     .invokeMethod('SystemNavigator.pop'); //sai da aplicação
+        Navigator.popAndPushNamed(context, "/Menu");
+        break;
+      case 9:
+        // Navigator.popAndPushNamed(context, "/Menu");
+        Navigator.pop(context);
+        Alerta.alert(context, "Fim de Jogo", "Deseja jogar novamente ?",
+            function: () {
+          transicao(Tela.sair);
+        });
+        break;
     }
   }
 

@@ -8,10 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
+import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/util/valorUtil.dart';
+import 'package:tableblocktrue/view/alerta.dart';
 
 class Proposicao extends SpriteComponent {
-
   final BoxGame game;
   final Alien _alien;
   Random _random;
@@ -23,11 +24,12 @@ class Proposicao extends SpriteComponent {
   List<bool> _valores;
   bool resultado;
 
-  Proposicao(this.game, this._alien, double x, double y){
+  Proposicao(this.game, this._alien, double x, double y) {
     ponto = Rect.fromLTWH(x, y, 100, 50);
     // simbolo = Sprite("bloco.png");
-    config = TextConfig(fontSize: 19.0, fontFamily: 'Special', color: Colors.white);
-    
+    config =
+        TextConfig(fontSize: 19.0, fontFamily: 'Special', color: Colors.white);
+
     _random = Random();
     _paint = Paint();
     _valores = List();
@@ -40,26 +42,25 @@ class Proposicao extends SpriteComponent {
   @override
   void render(Canvas canvas) {
     canvas.drawRect(ponto, _paint);
-    config.render(canvas, "${boolInString(_valores[0])} ? ${boolInString(_valores[1])} = ${boolInString(resultado)}", Position(ponto.left + 10, ponto.top+15));
+    config.render(
+        canvas,
+        "${boolInString(_valores[0])} ? ${boolInString(_valores[1])} = ${boolInString(resultado)}",
+        Position(ponto.left + 10, ponto.top + 15));
     // simbolo.renderRect(canvas, ponto);
   }
 
   @override
   void update(double t) {
-   
-    preposicoes.forEach((f){
-
-      if(f.ponto.overlaps(ponto))
-      {
+    preposicoes.forEach((f) {
+      if (f.ponto.overlaps(ponto)) {
         bool valor = calcularProposicao(f.tipo, _valores);
-        // print(valor);
-        // print(resultado);
-        if(valor == resultado) _paint.color = Colors.green;
-        else _paint.color = Colors.red;
+        if (valor == resultado) {
+          _paint.color = Colors.green;
+          game.menu.transicao(Tela.alerta);
+        } else
+          _paint.color = Colors.red;
       }
       // else _paint.color = Colors.black;
     });
-
   }
-
 }

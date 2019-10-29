@@ -86,18 +86,20 @@ bool se(List<bool> valores) {
 }
 
 bool somente(List<bool> valores) {
+  // print(valores);
   bool valor = true;
   //será verdeiro se todos forem verdadeiros ou todos forem falsos
   valores.forEach((f) {
-    valor = true;
     if (!f) {
       //todos tem que ser verdadeiros (true)
       valor = false;
     }
   });
+
   if (!valor) {
     //so verifica se todos são falsos se a verificação anterior falhar
     valores.forEach((f) {
+      print(f);
       valor = true;
       if (f) {
         //todos tem que ser falsos (true)

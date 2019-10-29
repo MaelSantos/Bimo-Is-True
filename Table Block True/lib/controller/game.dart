@@ -46,18 +46,7 @@ class BoxGame extends BaseGame {
       menu.transicao(Tela.sair);
     });
 
-    btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png", onPressed: () {
-      if (alien.segurando) {
-        btnSegurar.sprite = Sprite("icons/soltar.png");
-        alien.segurando = false;
-        print("segurando");
-      } else {
-        btnSegurar.sprite = Sprite("icons/segurar.png");
-        alien.segurando = true;
-        print("soltando");
-      }
-      print(alien.segurando);
-    });
+    btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png", onPressed: segurarBloco);
 
     joystick = Joystick(this);
 
@@ -127,6 +116,19 @@ class BoxGame extends BaseGame {
     joystick.onPanEnd(details);
   }
 
+  void segurarBloco(){
+    if (alien.segurando) {
+        btnSegurar.sprite = Sprite("icons/soltar.png");
+        alien.segurando = false;
+        print("segurando");
+      } else {
+        btnSegurar.sprite = Sprite("icons/segurar.png");
+        alien.segurando = true;
+        print("soltando");
+      }
+      print(alien.segurando);
+  }
+
   void gerarPreposicao() {
     // if(_preposicoes.isNotEmpty)
     //   _preposicoes.clear();"
@@ -135,24 +137,6 @@ class BoxGame extends BaseGame {
       List l = gerarPosicao();
       _preposicoes.add(Preposicao(this, alien, l[0], l[1], i));
     }
-
-    // switch (rnd.nextInt(5)) {
-    //   case 0:
-    //     flies.add(HouseFly(this, x, y));
-    //     break;
-    //   case 1:
-    //     flies.add(DroolerFly(this, x, y));
-    //     break;
-    //   case 2:
-    //     flies.add(AgileFly(this, x, y));
-    //     break;
-    //   case 3:
-    //     flies.add(MachoFly(this, x, y));
-    //     break;
-    //   case 4:
-    //     flies.add(HungryFly(this, x, y));
-    //     break;
-    // }
   }
 
   List gerarPosicao() {

@@ -26,11 +26,10 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   Menu menu;
   Login login;
 
-  MyApp(){
+  MyApp() {
     menu = Menu();
     login = Login();
   }
@@ -43,7 +42,8 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.lightBlue,
             fontFamily: "Special", //define a fonte familia do texto
             textTheme: TextTheme(
-              body1: TextStyle(
+              body1: TextStyle(color: Colors.white, fontSize: 19),
+              body2: TextStyle(
                   color: Colors.white,
                   fontSize: 19), //define a cor padrão dos textos
             )),
