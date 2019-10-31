@@ -82,8 +82,6 @@ class MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
-      // bottomNavigationBar: ,
       body: principal,
     );
   }

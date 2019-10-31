@@ -7,9 +7,21 @@ String boolInString(bool valor) {
   return "F";
 }
 
+int stringInPosition(String valor)
+{
+  if(valor.length < 2)
+    return 12;
+  if(valor.length >= 2 && valor.length < 3)
+    return 9;
+  if(valor.length >= 3)
+    return 6;
+  
+  return 0;
+}
+
 String tipoInString(TipoPreposicao tipo) {
   if (tipo == TipoPreposicao.e) {
-    return "^";
+    return "ʌ";
   } else if (tipo == TipoPreposicao.ou) {
     return "v";
   } else if (tipo == TipoPreposicao.nao) {

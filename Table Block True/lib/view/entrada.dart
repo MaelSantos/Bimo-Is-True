@@ -28,7 +28,6 @@ class EntradaState extends State<Entrada> {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
-        backgroundColor: Colors.blue,
         body: Center(
           child: Image.asset("assets/icon.png", fit: BoxFit.fill))
           );

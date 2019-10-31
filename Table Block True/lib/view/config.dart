@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
 class Config extends StatefulWidget {
@@ -14,7 +15,8 @@ class Config extends StatefulWidget {
 
 class ConfigState extends State<Config> {
   MenuState menu;
-  Image musica, audio, veloci;
+  Image audio, veloci;
+  String musica;
   double velocidade;
   double volume;
   bool inVolume;
@@ -30,9 +32,9 @@ class ConfigState extends State<Config> {
     inVolume = true;
 
     if (inVolume)
-      musica = Image.asset("assets/images/icons/musicaOn.png");
+      musica = "assets/images/icons/musicaOn.png";
     else
-      musica = Image.asset("assets/images/icons/musicaOff.png");
+      musica = "assets/images/icons/musicaOff.png";
 
     if (velocidade > 50.0)
       veloci = Image.asset("assets/images/icons/velocidade.png");
@@ -48,15 +50,16 @@ class ConfigState extends State<Config> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
-      // bottomNavigationBar: ,
-      body: Container(
+        body: Container(
       padding: EdgeInsets.all(10.0),
       constraints: BoxConstraints.expand(),
-      // decoration: BoxDecoration(
-      //     image: DecorationImage(
-      //         image: AssetImage("assets/images/fundo.jpg"),
-      //         repeat: ImageRepeat.repeat)),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage("assets/back.png"),
+        alignment: Alignment.center,
+        // fit: BoxFit.fitWidth,
+        repeat: ImageRepeat.repeat,
+      )),
       child: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +101,8 @@ class ConfigState extends State<Config> {
                   setState(() {
                     velocidade = va;
                     if (va > 50.0)
-                      veloci = Image.asset("assets/images/icons/velocidade.png");
+                      veloci =
+                          Image.asset("assets/images/icons/velocidade.png");
                     else
                       veloci = Image.asset("assets/images/icons/iniciar.png");
                   });
@@ -106,25 +110,25 @@ class ConfigState extends State<Config> {
               ),
             ],
           ),
-          FlatButton(
+          RoundButton(
             onPressed: () {
               setState(() {});
 
               if (inVolume) {
-                musica = Image.asset("assets/images/icons/musicaOn.png");
+                musica = "assets/images/icons/musicaOn.png";
                 inVolume = false;
               } else {
-                musica = Image.asset("assets/images/icons/musicaOff.png");
+                musica = "assets/images/icons/musicaOff.png";
                 inVolume = true;
               }
             },
-            child: musica,
+            sourceImage: musica,
           ),
-          FlatButton(
+          RoundButton(
               onPressed: () {
                 menu.transicao(Tela.principal);
               },
-              child: Image.asset("assets/images/icons/home.png")),
+              sourceImage: "assets/images/icons/home.png"),
         ],
       )),
     ));

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tableblocktrue/beans/usuario.dart';
+import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/componentes/text_component.dart';
 import 'package:tableblocktrue/webservice/web_service.dart';
 
@@ -27,33 +28,37 @@ class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue,
+      resizeToAvoidBottomPadding: false,
         body: Form(
             key: _formKey,
             child: Container(
-                padding: EdgeInsets.all(30.0),
+              alignment: Alignment.center,
+                padding: EdgeInsets.only(top: 240),
                 constraints: BoxConstraints.expand(),
-                // decoration: BoxDecoration(
-                //     image: DecorationImage(
-                //         image: AssetImage("assets/fundo.png"),
-                //         repeat: ImageRepeat.repeat
-                //         )),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage("assets/back + logo.png"),
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.cover,
+                  repeat: ImageRepeat.repeat,
+                )),
                 child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  child: ListView(
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("Cadastro"),
+                      Center(child: new Text("Cadastro")),
                       tfdNome,
                       tfdEmail,
                       tfdLogin,
                       tfdSenha,
                       tfdConfirmar,
+                      SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          FlatButton(
+                          RoundButton(
                               onPressed: () {
                                 if (tfdSenha.text == tfdConfirmar.text) {
                                   Usuario usuario = Usuario();
@@ -62,8 +67,10 @@ class Cadastro extends StatelessWidget {
                                   usuario.senha = tfdSenha.text.trim();
 
                                   _formKey.currentState.validate();
-                                  if (WebService.cadastroUsuario(usuario) != null) {
-                                    Navigator.pushReplacementNamed(context, '/Menu');
+                                  if (WebService.cadastroUsuario(usuario) !=
+                                      null) {
+                                    Navigator.pushReplacementNamed(
+                                        context, '/Menu');
                                   }
                                   //else {exibir mensagem de erro}
                                 } else {
@@ -71,14 +78,14 @@ class Cadastro extends StatelessWidget {
                                   _formKey.currentState.validate();
                                 }
                               },
-                              child: Image.asset(
-                                  "assets/images/icons/confirmar.png")),
-                          FlatButton(
+                              sourceImage: "assets/images/icons/confirmar.png",
+                              rotation: Rotation.horizontal),
+                          RoundButton(
                               onPressed: () {
                                 Navigator.pop(context, "Login");
                               },
-                              child: Image.asset(
-                                  "assets/images/icons/cancelar.png")),
+                              sourceImage: "assets/images/icons/cancelar.png",
+                              rotation: Rotation.horizontal),
                         ],
                       )
                     ],

@@ -13,6 +13,9 @@ void main() async {
     "sprite/play_0.png",
     "sprite/play_1.png",
     "sprite/play_2.png",
+    "sprite/play_3.png",
+    "sprite/play_4.png",
+    "sprite/play_5.png",
     "icons/atencao.png",
     "icons/voltar.png",
     "icons/segurar.png",
@@ -39,7 +42,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         // O widget Scaffold define o layouta da home
         theme: ThemeData(
-            primarySwatch: Colors.lightBlue,
+            backgroundColor: Colors.lightBlue[300],
+            buttonColor: Colors.green,
+            scaffoldBackgroundColor: Color(0xff269fbd),
+            primaryColor: Colors.lightBlue[300],
             fontFamily: "Special", //define a fonte familia do texto
             textTheme: TextTheme(
               body1: TextStyle(color: Colors.white, fontSize: 19),

@@ -62,8 +62,9 @@ flutter:
     - assets/images/icons/segurar.png
     - assets/images/icons/soltar.png
     - assets/icon.png
-    - assets/fundo.jpg
-    - assets/fundo.png
+    - assets/back.png
+    - assets/back + logo.png
+    - assets/logo bimo.png
     - assets/tiles/mapa.tmx
     - assets/images/blocos.png
     - assets/images/bloco.png
@@ -75,6 +76,9 @@ flutter:
     - assets/images/sprite/play_0.png
     - assets/images/sprite/play_1.png
     - assets/images/sprite/play_2.png
+    - assets/images/sprite/play_3.png
+    - assets/images/sprite/play_4.png
+    - assets/images/sprite/play_5.png
 
 flutter_icons:
  android: "launcher_icon"

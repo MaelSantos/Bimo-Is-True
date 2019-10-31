@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:tableblocktrue/beans/usuario.dart';
 import 'package:tableblocktrue/view/alerta.dart';
 import 'package:tableblocktrue/view/cadastro.dart';
+import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/componentes/text_component.dart';
 import 'package:tableblocktrue/webservice/web_service.dart';
 
@@ -38,62 +39,70 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue,
+        resizeToAvoidBottomPadding: false,
         body: Form(
             key: _formKey,
-            child: Container(
-                padding: EdgeInsets.all(30.0),
-                constraints: BoxConstraints.expand(),
-                // decoration: BoxDecoration(
-                //     image: DecorationImage(
-                //         image: AssetImage("assets/fundo.jpg"),
-                //         repeat: ImageRepeat.repeat,)),
-                child: Center(
+            child: Center(
+                child: Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10.0),
+                    constraints: BoxConstraints.expand(),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: AssetImage("assets/back + logo.png"),
+                      alignment: Alignment.topCenter,
+                      fit: BoxFit.cover,
+                      repeat: ImageRepeat.repeat,
+                    )),
                     child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text("Login"),
-                    tfdLogin,
-                    tfdSenha,
-                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        FlatButton(
-                            onPressed: () {
-                              if (_formKey.currentState.validate()) {
-                                Usuario user = Usuario();
-                                user.login = tfdLogin.text;
-                                user.senha = tfdSenha.text;
-                                _showMenu(usuario: user);
-                              }
-                            },
-                            child: Image.asset(
-                                "assets/images/icons/confirmar.png")),
-                        FlatButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => _cadastro));
-                            },
-                            child: Image.asset("assets/images/icons/mais.png")),
-                        FlatButton(
-                            onPressed: () {
-                              Alerta.alert(
-                                  context, "Sair ?", "Deseja realmente sair?",
-                                  function: () {
-                                SystemChannels.platform
-                                    .invokeMethod('SystemNavigator.pop'); //sai da aplicação
-                              });
-                              
-                            },
-                            child: Image.asset("assets/images/icons/sair.png")),
+                        Text("Login"),
+                        tfdLogin,
+                        tfdSenha,
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            RoundButton(
+                                onPressed: () {
+                                  if (_formKey.currentState.validate()) {
+                                    Usuario user = Usuario();
+                                    user.login = tfdLogin.text;
+                                    user.senha = tfdSenha.text;
+                                    _showMenu(usuario: user);
+                                  }
+                                },
+                                sourceImage:
+                                    "assets/images/icons/confirmar.png",
+                                rotation: Rotation.horizontal),
+                            RoundButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => _cadastro));
+                              },
+                              sourceImage: "assets/images/icons/mais.png",
+                              rotation: Rotation.horizontal,
+                            ),
+                            // SizedBox(width: 10),
+                            RoundButton(
+                                onPressed: () {
+                                  Alerta.alert(context, "Sair ?",
+                                      "Deseja realmente sair?", function: () {
+                                    SystemChannels.platform.invokeMethod(
+                                        'SystemNavigator.pop'); //sai da aplicação
+                                  });
+                                },
+                                sourceImage: "assets/images/icons/sair.png",
+                                rotation: Rotation.horizontal),
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                )))));
+                    )))));
   }
 
   void _showMenu({Usuario usuario}) async {

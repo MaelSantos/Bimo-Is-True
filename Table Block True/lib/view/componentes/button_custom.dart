@@ -14,7 +14,7 @@ class ButtonCustom extends StatelessWidget {
       child: RaisedButton(
         color: Colors.lightBlue,
         shape:
-            RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         padding: EdgeInsets.only(left: 0),
         child: Text(
           conteudo,

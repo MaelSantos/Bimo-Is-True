@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
 class Principal extends StatelessWidget {
@@ -9,57 +10,61 @@ class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
-      // bottomNavigationBar: ,
-      body: Container(
-      padding: EdgeInsets.all(10.0),
-      alignment: Alignment.center,
-      constraints: BoxConstraints.expand(),
-      // decoration: BoxDecoration(
-      //     image: DecorationImage(
-      //         image: AssetImage("assets/fundo.jpg"),
-      //         repeat: ImageRepeat.repeat)),
-      child: Center(
+        body: Center(
+      child: Container(
+        padding: EdgeInsets.only(top: 160),
+        alignment: Alignment.center,
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/back + logo.png"),
+                alignment: Alignment.topCenter,
+                fit: BoxFit.cover,
+                // repeat: ImageRepeat.repeat
+                )),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            FlatButton(
+            // Container(
+            //   child: Image.asset("assets/logo bimo.png"),
+            // ),
+            RoundButton(
                 onPressed: () {
                   menu.transicao(Tela.fase);
                 },
-                child: Image.asset("assets/images/icons/iniciar.png")),
-            FlatButton(
+                sourceImage: "assets/images/icons/iniciar.png"),
+            RoundButton(
+              onPressed: () {
+                menu.transicao(Tela.config);
+              },
+              sourceImage: "assets/images/icons/mais.png",
+            ),
+            RoundButton(
                 onPressed: () {
                   menu.transicao(Tela.config);
                 },
-                child: Image.asset("assets/images/icons/mais.png")),
-            FlatButton(
+                sourceImage: "assets/images/icons/pessoa.png"),
+            RoundButton(
                 onPressed: () {
                   menu.transicao(Tela.config);
                 },
-                child: Image.asset("assets/images/icons/pessoa.png")),
-            FlatButton(
-                onPressed: () {
-                  menu.transicao(Tela.config);
-                },
-                child: Image.asset("assets/images/icons/config.png")),
-            FlatButton(
+                sourceImage: "assets/images/icons/config.png"),
+            RoundButton(
                 onPressed: () {
                   menu.transicao(Tela.ajuda);
                 },
-                child: Image.asset("assets/images/icons/ajuda.png")),
-            FlatButton(
-              onPressed: () {
-                menu.transicao(Tela.info);
-              },
-              child: Image.asset("assets/images/icons/info.png"),
-            ),
-            FlatButton(
+                sourceImage: "assets/images/icons/ajuda.png"),
+            RoundButton(
+                onPressed: () {
+                  menu.transicao(Tela.info);
+                },
+                sourceImage: "assets/images/icons/info.png"),
+            RoundButton(
                 onPressed: () {
                   menu.transicao(Tela.login);
                 },
-                child: Image.asset("assets/images/icons/porta.png")),
+                sourceImage: "assets/images/icons/porta.png"),
           ],
         ),
       ),

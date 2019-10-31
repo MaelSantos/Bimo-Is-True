@@ -41,7 +41,7 @@ class Preposicao extends SpriteComponent {
     canvas.drawRect(ponto, Paint());
     simbolo.renderRect(canvas, ponto);
     config.render(canvas, "${tipoInString(tipo)}",
-        Position(ponto.left + 6, ponto.top + 10));
+        Position(ponto.left + stringInPosition(tipoInString(tipo)), ponto.top + 11));
   }
 
   @override

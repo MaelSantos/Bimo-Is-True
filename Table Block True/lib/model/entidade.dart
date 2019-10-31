@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flame/animation.dart';
+import 'package:flame/components/animation_component.dart';
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
 import 'package:tableblocktrue/controller/game.dart';
@@ -14,6 +16,8 @@ class Entidade extends SpriteComponent {
   final BoxGame game;
 
   List<Sprite> sprites;
+  AnimationComponent direita;
+  AnimationComponent esquerda;
   Sprite spriteFim;
   double aparencia = 0;
 
@@ -33,9 +37,10 @@ class Entidade extends SpriteComponent {
     if (isVivo) {
       spriteFim.renderRect(canvas, entidadeRect);
     } else {
-      // canvas.drawRect(entidadeRect, Paint());
-      // Future.delayed(const Duration(seconds: 1), () =>
-      sprites[aparencia.toInt()].renderRect(canvas, entidadeRect);
+      if (angulo > -2 && angulo < 1)
+        direita.render(canvas);
+      else
+        esquerda.render(canvas);
     }
   }
 
@@ -54,9 +59,15 @@ class Entidade extends SpriteComponent {
 
       //atualiza posição do personagem
       if (!collision(colisoes, diffBase)) // verifica as colisões
+      {
         entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
+        direita.setByRect(entidadeRect);
+        esquerda.setByRect(entidadeRect);
+      }
 
-      animar();
+      // animar();
+      direita.update(t);
+      esquerda.update(t);
     }
   }
 
