@@ -58,10 +58,21 @@ class LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Login"),
+                        Container(
+                          width: 90,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Color(0xff269fbd),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text("Login",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 23)),
+                        ),
                         tfdLogin,
                         tfdSenha,
-                        SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,28 +88,27 @@ class LoginState extends State<Login> {
                                 },
                                 sourceImage:
                                     "assets/images/icons/confirmar.png",
-                                rotation: Rotation.horizontal),
-                            RoundButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => _cadastro));
-                              },
-                              sourceImage: "assets/images/icons/mais.png",
-                              rotation: Rotation.horizontal,
-                            ),
-                            // SizedBox(width: 10),
+                                division: 10),
                             RoundButton(
                                 onPressed: () {
-                                  Alerta.alert(context, "Sair ?",
-                                      "Deseja realmente sair?", function: () {
-                                    SystemChannels.platform.invokeMethod(
-                                        'SystemNavigator.pop'); //sai da aplicação
-                                  });
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => _cadastro));
                                 },
-                                sourceImage: "assets/images/icons/sair.png",
-                                rotation: Rotation.horizontal),
+                                sourceImage: "assets/images/icons/mais.png",
+                                division: 10),
+                            RoundButton(
+                              onPressed: () {
+                                Alerta.alert(
+                                    context, "Sair ?", "Deseja realmente sair?",
+                                    function: () {
+                                  SystemChannels.platform.invokeMethod(
+                                      'SystemNavigator.pop'); //sai da aplicação
+                                });
+                              },
+                              sourceImage: "assets/images/icons/sair.png",
+                            ),
                           ],
                         )
                       ],

@@ -40,14 +40,16 @@ class Preposicao extends SpriteComponent {
   void render(Canvas canvas) {
     canvas.drawRect(ponto, Paint());
     simbolo.renderRect(canvas, ponto);
-    config.render(canvas, "${tipoInString(tipo)}",
-        Position(ponto.left + stringInPosition(tipoInString(tipo)), ponto.top + 11));
+    config.render(
+        canvas,
+        "${tipoInString(tipo)}",
+        Position(
+            ponto.left + stringInPosition(tipoInString(tipo)), ponto.top + 11));
   }
 
   @override
   void update(double t) {
-    // if (move) {
-    if (colidionInPlay() && _alien.segurando && _alien.move) {
+    if (colidionInPlay() && _alien.move) {
       angulo = _alien.angulo;
 
       double nextX = (velocidade * t) * cos(angulo);
@@ -60,15 +62,39 @@ class Preposicao extends SpriteComponent {
           ponto.center;
 
       if (!collision(_alien.colisoes, diffBase)) {
+        // ponto.top = ponto.top+1;
+
         ponto = ponto.shift(diffBase);
-        // ponto = ponto.shift(Offset(_alien.entidadeRect.left.toDouble(), _alien.entidadeRect.top.toDouble()));
+        // ponto = ponto.shift(_alien.entidadeRect.translate(0, 0));
+        // ponto = _alien.entidadeRect;
+        // if (_alien.escolhida == null || _alien.escolhida == this) 
+        // mover();
       }
     }
-    // }
+  }
+
+  void mover() {
+    Rect p = Rect.fromLTWH(
+        _alien.entidadeRect.left + 10, _alien.entidadeRect.top + 2, 35, 35);
+
+    for (Colisao r in _alien.colisoes) {
+      if (!p.overlaps(r.toRect())) {
+        ponto = Rect.fromLTWH(
+            _alien.entidadeRect.left + 10, _alien.entidadeRect.top + 2, 35, 35);
+        _alien.segurando = true;
+        _alien.escolhida = this;
+        return;
+      }
+    }
   }
 
   bool colidionInPlay() {
-    if (_alien.entidadeRect.overlaps(ponto)) return true;
+    if (_alien.entidadeRect.overlaps(ponto.translate(-1, 0)) ||
+        _alien.entidadeRect.overlaps(ponto.translate(0, -1)) ||
+        _alien.entidadeRect.overlaps(ponto.translate(1, 0)) ||
+        _alien.entidadeRect.overlaps(ponto.translate(0, 1))) {
+      return true;
+    }
     return false;
   }
 
@@ -79,25 +105,9 @@ class Preposicao extends SpriteComponent {
       if (deslocamento.overlaps(r.toRect())) return true;
     }
 
-    // if(deslocamento.overlaps(game.alien.entidadeRect)) return true;
+    // if (_alien.entidadeRect.overlaps(ponto)) return true;
+    if (deslocamento.overlaps(_alien.entidadeRect)) return false;
 
     return false;
   }
-
-  // @override
-  // Rect toRect() {
-
-  //   ponto = ponto.translate( ( - game.camera.x) , 0);
-
-  //   return ponto;
-  // }
-
-  // @override
-  // Rect toRect() {
-  //   Rect r = ponto;
-
-  //   r = r.translate( ( - game.camera.x) , 0);
-
-  //   return r;
-  // }
 }

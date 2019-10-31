@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:flame/animation.dart';
 import 'package:flame/components/animation_component.dart';
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
@@ -27,6 +26,8 @@ class Entidade extends SpriteComponent {
 
   List<Colisao> colisoes;
   List<Preposicao> preposicoes;
+  Preposicao escolhida;
+  bool segurando = false;
 
   Entidade(this.game) {
     colisoes = List();
@@ -65,7 +66,6 @@ class Entidade extends SpriteComponent {
         esquerda.setByRect(entidadeRect);
       }
 
-      // animar();
       direita.update(t);
       esquerda.update(t);
     }
@@ -79,22 +79,6 @@ class Entidade extends SpriteComponent {
   @override
   void resize(Size size) {}
 
-  void animar() {
-    if (aparencia > 0) {
-      aparencia = 0;
-    } else {
-      aparencia = 1;
-    }
-  }
-
-  // void colisao(Entidade entidade) {
-  //   move = this.toRect().contains(entidade.toRect().bottomCenter) ||
-  //       this.toRect().contains(entidade.toRect().bottomLeft) ||
-  //       this.toRect().contains(entidade.toRect().bottomRight);
-
-  //   // entidade.isVivo = isVivo;
-  // }
-
   bool collision(List<Colisao> collision, Offset ponto) {
     Rect deslocamento = entidadeRect.shift(ponto);
 
@@ -102,9 +86,12 @@ class Entidade extends SpriteComponent {
       if (deslocamento.overlaps(r.toRect())) return true;
     }
 
-    // for (Preposicao p in preposicoes) {
-    //   if (entidadeRect.overlaps(p.ponto)) return true;
-    // }
+    // if (segurando) {
+      for (Preposicao p in preposicoes) {
+        // if(p.tipo == escolhida.tipo) return false;
+        if (deslocamento.overlaps(p.ponto)) return true;
+      // }
+    }
 
     return false;
   }

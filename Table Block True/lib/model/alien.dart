@@ -7,13 +7,10 @@ import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/entidade.dart';
 
 class Alien extends Entidade {
-  
-  bool segurando;
 
   Alien(BoxGame game, double x, double y) : super(game) {
 
     entidadeRect = Rect.fromLTWH(x, y, 40, 40);
-    segurando = false;
 
     sprites = [0,1,2].map((i) => new Sprite('sprite/play_$i.png')).toList();
     this.direita = AnimationComponent(40, 40, Animation.spriteList(sprites, stepTime: 0.07));

@@ -27,8 +27,8 @@ class MenuState extends State<Menu> {
   Tela tela;
   String titulo;
   //telas
-  Scaffold detector;
   BoxGame game;
+  Util flameUtil;
 
   Principal principal;
   Fase fase;
@@ -53,26 +53,16 @@ class MenuState extends State<Menu> {
     ajuda = Ajuda(this);
     info = Info(this);
     //tela jogo
-    game = BoxGame(this);
+    // game = BoxGame(this);
 
-    detector = Scaffold(
-        backgroundColor: Colors.lightBlue,
-        body: GestureDetector(
-          behavior: HitTestBehavior.opaque,
-          onPanStart: game.onPanStart,
-          onPanUpdate: game.onPanUpdate,
-          onPanEnd: game.onPanEnd,
-          child: game.widget,
-        ));
-
-    Util flameUtil = Util();
+    flameUtil = Util();
     await flameUtil.fullScreen(); //Tela cheia
     await flameUtil.setOrientation(
         DeviceOrientation.portraitUp); //define a rotação da tela
 
-    TapGestureRecognizer tapper = TapGestureRecognizer();
-    tapper.onTapDown = game.onTapDown;
-    flameUtil.addGestureRecognizer(tapper); //adiciono o evento
+    // TapGestureRecognizer tapper = TapGestureRecognizer();
+    // tapper.onTapDown = game.onTapDown;
+    // flameUtil.addGestureRecognizer(tapper); //adiciono o evento
 
     // MultiTapGestureRecognizer multiTap = MultiTapGestureRecognizer();
     // multiTap.onLongTapDown = game.onLongTapDown;
@@ -100,7 +90,7 @@ class MenuState extends State<Menu> {
         break;
       case 4:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => detector));
+            context, MaterialPageRoute(builder: (context) => gameInit()));
         break;
       case 5:
         Navigator.push(
@@ -132,5 +122,28 @@ class MenuState extends State<Menu> {
       tela = valor;
       mudarTela();
     });
+  }
+
+  void execute(Function valor) {
+    setState(() {
+      valor();
+    });
+  }
+
+  Widget gameInit() {
+    game = BoxGame(this);
+
+    TapGestureRecognizer tapper = TapGestureRecognizer();
+    tapper.onTapDown = game.onTapDown;
+    flameUtil.addGestureRecognizer(tapper); //adiciono o evento
+
+    return Scaffold(
+        body: GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onPanStart: game.onPanStart,
+      onPanUpdate: game.onPanUpdate,
+      onPanEnd: game.onPanEnd,
+      child: game.widget,
+    ));
   }
 }

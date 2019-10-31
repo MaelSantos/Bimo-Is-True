@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
+import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/util/valorUtil.dart';
 import 'package:tableblocktrue/view/alerta.dart';
@@ -56,7 +57,8 @@ class Proposicao extends SpriteComponent {
         bool valor = calcularProposicao(f.tipo, _valores);
         if (valor == resultado) {
           _paint.color = Colors.green;
-          game.menu.transicao(Tela.alerta);
+          // game.menu.transicao(Tela.alerta);
+          FaseUtil.faseAtual++;
         } else
           _paint.color = Colors.red;
       }

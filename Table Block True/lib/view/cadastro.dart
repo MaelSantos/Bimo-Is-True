@@ -28,11 +28,11 @@ class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+        // resizeToAvoidBottomPadding: false,
         body: Form(
             key: _formKey,
             child: Container(
-              alignment: Alignment.center,
+                alignment: Alignment.center,
                 padding: EdgeInsets.only(top: 240),
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
@@ -44,10 +44,23 @@ class Cadastro extends StatelessWidget {
                 )),
                 child: Center(
                   child: ListView(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Center(child: new Text("Cadastro")),
+                      Center(
+                        child: Container(
+                          width: 110,
+                          height: 30,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Color(0xff269fbd),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text("Cadastro",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 23)),
+                        ),
+                      ),
                       tfdNome,
                       tfdEmail,
                       tfdLogin,
@@ -79,13 +92,13 @@ class Cadastro extends StatelessWidget {
                                 }
                               },
                               sourceImage: "assets/images/icons/confirmar.png",
-                              rotation: Rotation.horizontal),
+                              division: 10),
                           RoundButton(
-                              onPressed: () {
-                                Navigator.pop(context, "Login");
-                              },
-                              sourceImage: "assets/images/icons/cancelar.png",
-                              rotation: Rotation.horizontal),
+                            onPressed: () {
+                              Navigator.pop(context, "Login");
+                            },
+                            sourceImage: "assets/images/icons/cancelar.png",
+                          ),
                         ],
                       )
                     ],

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
 class Fase extends StatelessWidget {
   MenuState menu;
-  int faseAtual = 0;
-
   Fase(this.menu);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // backgroundColor: Colors.lightBlue,
         body: Center(
             child: Container(
       padding: EdgeInsets.all(10.0),
@@ -27,32 +25,41 @@ class Fase extends StatelessWidget {
       )),
       child: GridView.count(
           crossAxisCount: 2,
-          children: List.generate(8, (index) {
-            return
-                // Center(
-                //   child:
-                // ListView(
-                // scrollDirection: Axis.horizontal,
-                // children: [
-                Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                RoundButton(
-                    onPressed: () {
-                      menu.transicao(Tela.jogo);
-                    },
-                    sourceImage: imageFase(index)),
-                Text("Fase ${index + 1}")
-              ],
-              // ),
-            );
+          children: List.generate(2, (index) {
+            return Container(
+                alignment: Alignment.center,
+                // color: Colors.green,
+                // padding: EdgeInsets.only(top: 40),
+                margin: EdgeInsets.all(40),
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(10),
+                  // border: Border.all(color: Colors.lightBlue, width: 5),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FlatButton(
+                        onPressed: () {
+                          if(FaseUtil.faseAtual >= index){
+                            menu.transicao(Tela.jogo);
+                            FaseUtil.faseJogar = index+1;
+                          }
+                        },
+                        child: Image.asset(
+                          imageFase(index),
+                        )),
+                    Text("Fase ${index + 1}")
+                  ],
+                  // ),
+                ));
           })),
     )));
   }
 
   String imageFase(int index) {
-    if (index <= faseAtual)
+    if (index <= FaseUtil.faseAtual)
       return "assets/images/icons/livre.png";
     else
       return "assets/images/icons/bloqueado.png";

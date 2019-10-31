@@ -10,6 +10,7 @@ import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/colisao.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
 import 'package:tableblocktrue/model/proposicao.dart';
+import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/button_component.dart';
 import 'package:tableblocktrue/view/joystick.dart';
@@ -38,15 +39,17 @@ class BoxGame extends BaseGame {
   void initialize() async {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-    alien = Alien(this, 40, 40);
-    mapa = TiledComponent("map1.tmx");
+    alien = Alien(this, 50, 40);
+    mapa = TiledComponent("map${FaseUtil.faseJogar}.tmx");
     add(mapa);
 
-    btnVoltar = ButtonComponent(this, 300, 630, "icons/voltar.png", onPressed: () {
+    btnVoltar =
+        ButtonComponent(this, 300, 630, "icons/voltar.png", onPressed: () {
       menu.transicao(Tela.sair);
     });
 
-    btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png", onPressed: segurarBloco);
+    btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png",
+        onPressed: segurarBloco);
 
     joystick = Joystick(this);
 
@@ -68,29 +71,21 @@ class BoxGame extends BaseGame {
     _preposicoes.forEach((f) {
       f.render(canvas);
     });
-
     alien.render(canvas);
 
-    // alien.colisoes.forEach((c) {
-    //   canvas.drawRect(c.toRect(), Paint());
-    // });
   }
 
   @override
   void update(double t) {
     super.update(t);
     joystick.update(t);
-    _proposicao.update(t);
+    alien.update(t);
     _preposicoes.forEach((f) {
       f.update(t);
     });
+    _proposicao.update(t);
 
-    alien.update(t);
-    //atualiza posição da camera
-    // if (mapa.map != null) {
-    //   camera.x = min((mapa.map.tileWidth * 32) - screenSize.width,
-    //       max(0, alien.entidadeRect.left - screenSize.width / 2));
-    // }
+    // print(segurando);
   }
 
   @override
@@ -116,23 +111,19 @@ class BoxGame extends BaseGame {
     joystick.onPanEnd(details);
   }
 
-  void segurarBloco(){
+  void segurarBloco() {
     if (alien.segurando) {
-        btnSegurar.sprite = Sprite("icons/soltar.png");
-        alien.segurando = false;
-        print("segurando");
-      } else {
-        btnSegurar.sprite = Sprite("icons/segurar.png");
-        alien.segurando = true;
-        print("soltando");
-      }
-      print(alien.segurando);
+      // btnSegurar.sprite = Sprite("icons/soltar.png");
+      alien.segurando = false;
+      print("segurando");
+    } else if (!alien.segurando) {
+      // btnSegurar.sprite = Sprite("icons/segurar.png");
+      alien.segurando = true;
+      print("soltando");
+    }
   }
 
   void gerarPreposicao() {
-    // if(_preposicoes.isNotEmpty)
-    //   _preposicoes.clear();"
-
     for (var i = 0; i < 5; i++) {
       List l = gerarPosicao();
       _preposicoes.add(Preposicao(this, alien, l[0], l[1], i));
