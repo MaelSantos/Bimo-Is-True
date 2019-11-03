@@ -34,17 +34,17 @@ class Principal extends StatelessWidget {
                   menu.transicao(Tela.fase);
                 },
                 sourceImage: "assets/images/icons/iniciar.png"),
-            RoundButton(
-              onPressed: () {
-                menu.transicao(Tela.config);
-              },
-              sourceImage: "assets/images/icons/mais.png",
-            ),
-            RoundButton(
-                onPressed: () {
-                  menu.transicao(Tela.config);
-                },
-                sourceImage: "assets/images/icons/pessoa.png"),
+            // RoundButton(
+            //   onPressed: () {
+            //     menu.transicao(Tela.config);
+            //   },
+            //   sourceImage: "assets/images/icons/mais.png",
+            // ),
+            // RoundButton(
+            //     onPressed: () {
+            //       menu.transicao(Tela.config);
+            //     },
+            //     sourceImage: "assets/images/icons/pessoa.png"),
             RoundButton(
                 onPressed: () {
                   menu.transicao(Tela.config);

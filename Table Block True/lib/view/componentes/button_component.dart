@@ -41,4 +41,11 @@ class ButtonComponent {
       onPressed();
     }
   }
+
+  void onTapUp(TapUpDetails d) {
+    if (rect.contains(d.globalPosition)) {
+      onPressed();
+    }
+  }
+
 }

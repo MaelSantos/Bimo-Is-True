@@ -42,77 +42,78 @@ class LoginState extends State<Login> {
         resizeToAvoidBottomPadding: false,
         body: Form(
             key: _formKey,
-            child: Center(
-                child: Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(10.0),
-                    constraints: BoxConstraints.expand(),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: AssetImage("assets/back + logo.png"),
-                      alignment: Alignment.topCenter,
-                      fit: BoxFit.cover,
-                      repeat: ImageRepeat.repeat,
-                    )),
+            child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(10.0),
+                constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage("assets/back + logo.png"),
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.cover,
+                  repeat: ImageRepeat.repeat,
+                )),
+                child: Center(
                     child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 315,
+                      margin: EdgeInsets.only(
+                        bottom: 10,
+                      ),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text("Login",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 23)),
+                    ),
+                    tfdLogin,
+                    tfdSenha,
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 90,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Color(0xff269fbd),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text("Login",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 23)),
+                        RoundButton(
+                            onPressed: () {
+                              if (_formKey.currentState.validate()) {
+                                Usuario user = Usuario();
+                                user.login = tfdLogin.text;
+                                user.senha = tfdSenha.text;
+                                _showMenu(usuario: user);
+                              }
+                            },
+                            sourceImage: "assets/images/icons/confirmar.png",
+                            division: 10),
+                        RoundButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => _cadastro));
+                            },
+                            sourceImage: "assets/images/icons/mais.png",
+                            division: 10),
+                        RoundButton(
+                          onPressed: () {
+                            Alerta.alert(
+                                context, "Sair ?", "Deseja realmente sair?",
+                                function: () {
+                              SystemChannels.platform.invokeMethod(
+                                  'SystemNavigator.pop'); //sai da aplicação
+                            });
+                          },
+                          sourceImage: "assets/images/icons/sair.png",
                         ),
-                        tfdLogin,
-                        tfdSenha,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            RoundButton(
-                                onPressed: () {
-                                  if (_formKey.currentState.validate()) {
-                                    Usuario user = Usuario();
-                                    user.login = tfdLogin.text;
-                                    user.senha = tfdSenha.text;
-                                    _showMenu(usuario: user);
-                                  }
-                                },
-                                sourceImage:
-                                    "assets/images/icons/confirmar.png",
-                                division: 10),
-                            RoundButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => _cadastro));
-                                },
-                                sourceImage: "assets/images/icons/mais.png",
-                                division: 10),
-                            RoundButton(
-                              onPressed: () {
-                                Alerta.alert(
-                                    context, "Sair ?", "Deseja realmente sair?",
-                                    function: () {
-                                  SystemChannels.platform.invokeMethod(
-                                      'SystemNavigator.pop'); //sai da aplicação
-                                });
-                              },
-                              sourceImage: "assets/images/icons/sair.png",
-                            ),
-                          ],
-                        )
                       ],
-                    )))));
+                    )
+                  ],
+                )))));
   }
 
   void _showMenu({Usuario usuario}) async {

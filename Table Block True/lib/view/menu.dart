@@ -134,7 +134,8 @@ class MenuState extends State<Menu> {
     game = BoxGame(this);
 
     TapGestureRecognizer tapper = TapGestureRecognizer();
-    tapper.onTapDown = game.onTapDown;
+    // tapper.onTapDown = game.onTapDown;
+    tapper.onTapUp = game.onTapUp;
     flameUtil.addGestureRecognizer(tapper); //adiciono o evento
 
     return Scaffold(

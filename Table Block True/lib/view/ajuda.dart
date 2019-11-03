@@ -27,7 +27,19 @@ class Ajuda extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Ajuda"),
+          Container(
+            height: 50,
+            width: 190,
+            margin: EdgeInsets.only(bottom: 10,),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              // color: Color(0xff269fbd),
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text("Ajuda",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
+          ),
           RoundButton(
               onPressed: () {
                 menu.transicao(Tela.principal);

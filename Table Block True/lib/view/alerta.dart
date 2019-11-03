@@ -36,7 +36,7 @@ class Alerta {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.width - 80,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Color(0xff269fbd),
             borderRadius: BorderRadius.all(
               Radius.circular(14),
             ),
@@ -51,7 +51,7 @@ class Alerta {
                     fontFamily: "Special",
                     // fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.lightBlue,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -62,7 +62,7 @@ class Alerta {
                   padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.lightBlue, width: 5),
+                    border: Border.all(color: Colors.white, width: 5),
                   ),
                   child: Center(
                     child: Text(
@@ -70,7 +70,8 @@ class Alerta {
                       style: TextStyle(
                           fontFamily: "Special",
                           fontSize: 20,
-                          color: Colors.lightBlue),
+                          color: Colors.white
+                          ),
                     ),
                   )),
               Container(

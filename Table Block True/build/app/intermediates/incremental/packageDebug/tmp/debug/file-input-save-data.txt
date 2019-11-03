@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Oct 31 08:47:11 BRT 2019
+#Sun Nov 03 00:45:59 BRT 2019
 56.path=flutter_assets/assets/images/joystick_knob.png
 5.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 42.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
@@ -16,7 +16,7 @@
 21.set=ASSET
 46.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 39.set=ASSET
-26.path=flutter_assets/LICENSE
+26.path=flutter_assets/assets/tiles/map1.tmx
 56.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 6.baseType=DIRECTORY
 36.path=flutter_assets/assets/images/icons/pausar.png
@@ -73,7 +73,7 @@
 48.baseType=DIRECTORY
 39.baseType=DIRECTORY
 20.baseType=DIRECTORY
-27.path=flutter_assets/assets/tiles/map1.tmx
+27.path=flutter_assets/LICENSE
 58.baseType=DIRECTORY
 57.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 37.path=flutter_assets/assets/images/icons/bloqueado.png
@@ -116,7 +116,7 @@ count=62
 22.baseType=DIRECTORY
 31.baseType=DIRECTORY
 40.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
-20.path=flutter_assets/assets/images/sprite/play_4.png
+20.path=flutter_assets/assets/images/icons/musicaOn.png
 12.set=ASSET
 50.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 48.path=flutter_assets/assets/images/icons/pessoa.png
@@ -131,7 +131,7 @@ count=62
 54.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 34.path=flutter_assets/assets/images/icons/segurar.png
 3.set=NATIVE_RESOURCE
-18.path=flutter_assets/assets/images/icons/musicaOn.png
+18.path=flutter_assets/assets/images/bloco.png
 20.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 41.set=ASSET
 59.set=ASSET
@@ -203,7 +203,7 @@ count=62
 55.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 35.path=flutter_assets/assets/images/icons/musicaOff.png
 18.set=ASSET
-19.path=flutter_assets/assets/images/bloco.png
+19.path=flutter_assets/assets/images/sprite/play_4.png
 21.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 51.set=ASSET
 49.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out

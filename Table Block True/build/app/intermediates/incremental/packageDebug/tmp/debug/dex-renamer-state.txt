@@ -1,4 +1,4 @@
-#Thu Oct 31 15:49:37 BRT 2019
+#Sun Nov 03 00:45:54 BRT 2019
 base.0=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

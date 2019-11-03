@@ -45,12 +45,14 @@ class MyApp extends StatelessWidget {
             backgroundColor: Color(0xff269fbd),
             buttonColor: Colors.green,
             scaffoldBackgroundColor: Color(0xff269fbd),
+            sliderTheme: SliderThemeData(
+                activeTickMarkColor: Colors.green,
+                valueIndicatorTextStyle: TextStyle(color: Colors.green, fontFamily: "Special")),
             fontFamily: "Special", //define a fonte familia do texto
             textTheme: TextTheme(
+              //define a cor padrão dos textos
               body1: TextStyle(color: Colors.white, fontSize: 19),
-              body2: TextStyle(
-                  color: Colors.white,
-                  fontSize: 19), //define a cor padrão dos textos
+              body2: TextStyle(color: Colors.white, fontSize: 19),
             )),
         home: Entrada(),
         routes: {

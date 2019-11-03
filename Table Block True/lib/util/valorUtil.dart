@@ -21,7 +21,7 @@ int stringInPosition(String valor)
 
 String tipoInString(TipoPreposicao tipo) {
   if (tipo == TipoPreposicao.e) {
-    return "ʌ";
+    return "^ʌ";
   } else if (tipo == TipoPreposicao.ou) {
     return "v";
   } else if (tipo == TipoPreposicao.nao) {

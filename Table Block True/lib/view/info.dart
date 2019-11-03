@@ -27,7 +27,34 @@ class Info extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Informações"),
+          Container(
+            height: 50,
+            width: 190,
+            margin: EdgeInsets.only(
+              bottom: 10,
+            ),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              // color: Color(0xff269fbd),
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text("Informações",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: 10,),
+            padding: EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              // color: Color(0xff269fbd),
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text(
+                "Disciplina: Interface Homem Máquina (IHM) e Desenvolvimento de Projetos Mobile (MOBILE) \nDiscente: Abimael Jonas \nDocente: Richarlyson e Heldon \nUniversidade: UAST-UFRPE \nTurma: 2019.2",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
+          ),
           RoundButton(
               onPressed: () {
                 menu.transicao(Tela.principal);

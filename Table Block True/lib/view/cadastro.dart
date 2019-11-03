@@ -47,18 +47,19 @@ class Cadastro extends StatelessWidget {
                     children: [
                       Center(
                         child: Container(
-                          width: 110,
-                          height: 30,
+                          height: 50,
+                          width: 315,
+                          margin: EdgeInsets.only(
+                            bottom: 10,
+                          ),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: Color(0xff269fbd),
+                            color: Colors.green,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text("Cadastro",
                               style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 23)),
+                                  fontWeight: FontWeight.bold, fontSize: 23)),
                         ),
                       ),
                       tfdNome,

@@ -12,7 +12,7 @@ class ButtonCustom extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       child: RaisedButton(
-        color: Colors.lightBlue,
+        color: Colors.green,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         padding: EdgeInsets.only(left: 0),

@@ -7,10 +7,11 @@ import 'package:flame/sprite.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/colisao.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
+import 'package:tableblocktrue/util/faseUtil.dart';
 
 class Entidade extends SpriteComponent {
   bool isVivo = false;
-  double get velocidade => 9;
+  double get velocidade => FaseUtil.velocidade;
 
   final BoxGame game;
 
@@ -27,7 +28,6 @@ class Entidade extends SpriteComponent {
   List<Colisao> colisoes;
   List<Preposicao> preposicoes;
   Preposicao escolhida;
-  bool segurando = false;
 
   Entidade(this.game) {
     colisoes = List();
@@ -58,12 +58,28 @@ class Entidade extends SpriteComponent {
               entidadeRect.center.dy + nextPoint.dy) -
           entidadeRect.center;
 
+
       //atualiza posição do personagem
-      if (!collision(colisoes, diffBase)) // verifica as colisões
+      if (!collision(colisoes, diffBase, entidadeRect)) // verifica as colisões
       {
-        entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
-        direita.setByRect(entidadeRect);
-        esquerda.setByRect(entidadeRect);
+        if (escolhida != null) {
+
+      Offset diffEscolhido = Offset(escolhida.ponto.center.dx + nextPoint.dx,
+              escolhida.ponto.center.dy + nextPoint.dy) -
+          escolhida.ponto.center;
+
+          if (!collision(colisoes, diffEscolhido, escolhida.ponto) &&
+              !collision(colisoes, diffBase, entidadeRect)) {
+            entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
+            direita.setByRect(entidadeRect);
+            esquerda.setByRect(entidadeRect);
+            escolhida.ponto = escolhida.ponto.shift(diffEscolhido);
+          }
+        } else {
+          entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
+          direita.setByRect(entidadeRect);
+          esquerda.setByRect(entidadeRect);
+        }
       }
 
       direita.update(t);
@@ -79,18 +95,21 @@ class Entidade extends SpriteComponent {
   @override
   void resize(Size size) {}
 
-  bool collision(List<Colisao> collision, Offset ponto) {
-    Rect deslocamento = entidadeRect.shift(ponto);
+  bool collision(List<Colisao> collision, Offset ponto, Rect rect) {
+    Rect deslocamento = rect.shift(ponto);
 
     for (Colisao r in collision) {
       if (deslocamento.overlaps(r.toRect())) return true;
     }
 
-    // if (segurando) {
-      for (Preposicao p in preposicoes) {
-        // if(p.tipo == escolhida.tipo) return false;
-        if (deslocamento.overlaps(p.ponto)) return true;
-      // }
+    for (Preposicao p in preposicoes) {
+      if (deslocamento.overlaps(p.ponto)) {
+        if (p == escolhida && p != null) {
+          return false;
+        } else {
+          return true;
+        }
+      }
     }
 
     return false;

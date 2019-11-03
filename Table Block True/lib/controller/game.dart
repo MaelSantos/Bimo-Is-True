@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
-import 'package:flame/sprite.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/colisao.dart';
@@ -27,7 +26,7 @@ class BoxGame extends BaseGame {
   Proposicao _proposicao;
   List<Preposicao> _preposicoes;
   TiledComponent mapa;
-  ButtonComponent btnVoltar, btnSegurar;
+  ButtonComponent btnVoltar, btnSegurar, btnSoltar;
   Joystick joystick;
 
   MenuState menu;
@@ -51,9 +50,12 @@ class BoxGame extends BaseGame {
     btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png",
         onPressed: segurarBloco);
 
+    btnSoltar = ButtonComponent(this, 50, 630, "icons/soltar.png",
+        onPressed: soltarBloco);
+
     joystick = Joystick(this);
 
-    _proposicao = Proposicao(this, alien, 150, 490);
+    _proposicao = Proposicao(this, 150, 490);
 
     _preposicoes = List();
     _addCollision(mapa);
@@ -66,13 +68,17 @@ class BoxGame extends BaseGame {
     super.render(canvas);
     joystick.render(canvas);
     btnVoltar.render(canvas);
-    btnSegurar.render(canvas);
+
+    if (alien.escolhida != null)
+      btnSoltar.render(canvas);
+    else
+      btnSegurar.render(canvas);
+
     _proposicao.render(canvas);
     _preposicoes.forEach((f) {
       f.render(canvas);
     });
     alien.render(canvas);
-
   }
 
   @override
@@ -80,12 +86,10 @@ class BoxGame extends BaseGame {
     super.update(t);
     joystick.update(t);
     alien.update(t);
-    _preposicoes.forEach((f) {
-      f.update(t);
-    });
+    // _preposicoes.forEach((f) {
+    //   f.update(t);
+    // });
     _proposicao.update(t);
-
-    // print(segurando);
   }
 
   @override
@@ -95,8 +99,23 @@ class BoxGame extends BaseGame {
   }
 
   void onTapDown(TapDownDetails d) {
-    btnSegurar.onTapDown(d);
+
+    if (alien.escolhida != null)
+      btnSoltar.onTapDown(d);
+    else
+      btnSegurar.onTapDown(d);
+
     btnVoltar.onTapDown(d);
+  }
+
+  void onUpDown(TapUpDetails d) {
+
+    if (alien.escolhida != null)
+      btnSoltar.onTapUp(d);
+    else
+      btnSegurar.onTapUp(d);
+
+    btnVoltar.onTapUp(d);
   }
 
   void onPanStart(DragStartDetails details) {
@@ -112,14 +131,24 @@ class BoxGame extends BaseGame {
   }
 
   void segurarBloco() {
-    if (alien.segurando) {
-      // btnSegurar.sprite = Sprite("icons/soltar.png");
-      alien.segurando = false;
-      print("segurando");
-    } else if (!alien.segurando) {
-      // btnSegurar.sprite = Sprite("icons/segurar.png");
-      alien.segurando = true;
+    if (alien.escolhida == null) {
+      _preposicoes.forEach((f) {
+        if (f.colidionInPlay(alien)) {
+          alien.escolhida = f;
+          print(alien.escolhida);
+          print("segurando");
+          return;
+        }
+      });
+    }
+  }
+
+  void soltarBloco() {
+    if (alien.escolhida != null) {
+      print(alien.escolhida);
+      alien.escolhida = null;
       print("soltando");
+      print(alien.escolhida);
     }
   }
 

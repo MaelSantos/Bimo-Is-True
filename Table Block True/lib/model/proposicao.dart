@@ -6,16 +6,13 @@ import 'package:flame/sprite.dart';
 import 'package:flame/text_config.dart';
 import 'package:flutter/material.dart';
 import 'package:tableblocktrue/controller/game.dart';
-import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
 import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/util/valorUtil.dart';
-import 'package:tableblocktrue/view/alerta.dart';
 
 class Proposicao extends SpriteComponent {
   final BoxGame game;
-  final Alien _alien;
   Random _random;
   Rect ponto;
   Paint _paint;
@@ -25,7 +22,7 @@ class Proposicao extends SpriteComponent {
   List<bool> _valores;
   bool resultado;
 
-  Proposicao(this.game, this._alien, double x, double y) {
+  Proposicao(this.game, double x, double y) {
     ponto = Rect.fromLTWH(x, y, 100, 50);
     // simbolo = Sprite("bloco.png");
     config =
@@ -57,8 +54,8 @@ class Proposicao extends SpriteComponent {
         bool valor = calcularProposicao(f.tipo, _valores);
         if (valor == resultado) {
           _paint.color = Colors.green;
-          // game.menu.transicao(Tela.alerta);
-          FaseUtil.faseAtual++;
+          FaseUtil.setFaseAtual(1);
+          game.menu.transicao(Tela.jogo);
         } else
           _paint.color = Colors.red;
       }
