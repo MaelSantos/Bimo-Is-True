@@ -42,7 +42,7 @@ class Fase extends StatelessWidget {
                   children: [
                     FlatButton(
                         onPressed: () {
-                          if(FaseUtil.faseAtual >= index){
+                          if(FaseUtil.faseAtual > index){
                             menu.transicao(Tela.jogo);
                             FaseUtil.faseJogar = index+1;
                           }
@@ -59,7 +59,7 @@ class Fase extends StatelessWidget {
   }
 
   String imageFase(int index) {
-    if (index <= FaseUtil.faseAtual)
+    if (index < FaseUtil.faseAtual)
       return "assets/images/icons/livre.png";
     else
       return "assets/images/icons/bloqueado.png";

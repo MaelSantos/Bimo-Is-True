@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tableblocktrue/controller/game.dart';
+import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/ajuda.dart';
 import 'package:tableblocktrue/view/alerta.dart';
@@ -106,11 +107,23 @@ class MenuState extends State<Menu> {
         Navigator.popAndPushNamed(context, "/Menu");
         break;
       case 9:
-        // Navigator.popAndPushNamed(context, "/Menu");
         Navigator.pop(context);
-        Alerta.alert(context, "Fim de Jogo", "Deseja jogar novamente ?",
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => gameInit()));
+        break;
+      case 10:
+        Navigator.pop(context);
+        Alerta.alert(context, "Você Perdeu!!!", "Deseja jogar novamente ?",
             function: () {
-          transicao(Tela.sair);
+          transicao(Tela.jogo);
+        });
+        break;
+        case 11:
+        Navigator.pop(context);
+        Alerta.alert(context, "Todas as fases conluídas", "Parabéns!!! Todas as fases estão desbloqueadas\nDeseja jogar Novamente?",
+            function: () {
+              FaseUtil.faseJogar = 1;
+          transicao(Tela.jogo);
         });
         break;
     }
@@ -124,18 +137,13 @@ class MenuState extends State<Menu> {
     });
   }
 
-  void execute(Function valor) {
-    setState(() {
-      valor();
-    });
-  }
-
   Widget gameInit() {
     game = BoxGame(this);
 
     TapGestureRecognizer tapper = TapGestureRecognizer();
     // tapper.onTapDown = game.onTapDown;
     tapper.onTapUp = game.onTapUp;
+    flameUtil = Util();
     flameUtil.addGestureRecognizer(tapper); //adiciono o evento
 
     return Scaffold(

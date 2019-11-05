@@ -1,9 +1,11 @@
 class FaseUtil {
   static int faseJogar = 1;
-  static get faseAtual => _getFase();
+  static int get faseAtual => _getFase();
 
-  static int _atual = 0;
+  static int _atual = 1;
   static int _faseMaxima = 2;
+
+  static bool get faseFinal => fim();
 
   static double velocidade = 9;
 
@@ -18,4 +20,10 @@ class FaseUtil {
       _atual += valor;
   }
 
+  static bool fim() {
+    if (faseJogar == _faseMaxima && _atual == _faseMaxima)
+      return true;
+    else
+      return false;
+  }
 }

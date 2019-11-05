@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tipos_preposicao.dart';
 
 String boolInString(bool valor) {
@@ -7,15 +8,11 @@ String boolInString(bool valor) {
   return "F";
 }
 
-int stringInPosition(String valor)
-{
-  if(valor.length < 2)
-    return 12;
-  if(valor.length >= 2 && valor.length < 3)
-    return 9;
-  if(valor.length >= 3)
-    return 6;
-  
+int stringInPosition(String valor) {
+  if (valor.length < 2) return 12;
+  if (valor.length >= 2 && valor.length < 3) return 9;
+  if (valor.length >= 3) return 6;
+
   return 0;
 }
 
@@ -38,10 +35,24 @@ TipoPreposicao intInTipo(int valor) {
   return TipoPreposicao.values[valor];
 }
 
-TipoPreposicao gerarTipoPreposicao() {
-  Random r = Random();
-  int valor = r.nextInt(5);
-  return intInTipo(valor);
+List<bool> gerarValores() {
+  List<bool> valores = List();
+  for (int i = 0; i <= FaseUtil.faseJogar; i++)
+    valores.add(Random().nextBool());
+  return valores;
+}
+
+String gerarProposicao(List<bool> valores) {
+  String proposicao = "";
+
+  for (int i = 0; i < valores.length; i++) {
+    bool b = valores[i];
+    if (i == valores.length - 1)
+      proposicao += "${boolInString(b)} = ";
+    else
+      proposicao += "${boolInString(b)} ? ";
+  }
+  return proposicao;
 }
 
 bool calcularProposicao(TipoPreposicao tipo, List<bool> valores) {
@@ -63,7 +74,6 @@ bool calcularProposicao(TipoPreposicao tipo, List<bool> valores) {
 }
 
 bool and(List<bool> valores) {
-  
   bool valor = true;
   valores.forEach((f) {
     if (!f) {

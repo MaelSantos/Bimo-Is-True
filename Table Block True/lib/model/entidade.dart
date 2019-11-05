@@ -58,18 +58,18 @@ class Entidade extends SpriteComponent {
               entidadeRect.center.dy + nextPoint.dy) -
           entidadeRect.center;
 
-
       //atualiza posição do personagem
-      if (!collision(colisoes, diffBase, entidadeRect)) // verifica as colisões
+      if (!collision(
+          colisoes, diffBase, entidadeRect, false)) // verifica as colisões
       {
         if (escolhida != null) {
+          Offset diffEscolhido = Offset(
+                  escolhida.ponto.center.dx + nextPoint.dx,
+                  escolhida.ponto.center.dy + nextPoint.dy) -
+              escolhida.ponto.center;
 
-      Offset diffEscolhido = Offset(escolhida.ponto.center.dx + nextPoint.dx,
-              escolhida.ponto.center.dy + nextPoint.dy) -
-          escolhida.ponto.center;
-
-          if (!collision(colisoes, diffEscolhido, escolhida.ponto) &&
-              !collision(colisoes, diffBase, entidadeRect)) {
+          if (!collision(colisoes, diffEscolhido, escolhida.ponto, false) &&
+              !collision(colisoes, diffBase, entidadeRect, false)) {
             entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
             direita.setByRect(entidadeRect);
             esquerda.setByRect(entidadeRect);
@@ -95,7 +95,8 @@ class Entidade extends SpriteComponent {
   @override
   void resize(Size size) {}
 
-  bool collision(List<Colisao> collision, Offset ponto, Rect rect) {
+  bool collision(
+      List<Colisao> collision, Offset ponto, Rect rect, bool ignore) {
     Rect deslocamento = rect.shift(ponto);
 
     for (Colisao r in collision) {
@@ -103,11 +104,13 @@ class Entidade extends SpriteComponent {
     }
 
     for (Preposicao p in preposicoes) {
-      if (deslocamento.overlaps(p.ponto)) {
-        if (p == escolhida && p != null) {
-          return false;
-        } else {
-          return true;
+      if (p != escolhida) {
+        if (deslocamento.overlaps(p.ponto)) {
+          if (p == escolhida && escolhida != null) {
+            return false;
+          } else {
+            return true;
+          }
         }
       }
     }

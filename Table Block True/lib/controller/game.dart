@@ -29,6 +29,7 @@ class BoxGame extends BaseGame {
   ButtonComponent btnVoltar, btnSegurar, btnSoltar;
   Joystick joystick;
 
+  bool isGame;
   MenuState menu;
 
   BoxGame(this.menu) {
@@ -55,41 +56,47 @@ class BoxGame extends BaseGame {
 
     joystick = Joystick(this);
 
-    _proposicao = Proposicao(this, 150, 490);
+    _proposicao = Proposicao(this);
 
     _preposicoes = List();
     _addCollision(mapa);
 
     camera.x = -5;
+
+    isGame = true;
   }
 
   @override
   void render(Canvas canvas) {
-    super.render(canvas);
-    joystick.render(canvas);
-    btnVoltar.render(canvas);
+    if (isGame) {
+      super.render(canvas);
+      joystick.render(canvas);
+      btnVoltar.render(canvas);
 
-    if (alien.escolhida != null)
-      btnSoltar.render(canvas);
-    else
-      btnSegurar.render(canvas);
+      if (alien.escolhida != null)
+        btnSoltar.render(canvas);
+      else
+        btnSegurar.render(canvas);
 
-    _proposicao.render(canvas);
-    _preposicoes.forEach((f) {
-      f.render(canvas);
-    });
-    alien.render(canvas);
+      _proposicao.render(canvas);
+      _preposicoes.forEach((f) {
+        f.render(canvas);
+      });
+      alien.render(canvas);
+    }
   }
 
   @override
   void update(double t) {
-    super.update(t);
-    joystick.update(t);
-    alien.update(t);
-    // _preposicoes.forEach((f) {
-    //   f.update(t);
-    // });
-    _proposicao.update(t);
+    if (isGame) {
+      super.update(t);
+      joystick.update(t);
+      _proposicao.update(t);
+      alien.update(t);
+      // _preposicoes.forEach((f) {
+      //   f.update(t);
+      // });
+    }
   }
 
   @override
@@ -99,7 +106,6 @@ class BoxGame extends BaseGame {
   }
 
   void onTapDown(TapDownDetails d) {
-
     if (alien.escolhida != null)
       btnSoltar.onTapDown(d);
     else
@@ -109,7 +115,6 @@ class BoxGame extends BaseGame {
   }
 
   void onUpDown(TapUpDetails d) {
-
     if (alien.escolhida != null)
       btnSoltar.onTapUp(d);
     else
@@ -135,8 +140,7 @@ class BoxGame extends BaseGame {
       _preposicoes.forEach((f) {
         if (f.colidionInPlay(alien)) {
           alien.escolhida = f;
-          print(alien.escolhida);
-          print("segurando");
+          print("segurando ${alien.escolhida.tipo}");
           return;
         }
       });
@@ -145,10 +149,8 @@ class BoxGame extends BaseGame {
 
   void soltarBloco() {
     if (alien.escolhida != null) {
-      print(alien.escolhida);
+      print("soltando ${alien.escolhida.tipo}");
       alien.escolhida = null;
-      print("soltando");
-      print(alien.escolhida);
     }
   }
 
