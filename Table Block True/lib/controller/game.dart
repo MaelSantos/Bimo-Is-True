@@ -106,21 +106,25 @@ class BoxGame extends BaseGame {
   }
 
   void onTapDown(TapDownDetails d) {
-    if (alien.escolhida != null)
-      btnSoltar.onTapDown(d);
-    else
-      btnSegurar.onTapDown(d);
+    if (isGame) {
+      if (alien.escolhida != null)
+        btnSoltar.onTapDown(d);
+      else
+        btnSegurar.onTapDown(d);
 
-    btnVoltar.onTapDown(d);
+      btnVoltar.onTapDown(d);
+    }
   }
 
   void onUpDown(TapUpDetails d) {
-    if (alien.escolhida != null)
-      btnSoltar.onTapUp(d);
-    else
-      btnSegurar.onTapUp(d);
+    if (isGame) {
+      if (alien.escolhida != null)
+        btnSoltar.onTapUp(d);
+      else
+        btnSegurar.onTapUp(d);
 
-    btnVoltar.onTapUp(d);
+      btnVoltar.onTapUp(d);
+    }
   }
 
   void onPanStart(DragStartDetails details) {
@@ -140,6 +144,7 @@ class BoxGame extends BaseGame {
       _preposicoes.forEach((f) {
         if (f.colidionInPlay(alien)) {
           alien.escolhida = f;
+          alien.escolhida.paint.color = Color(0xff269fbd);
           print("segurando ${alien.escolhida.tipo}");
           return;
         }
@@ -150,6 +155,7 @@ class BoxGame extends BaseGame {
   void soltarBloco() {
     if (alien.escolhida != null) {
       print("soltando ${alien.escolhida.tipo}");
+      alien.escolhida.paint.color = Colors.black;
       alien.escolhida = null;
     }
   }

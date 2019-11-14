@@ -18,7 +18,7 @@ int stringInPosition(String valor) {
 
 String tipoInString(TipoPreposicao tipo) {
   if (tipo == TipoPreposicao.e) {
-    return "^ʌ";
+    return "&";
   } else if (tipo == TipoPreposicao.ou) {
     return "v";
   } else if (tipo == TipoPreposicao.nao) {
@@ -47,8 +47,15 @@ String gerarProposicao(List<bool> valores) {
 
   for (int i = 0; i < valores.length; i++) {
     bool b = valores[i];
-    if (i == valores.length - 1)
-      proposicao += "${boolInString(b)} = ";
+    if (i == valores.length - 1) {
+      if (valores.length % 2 == 0 && valores.length != 2)
+        proposicao += "${boolInString(b)}) = ";
+      else
+        proposicao += "${boolInString(b)} = ";
+    } else if (i % 2 != 0)
+      proposicao += "${boolInString(b)}) ? ";
+    else if (valores.length != 2)
+      proposicao += "(${boolInString(b)} ? ";
     else
       proposicao += "${boolInString(b)} ? ";
   }
@@ -60,42 +67,37 @@ bool calcularProposicao(TipoPreposicao tipo, List<bool> valores) {
 
   if (tipo == TipoPreposicao.e) {
     valor = and(valores);
+    _atualizarValores(valores, valor);
   } else if (tipo == TipoPreposicao.ou) {
     valor = or(valores);
+    _atualizarValores(valores, valor);
   } else if (tipo == TipoPreposicao.nao) {
     valor = not(valores);
   } else if (tipo == TipoPreposicao.se_entao) {
     valor = se(valores);
+    _atualizarValores(valores, valor);
   } else if (tipo == TipoPreposicao.se_somente_se) {
     valor = somente(valores);
+    _atualizarValores(valores, valor);
   }
 
   return valor;
 }
 
 bool and(List<bool> valores) {
-  bool valor = true;
-  valores.forEach((f) {
-    if (!f) {
-      //se existir pelo menos um valor falso então a preposição será falsa
-      valor = false;
-    }
-  });
+  bool valor = false;
+  if (valores[0] && valores[1]) valor = true;
   return valor;
 }
 
 bool or(List<bool> valores) {
   bool valor = false;
-  valores.forEach((f) {
-    if (f) {
-      //se existir pelo menos um valor verdadeiro então a preposição será verdadeira
-      valor = true;
-    }
-  });
+  if (valores[0] || valores[1]) valor = true;
   return valor;
 }
 
 bool not(List<bool> valores) {
+  valores[0] = !valores[0];
   return !valores[0];
 }
 
@@ -108,24 +110,17 @@ bool se(List<bool> valores) {
 }
 
 bool somente(List<bool> valores) {
-  bool valor = true;
-  //será verdeiro se todos forem verdadeiros ou todos forem falsos
-  valores.forEach((f) {
-    if (!f) {
-      //todos tem que ser verdadeiros (true)
-      valor = false;
-    }
-  });
-
-  if (!valor) {
-    //so verifica se todos são falsos se a verificação anterior falhar
-    valores.forEach((f) {
-      valor = true;
-      if (f) {
-        //todos tem que ser falsos (true)
-        valor = false;
-      }
-    });
+  bool valor = false;
+  if (valores[0] == true && valores[1] == true) {
+    valor = true;
+  } else if (valores[0] == false && valores[1] == false) {
+    valor = true;
   }
   return valor;
+}
+
+void _atualizarValores(List<bool> valores, bool valor) {
+  valores.removeAt(0);
+  valores.removeAt(0);
+  valores.insert(0, valor);
 }

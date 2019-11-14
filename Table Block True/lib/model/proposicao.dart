@@ -55,26 +55,28 @@ class Proposicao extends SpriteComponent {
 
     preposicoes.forEach((f) {
       if (ponto.overlaps(f.ponto)) {
+        preposicoes.remove(f);
         bool valor = calcularProposicao(f.tipo, _valores);
-        if (valor == resultado) {
-          _paint.color = Colors.green;
-          print("AMADA???????${!FaseUtil.faseFinal}");
-          if (!FaseUtil.faseFinal) {
+        print("AMADA???????${!FaseUtil.faseFinal}");
 
-            FaseUtil.setFaseAtual(1);
-            FaseUtil.faseJogar = FaseUtil.faseAtual;
-            game.menu.transicao(Tela.proxima_fase);
-            game.isGame = false;
-            return;
+        if (_valores.length == 1) {
+          if (_valores[0] == resultado) {
+            _paint.color = Colors.green;
+            // FaseUtil.setFaseAtual(1);
+            // FaseUtil.faseJogar += 1;
 
+            // game.isGame = false;
+            if (!FaseUtil.faseFinal) {
+              // game.menu.transicao(Tela.proxima_fase);
+            } else {
+              // game.menu.transicao(Tela.gameoverSucesso);
+            }
           } else {
-            game.menu.transicao(Tela.gameoverSucesso);
+            _paint.color = Colors.red;
+            // game.menu.transicao(Tela.gameoverFalha);
           }
-
-        } else {
-          _paint.color = Colors.red;
-          game.menu.transicao(Tela.gameoverFalha);
         }
+        return;
       }
     });
   }

@@ -21,11 +21,13 @@ class Preposicao extends SpriteComponent {
   double angulo = 0.0;
   TipoPreposicao tipo;
   Sprite simbolo;
+  Paint paint;
   TextConfig config;
 
   Preposicao(this.game, this._alien, double x, double y, int tipo) {
     ponto = Rect.fromLTWH(x, y, 35, 35);
     simbolo = Sprite("bloco.png");
+    paint = Paint();
     this.tipo = intInTipo(tipo);
     config =
         TextConfig(fontSize: 16.0, fontFamily: 'Special', color: Colors.white);
@@ -38,7 +40,7 @@ class Preposicao extends SpriteComponent {
 
   @override
   void render(Canvas canvas) {
-    canvas.drawRect(ponto, Paint());
+    canvas.drawRect(ponto, paint);
     simbolo.renderRect(canvas, ponto);
     config.render(
         canvas,
@@ -57,10 +59,10 @@ class Preposicao extends SpriteComponent {
   }
 
   bool colidionInPlay(Alien alien) {
-    if (alien.entidadeRect.overlaps(ponto.translate(-1, 0)) ||
-        alien.entidadeRect.overlaps(ponto.translate(0, -1)) ||
-        alien.entidadeRect.overlaps(ponto.translate(1, 0)) ||
-        alien.entidadeRect.overlaps(ponto.translate(0, 1))) {
+    if (alien.entidadeRect.overlaps(ponto.translate(-2, 0)) ||
+        alien.entidadeRect.overlaps(ponto.translate(0, -2)) ||
+        alien.entidadeRect.overlaps(ponto.translate(2, 0)) ||
+        alien.entidadeRect.overlaps(ponto.translate(0, 2))) {
       return true;
     }
     return false;
