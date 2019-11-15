@@ -3,7 +3,7 @@ class FaseUtil {
   static int get faseAtual => _getFase();
 
   static int _atual = 1;
-  static int _faseMaxima = 3;
+  static int _faseMaxima = 4;
 
   static bool get faseFinal => fim();
 

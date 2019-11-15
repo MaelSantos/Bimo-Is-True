@@ -37,7 +37,11 @@ TipoPreposicao intInTipo(int valor) {
 
 List<bool> gerarValores() {
   List<bool> valores = List();
-  for (int i = 0; i <= FaseUtil.faseJogar; i++)
+
+  int aux = 0;
+  if (FaseUtil.faseJogar == 0) aux += 1;
+
+  for (int i = 0; i <= FaseUtil.faseJogar + aux; i++)
     valores.add(Random().nextBool());
   return valores;
 }
@@ -123,7 +127,7 @@ void _atualizarValores(List<bool> valores, bool valor) {
   valores.removeAt(0);
   valores.removeAt(0);
 
-  if (valores.length % 2 == 0)
+  if (valores.length >= 4)
     valores.add(valor);
   else
     valores.insert(0, valor);

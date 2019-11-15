@@ -25,7 +25,7 @@ class Fase extends StatelessWidget {
       )),
       child: GridView.count(
           crossAxisCount: 2,
-          children: List.generate(3, (index) {
+          children: List.generate(5, (index) {
             return Container(
                 alignment: Alignment.center,
                 // color: Colors.green,
@@ -42,15 +42,15 @@ class Fase extends StatelessWidget {
                   children: [
                     FlatButton(
                         onPressed: () {
-                          if(FaseUtil.faseAtual > index){
-                            menu.transicao(Tela.jogo);
-                            FaseUtil.faseJogar = index+1;
+                          if(FaseUtil.faseAtual >= index){
+                          menu.transicao(Tela.jogo);
+                          FaseUtil.faseJogar = index;
                           }
                         },
                         child: Image.asset(
                           imageFase(index),
                         )),
-                    Text("Fase ${index + 1}")
+                    Text(textoFase(index))
                   ],
                   // ),
                 ));
@@ -59,9 +59,16 @@ class Fase extends StatelessWidget {
   }
 
   String imageFase(int index) {
-    if (index < FaseUtil.faseAtual)
+    if (index <= FaseUtil.faseAtual)
       return "assets/images/icons/livre.png";
     else
       return "assets/images/icons/bloqueado.png";
+  }
+
+  String textoFase(int index) {
+    if (index == 0)
+      return "Modo Loop";
+    else
+      return "Fase $index";
   }
 }

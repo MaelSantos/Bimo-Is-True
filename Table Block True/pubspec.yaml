@@ -69,9 +69,11 @@ flutter:
     - assets/images/blocos.png
     - assets/images/bloco.png
     - assets/images/blockx64.png
+    - assets/tiles/map0.tmx
     - assets/tiles/map1.tmx
     - assets/tiles/map2.tmx
     - assets/tiles/map3.tmx
+    - assets/tiles/map4.tmx
     - assets/images/joystick_background.png
     - assets/images/joystick_knob.png
     - assets/images/sprite/play_0.png
