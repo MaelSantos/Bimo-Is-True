@@ -18,11 +18,41 @@ class AjudaState extends State<Ajuda> {
 
   AjudaState(this.menu);
 
-  TipoPreposicao bandeira = TipoPreposicao.e;
+  List tabela;
+  TipoPreposicao tipoPreposicao = TipoPreposicao.e;
+  List e = ["X","Y","X^Y",
+            "V","V","V",
+            "V","F","F",
+            "F","V","F",
+            "F","F","F"];
+
+  List ou = ["X","Y","XvY",
+             "V","V","V",
+             "V","F","V",
+             "F","V","V",
+             "F","F","F"];
+
+  List nao = ["X","X~","-",
+              "V","F","-",
+              "V","V", "-",];
+
+  List se = ["X","Y","X->Y",
+             "V","V","V",
+             "V","F","F",
+             "F","V","V",
+             "F","F","V"];
+
+  List somente = ["X","Y","X<->Y",
+                  "V","V","V",
+                  "V","F","F",
+                  "F","V","F",
+                  "F","F","V"];
 
   void mudarSelecao(TipoPreposicao selecionado) {
     setState(() {
-      bandeira = selecionado;
+      tipoPreposicao = selecionado;
+      tabela = escolher();
+      print(tabela);
     });
   }
 
@@ -52,11 +82,10 @@ class AjudaState extends State<Ajuda> {
             ),
           ],
           onChanged: mudarSelecao,
-          value: bandeira,
+          value: tipoPreposicao,
           iconEnabledColor: Colors.white,
           iconDisabledColor: Colors.white,
-          style: TextStyle(
-              color: Colors.white),
+          // style: TextStyle(color: Colors.white),
         );
 
     return Scaffold(
@@ -67,7 +96,6 @@ class AjudaState extends State<Ajuda> {
           image: DecorationImage(
         image: AssetImage("assets/back.png"),
         alignment: Alignment.center,
-        // fit: BoxFit.fitWidth,
         repeat: ImageRepeat.repeat,
       )),
       child: Center(
@@ -97,13 +125,59 @@ class AjudaState extends State<Ajuda> {
             ),
             child: _down(),
           ),
+          gerarTabelaVerdade(),
           RoundButton(
               onPressed: () {
                 menu.transicao(Tela.principal);
               },
               sourceImage: "assets/images/icons/home.png"),
+              SizedBox(height: 30,)
         ],
       )),
     ));
+  }
+
+  List escolher() {
+    if (tipoPreposicao == TipoPreposicao.e) return e;
+    if (tipoPreposicao == TipoPreposicao.ou) return ou;
+    if (tipoPreposicao == TipoPreposicao.nao) return nao;
+    if (tipoPreposicao == TipoPreposicao.se_entao) return se;
+    if (tipoPreposicao == TipoPreposicao.se_somente_se) return somente;
+  }
+
+  Color gerarCor(int index) {
+    Color cor;
+    if (index < 3)
+      cor = Colors.green[700];
+    else 
+    // if(index != 5 && index != 8 && index != 11 && index != 14)
+      cor = Colors.green;
+    // else
+    //   cor = Colors.green[700];
+    return cor;
+  }
+
+  Widget gerarTabelaVerdade() {
+    tabela = escolher();
+
+    return Expanded(
+        child: SizedBox(
+            height: 100.0,
+            width: 350,
+            child: GridView.count(
+                crossAxisCount: 3,
+                padding: EdgeInsets.all(10),
+                children: List.generate(tabela.length, (index) {
+                  return Container(
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: gerarCor(index),
+                        border: Border.all(color: Colors.lightBlue, width: 1),
+                      ),
+                      child: Text(
+                        "${tabela[index]}",
+                        style: TextStyle(fontSize: 25),
+                      ));
+                }))));
   }
 }

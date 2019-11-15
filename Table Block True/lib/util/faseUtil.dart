@@ -21,7 +21,7 @@ class FaseUtil {
   }
 
   static bool fim() {
-    if (faseJogar == _faseMaxima && _atual == _faseMaxima)
+    if (faseJogar >= _faseMaxima && _atual >= _faseMaxima)
       return true;
     else
       return false;

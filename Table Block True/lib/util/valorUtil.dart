@@ -122,5 +122,9 @@ bool somente(List<bool> valores) {
 void _atualizarValores(List<bool> valores, bool valor) {
   valores.removeAt(0);
   valores.removeAt(0);
-  valores.insert(0, valor);
+
+  if (valores.length % 2 == 0)
+    valores.add(valor);
+  else
+    valores.insert(0, valor);
 }

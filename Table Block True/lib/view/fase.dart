@@ -42,10 +42,10 @@ class Fase extends StatelessWidget {
                   children: [
                     FlatButton(
                         onPressed: () {
-                          // if(FaseUtil.faseAtual > index){
+                          if(FaseUtil.faseAtual > index){
                             menu.transicao(Tela.jogo);
                             FaseUtil.faseJogar = index+1;
-                          // }
+                          }
                         },
                         child: Image.asset(
                           imageFase(index),

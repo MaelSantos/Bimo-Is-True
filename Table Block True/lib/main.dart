@@ -50,18 +50,10 @@ class MyApp extends StatelessWidget {
                 valueIndicatorTextStyle:
                     TextStyle(color: Colors.green, fontFamily: "Special")),
             fontFamily: "Special", //define a fonte familia do texto
-            // brightness: Brightness.dark,
-            textSelectionColor: Colors.black,
-            unselectedWidgetColor: Colors.green,
-            hintColor: Colors.green,
-            accentColor: Colors.green,
             textTheme: TextTheme(
               //define a cor padrão dos textos
               body1: TextStyle(color: Colors.white, fontSize: 19),
               body2: TextStyle(color: Colors.white, fontSize: 19),
-              subhead: TextStyle(
-                color: Colors.white,
-              ),
             )),
         home: Entrada(),
         routes: {
