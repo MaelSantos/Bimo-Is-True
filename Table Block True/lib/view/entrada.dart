@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'package:tableblocktrue/beans/usuario.dart';
+import 'package:tableblocktrue/util/configUtil.dart';
 
 class Entrada extends StatefulWidget {
   @override
@@ -8,8 +10,14 @@ class Entrada extends StatefulWidget {
 }
 
 class EntradaState extends State<Entrada> {
-  void navigationToNextPage() {
-    Navigator.pushReplacementNamed(context, '/Login');
+  void navigationToNextPage() async {
+    Usuario user = await Usuario.getAtivo();
+    if (user == null) {
+      Navigator.pushReplacementNamed(context, '/Login');
+    } else {
+      ConfigUtil.userLogado = user;
+      Navigator.pushReplacementNamed(context, '/Menu');
+    }
   }
 
   startSplashScreenTimer() async {
@@ -28,8 +36,6 @@ class EntradaState extends State<Entrada> {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
-        body: Center(
-          child: Image.asset("assets/icon.png", fit: BoxFit.fill))
-          );
+        body: Center(child: Image.asset("assets/icon.png", fit: BoxFit.fill)));
   }
 }

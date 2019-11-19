@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
+import 'package:flame/position.dart';
+import 'package:flame/text_config.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/colisao.dart';
@@ -30,6 +32,8 @@ class BoxGame extends BaseGame {
   Joystick joystick;
 
   bool isGame;
+  TextConfig config;
+
   MenuState menu;
 
   BoxGame(this.menu) {
@@ -63,6 +67,7 @@ class BoxGame extends BaseGame {
 
     camera.x = -5;
 
+    config = TextConfig(fontSize: 19.0, fontFamily: 'Special', color: Colors.white);
     isGame = true;
   }
 
@@ -70,6 +75,7 @@ class BoxGame extends BaseGame {
   void render(Canvas canvas) {
     if (isGame) {
       super.render(canvas);
+      config.render(canvas, "Pontos: ${FaseUtil.pontuacao}", Position(screenSize.width-130, 580));
       joystick.render(canvas);
       btnVoltar.render(canvas);
 

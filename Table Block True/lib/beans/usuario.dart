@@ -1,4 +1,3 @@
-
 import 'package:sqflite/sqlite_api.dart';
 import 'package:tableblocktrue/util/Sqlite/SQLUtil.dart';
 import 'package:tableblocktrue/util/Sqlite/SqLite.dart';
@@ -43,11 +42,22 @@ class Usuario {
     return map;
   }
 
-  Future save() async {
+  Future<int> save() async {
     Database dataBase = await SqlHelper().db;
     int valor = await dataBase.insert(TabelaUsuario.NOME_TABELA, toMap());
-    print("VALOR");
-    print(valor);
+    print("VALOR $valor");
+    return valor;
+  }
+
+  Future<Usuario> update() async {
+    Database dataBase = await SqlHelper().db;
+    List listMapUsuario =
+        await dataBase.rawQuery(TabelaUsuario.update(ativo, id));
+    if (listMapUsuario.length > 0) {
+      Usuario usuario = Usuario.fromMapSqLite(listMapUsuario.first);
+      return usuario;
+    }
+    return null;
   }
 
   static Future<List<Usuario>> getAll() async {
@@ -64,6 +74,19 @@ class Usuario {
     Database dataBase = await SqlHelper().db;
     List listMapUsuario =
         await dataBase.rawQuery(TabelaUsuario.getAllPorAtivo(true));
+    if (listMapUsuario.length > 0) {
+      Usuario usuario = Usuario.fromMapSqLite(listMapUsuario.first);
+      return usuario;
+    }
+    return null;
+  }
+
+  static Future<Usuario> getLogin(String login, String senha) async {
+    Database dataBase = await SqlHelper().db;
+    List listMapUsuario =
+        await dataBase.rawQuery(TabelaUsuario.getPorLoginSenha(login, senha));
+        // await dataBase.rawQuery(TabelaUsuario.getPorId(3));
+        print(listMapUsuario);
     if (listMapUsuario.length > 0) {
       Usuario usuario = Usuario.fromMapSqLite(listMapUsuario.first);
       return usuario;

@@ -66,17 +66,21 @@ class Proposicao extends SpriteComponent {
                 if (!FaseUtil.faseFinal) {
                   FaseUtil.faseJogar += 1;
                   FaseUtil.setFaseAtual(1);
+                  FaseUtil.pontuacao += 10;
                   game.menu.transicao(Tela.proxima_fase);
                 } else {
+                  FaseUtil.pontuacao = 0;
                   game.menu.transicao(Tela.gameoverSucesso);
                 }
               } else {
+                FaseUtil.pontuacao += 10;
                 game.menu.transicao(Tela.jogo);
               }
             });
           } else {
             _paint.color = Colors.red;
             Future.delayed(Duration(seconds: 1), () {
+              FaseUtil.pontuacao = 0;
               game.menu.transicao(Tela.gameoverFalha);
             });
           }

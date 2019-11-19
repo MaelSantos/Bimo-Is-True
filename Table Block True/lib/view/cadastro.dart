@@ -79,10 +79,10 @@ class Cadastro extends StatelessWidget {
                                   usuario.nome = tfdNome.text.trim();
                                   usuario.login = tfdLogin.text.trim();
                                   usuario.senha = tfdSenha.text.trim();
+                                  usuario.ativo = true;
 
                                   _formKey.currentState.validate();
-                                  if (WebService.cadastroUsuario(usuario) !=
-                                      null) {
+                                  if (usuario.save() != null) {
                                     Navigator.pushReplacementNamed(
                                         context, '/Menu');
                                   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tableblocktrue/util/configUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
@@ -62,6 +63,9 @@ class Principal extends StatelessWidget {
                 sourceImage: "assets/images/icons/info.png"),
             RoundButton(
                 onPressed: () {
+                  ConfigUtil.userLogado.ativo = false;
+                  ConfigUtil.userLogado.update();
+                  
                   menu.transicao(Tela.login);
                 },
                 sourceImage: "assets/images/icons/porta.png"),

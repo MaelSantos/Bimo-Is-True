@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tableblocktrue/beans/usuario.dart';
+import 'package:tableblocktrue/util/configUtil.dart';
 import 'package:tableblocktrue/view/alerta.dart';
 import 'package:tableblocktrue/view/cadastro.dart';
 import 'package:tableblocktrue/view/componentes/round_button.dart';
@@ -117,15 +118,30 @@ class LoginState extends State<Login> {
   }
 
   void _showMenu({Usuario usuario}) async {
+
     // Usuario user = await WebService.getUsuarioLoginSenha(usuario);
     // if (user == null) {
     //   tfdSenha.erro = true;
     //   _formKey.currentState.validate();
     // } else {
     //   user.ativo = true;
-    //   // user.save();
+    //   user.save();
     //   Navigator.pushReplacementNamed(context, '/Menu');
     // }
-    Navigator.pushReplacementNamed(context, '/Menu');
+    // Navigator.pushReplacementNamed(context, '/Menu');
+
+print(usuario);
+    Usuario user = await Usuario.getLogin(usuario.login, usuario.senha);
+    print(user);
+    if (user == null) {
+      tfdSenha.erro = true;
+      _formKey.currentState.validate();
+    } else {
+      user.ativo = true;
+      user.update();
+      ConfigUtil.userLogado = usuario;
+      Navigator.pushReplacementNamed(context, '/Menu');
+      // user.save();
+    }
   }
 }

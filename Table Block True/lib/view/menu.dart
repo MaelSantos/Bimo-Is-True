@@ -28,6 +28,7 @@ class MenuState extends State<Menu> {
   Tela tela;
   String titulo;
   //telas
+  Scaffold gestureGame;
   BoxGame game;
   Util flameUtil;
 
@@ -55,19 +56,25 @@ class MenuState extends State<Menu> {
     info = Info(this);
     //tela jogo
     // game = BoxGame(this);
-
     flameUtil = Util();
     await flameUtil.fullScreen(); //Tela cheia
-    await flameUtil.setOrientation(
-        DeviceOrientation.portraitUp); //define a rotação da tela
+    //define a rotação da tela
+    await flameUtil.setOrientation(DeviceOrientation.portraitUp);
 
-    // TapGestureRecognizer tapper = TapGestureRecognizer();
+    game = BoxGame(this);
+    TapGestureRecognizer tapper = TapGestureRecognizer();
     // tapper.onTapDown = game.onTapDown;
-    // flameUtil.addGestureRecognizer(tapper); //adiciono o evento
+    tapper.onTapUp = game.onTapUp;
+    flameUtil.addGestureRecognizer(tapper); //adiciono o evento
 
-    // MultiTapGestureRecognizer multiTap = MultiTapGestureRecognizer();
-    // multiTap.onLongTapDown = game.onLongTapDown;
-    // flameUtil.addGestureRecognizer(multiTap);
+    gestureGame = Scaffold(
+        body: GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onPanStart: game.onPanStart,
+      onPanUpdate: game.onPanUpdate,
+      onPanEnd: game.onPanEnd,
+      child: game.widget,
+    ));
   }
 
   @override
@@ -90,6 +97,8 @@ class MenuState extends State<Menu> {
         Navigator.push(context, MaterialPageRoute(builder: (context) => fase));
         break;
       case 4:
+        // game.iniciarFase();
+        Navigator.popAndPushNamed(context, "/Menu");
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => gameInit()));
         break;
@@ -116,14 +125,19 @@ class MenuState extends State<Menu> {
         Alerta.alert(context, "Você Perdeu!!!", "Deseja jogar novamente ?",
             function: () {
           transicao(Tela.jogo);
+        }, function2: (){
+          transicao(Tela.principal);
         });
         break;
-        case 11:
+      case 11:
         Navigator.pop(context);
-        Alerta.alert(context, "Todas as fases conluídas", "Parabéns!!! Todas as fases estão desbloqueadas\nDeseja jogar Novamente?",
+        Alerta.alert(context, "Todas as fases conluídas",
+            "Parabéns!!! Todas as fases estão desbloqueadas\nDeseja jogar Novamente?",
             function: () {
-              FaseUtil.faseJogar = 1;
+          FaseUtil.faseJogar = 1;
           transicao(Tela.jogo);
+        }, function2: (){
+          transicao(Tela.principal);
         });
         break;
     }

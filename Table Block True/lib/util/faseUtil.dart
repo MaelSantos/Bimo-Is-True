@@ -1,4 +1,5 @@
 class FaseUtil {
+  static int pontuacao = 0;
   static int faseJogar = 1;
   static int get faseAtual => _getFase();
 

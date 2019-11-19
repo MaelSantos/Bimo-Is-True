@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Nov 15 12:36:38 BRT 2019
+#Fri Nov 15 13:02:32 BRT 2019
 56.path=flutter_assets/assets/images/blockx64.png
 5.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 42.base=/home/mael/Documentos/Projetos Mobile/TableBlockTrue/Table Block True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out

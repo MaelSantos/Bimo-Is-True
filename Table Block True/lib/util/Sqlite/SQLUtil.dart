@@ -23,6 +23,16 @@ class TabelaUsuario {
     return "SELECT * FROM $NOME_TABELA where id='$id'";
   }
 
+  static String getPorLoginSenha(String login, String senha) {
+    return "SELECT * FROM $NOME_TABELA where login='$login' and senha='$senha'";
+  }
+
+  static String update(bool ativo, int id) {
+    int valor;
+    ativo? valor = 1 : valor = 0;
+    return "UPDATE $NOME_TABELA SET ativo=$valor where id=$id";
+  }
+
   static String getAll() {
     return "SELECT * FROM $NOME_TABELA";
   }

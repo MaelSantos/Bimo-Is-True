@@ -43,6 +43,7 @@ class Fase extends StatelessWidget {
                     FlatButton(
                         onPressed: () {
                           if(FaseUtil.faseAtual >= index){
+                          FaseUtil.pontuacao = 0;
                           menu.transicao(Tela.jogo);
                           FaseUtil.faseJogar = index;
                           }
