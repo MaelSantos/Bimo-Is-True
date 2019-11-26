@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:tableblocktrue/beans/usuario.dart';
 
 class WebService {
-  static final String URL = "http://172.24.39.123:8000";
+  static final String URL = "http://192.168.1.107:8000";
 
   static Future<Usuario> getUsuarioLoginSenha(Usuario usuario) async {
     http.Response responser = await http

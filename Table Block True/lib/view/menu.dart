@@ -125,7 +125,7 @@ class MenuState extends State<Menu> {
         Alerta.alert(context, "Você Perdeu!!!", "Deseja jogar novamente ?",
             function: () {
           transicao(Tela.jogo);
-        }, function2: (){
+        }, function2: () {
           transicao(Tela.principal);
         });
         break;
@@ -136,7 +136,7 @@ class MenuState extends State<Menu> {
             function: () {
           FaseUtil.faseJogar = 1;
           transicao(Tela.jogo);
-        }, function2: (){
+        }, function2: () {
           transicao(Tela.principal);
         });
         break;

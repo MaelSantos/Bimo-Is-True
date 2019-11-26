@@ -118,30 +118,30 @@ class LoginState extends State<Login> {
   }
 
   void _showMenu({Usuario usuario}) async {
-
-    // Usuario user = await WebService.getUsuarioLoginSenha(usuario);
-    // if (user == null) {
-    //   tfdSenha.erro = true;
-    //   _formKey.currentState.validate();
-    // } else {
-    //   user.ativo = true;
-    //   user.save();
-    //   Navigator.pushReplacementNamed(context, '/Menu');
-    // }
-    // Navigator.pushReplacementNamed(context, '/Menu');
-
-print(usuario);
-    Usuario user = await Usuario.getLogin(usuario.login, usuario.senha);
-    print(user);
+    Usuario user = await WebService.getUsuarioLoginSenha(usuario);
     if (user == null) {
       tfdSenha.erro = true;
       _formKey.currentState.validate();
     } else {
       user.ativo = true;
-      user.update();
-      ConfigUtil.userLogado = usuario;
+      user.save();
+      // user.update();
       Navigator.pushReplacementNamed(context, '/Menu');
-      // user.save();
     }
+    // Navigator.pushReplacementNamed(context, '/Menu');
+
+// print(usuario);
+//     Usuario user = await Usuario.getLogin(usuario.login, usuario.senha);
+//     print(user);
+//     if (user == null) {
+//       tfdSenha.erro = true;
+//       _formKey.currentState.validate();
+//     } else {
+//       user.ativo = true;
+//       user.update();
+//       ConfigUtil.userLogado = usuario;
+//       Navigator.pushReplacementNamed(context, '/Menu');
+//       // user.save();
+//     }
   }
 }

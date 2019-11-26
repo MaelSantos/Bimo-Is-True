@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tableblocktrue/beans/usuario.dart';
 import 'package:tableblocktrue/util/configUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
+import 'package:tableblocktrue/webservice/web_service.dart';
 
 class Principal extends StatelessWidget {
   MenuState menu;
@@ -65,6 +67,8 @@ class Principal extends StatelessWidget {
                 onPressed: () {
                   ConfigUtil.userLogado.ativo = false;
                   ConfigUtil.userLogado.update();
+
+                  Usuario.removeAll();
                   
                   menu.transicao(Tela.login);
                 },
