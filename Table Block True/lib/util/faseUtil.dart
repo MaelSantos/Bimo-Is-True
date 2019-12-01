@@ -9,6 +9,7 @@ class FaseUtil {
   static bool get faseFinal => fim();
 
   static double velocidade = 9;
+  static double volume = 1.0;
 
   static _getFase() {
     return _atual;

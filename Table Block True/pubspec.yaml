@@ -11,10 +11,11 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   path_provider: ^1.1.0
-  flame: ^0.15.2
-  tiled: ^0.2.1
+  flame: any
+  tiled: any
   http: ^0.12.0+2
   sqflite: any
+  audioplayers: 0.13.2
 
 
 dev_dependencies:
@@ -82,6 +83,9 @@ flutter:
     - assets/images/sprite/play_3.png
     - assets/images/sprite/play_4.png
     - assets/images/sprite/play_5.png
+    - assets/audio/sakura.mp3
+    - assets/audio/iniciofase.ogg
+    - assets/audio/andando.ogg
 
 flutter_icons:
  android: "launcher_icon"

@@ -19,8 +19,9 @@ class ConfigState extends State<Config> {
   Image audio, veloci;
   String musica;
   double get velocidade => FaseUtil.velocidade;
-  double volume;
+  double get volume => FaseUtil.volume;
   bool inVolume;
+  double volumeAnterior = 0;
 
   ConfigState(this.menu);
 
@@ -29,7 +30,6 @@ class ConfigState extends State<Config> {
     super.initState();
 
     // velocidade = 50.0;
-    volume = 50.0;
     inVolume = true;
 
     if (inVolume)
@@ -68,7 +68,9 @@ class ConfigState extends State<Config> {
               Container(
                 height: 50,
                 width: 190,
-                margin: EdgeInsets.only(bottom: 10,),
+                margin: EdgeInsets.only(
+                  bottom: 10,
+                ),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   // color: Color(0xff269fbd),
@@ -91,21 +93,23 @@ class ConfigState extends State<Config> {
                   children: [
                     audio,
                     Slider(
-                      activeColor: Colors.white,
-                      label: volume.toInt().toString() + "%",
+                      activeColor: isAtivo(),
+                      label: (volume.toInt() * 10).toString() + "%",
                       value: volume,
                       min: 0,
-                      max: 100,
+                      max: 10,
                       divisions: 10,
                       onChanged: (va) {
                         setState(() {
-                          volume = va;
-                          if (va != 0)
-                            audio =
-                                Image.asset("assets/images/icons/audioOn.png");
-                          else
-                            audio =
-                                Image.asset("assets/images/icons/audioOff.png");
+                          if (inVolume) {
+                            FaseUtil.volume = va;
+                            if (va != 0)
+                              audio = Image.asset(
+                                  "assets/images/icons/audioOn.png");
+                            else
+                              audio = Image.asset(
+                                  "assets/images/icons/audioOff.png");
+                          }
                         });
                       },
                     ),
@@ -126,8 +130,6 @@ class ConfigState extends State<Config> {
                       veloci,
                       Slider(
                         activeColor: Colors.white,
-
-                        // inactiveColor: Colors.black,
                         label: (velocidade.toInt() * 10).toString() + "%",
                         value: velocidade,
                         min: 2,
@@ -157,9 +159,12 @@ class ConfigState extends State<Config> {
 
                         if (inVolume) {
                           musica = "assets/images/icons/musicaOff.png";
+                          volumeAnterior = volume;
+                          FaseUtil.volume = 0;
                           inVolume = false;
                         } else {
                           musica = "assets/images/icons/musicaOn.png";
+                          FaseUtil.volume = volumeAnterior;
                           inVolume = true;
                         }
                       },
@@ -176,5 +181,12 @@ class ConfigState extends State<Config> {
             ],
           )),
     );
+  }
+
+  Color isAtivo() {
+    if (inVolume)
+      return Colors.white;
+    else
+      return Colors.grey;
   }
 }

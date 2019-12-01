@@ -25,13 +25,16 @@ void main() async {
     "bloco.png"
   ]);
 
-  // Flame.audio.loadAll([
-  //   "",
-  //   "",
-  //   ""
-  // ]);
+  Flame.audio.loadAll([
+    "iniciofase.ogg",
+    "andando.ogg",
+    "sakura.mp3",
+  ]);
 
+  // Flame.audio.disableLog();
   runApp(MyApp()); //rodo a aplicação
+
+  Flame.bgm.initialize();
 }
 
 class MyApp extends StatelessWidget {
@@ -46,6 +49,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         // O widget Scaffold define o layouta da home
         theme: ThemeData(
             backgroundColor: Color(0xff269fbd),

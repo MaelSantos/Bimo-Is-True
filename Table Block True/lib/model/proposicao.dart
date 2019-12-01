@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/components/component.dart';
+import 'package:flame/flame.dart';
 import 'package:flame/position.dart';
 import 'package:flame/text_config.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +86,7 @@ class Proposicao extends SpriteComponent {
             });
           }
         }
+        Flame.bgm.stop();
         return;
       }
     });

@@ -22,6 +22,8 @@ import 'package:flutter/material.dart';
 class BoxGame extends BaseGame {
   Size screenSize;
   double tileSize;
+  Rect screenRect;
+  Paint p;
   Random rnd;
 
   Alien alien;
@@ -50,6 +52,7 @@ class BoxGame extends BaseGame {
 
     btnVoltar =
         ButtonComponent(this, 300, 630, "icons/voltar.png", onPressed: () {
+      Flame.bgm.stop();
       menu.transicao(Tela.sair);
     });
 
@@ -68,15 +71,26 @@ class BoxGame extends BaseGame {
 
     camera.x = -5;
 
-    config = TextConfig(fontSize: 19.0, fontFamily: 'Special', color: Colors.white);
+    config =
+        TextConfig(fontSize: 19.0, fontFamily: "Special", color: Colors.white);
+
+    p = Paint();
+    p.color = Color(0xff269fbd);
+
     isGame = true;
+
+    Flame.audio.play("iniciofase.ogg", volume: FaseUtil.volume);
+    Flame.bgm.play("sakura.mp3", volume: 0.5);
   }
 
   @override
   void render(Canvas canvas) {
     if (isGame) {
+      canvas.drawRect(screenRect, p);
+
       super.render(canvas);
-      config.render(canvas, "Pontos: ${FaseUtil.pontuacao}", Position(screenSize.width-130, 580));
+      config.render(canvas, "Pontos: ${FaseUtil.pontuacao}",
+          Position(screenSize.width - 130, 580));
       joystick.render(canvas);
       btnVoltar.render(canvas);
 
@@ -109,6 +123,7 @@ class BoxGame extends BaseGame {
   @override
   void resize(Size size) {
     screenSize = size;
+    screenRect = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
     tileSize = screenSize.width / 9;
   }
 
