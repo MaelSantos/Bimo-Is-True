@@ -27,11 +27,12 @@ class LoginState extends State<Login> {
   void initState() {
     super.initState();
     _cadastro = Cadastro();
-    tfdLogin = TextCustom("Informe o Login");
+    tfdLogin = TextCustom("Informe o Login", iconData: Icons.alternate_email);
     tfdSenha = TextCustom(
       "Informe a Senha",
       isPassword: true,
       mensagemErro: "Login ou senha incorretos",
+      iconData: Icons.lock_outline
     );
 
     _formKey = GlobalKey<FormState>();

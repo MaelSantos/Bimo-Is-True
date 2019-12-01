@@ -61,20 +61,20 @@ class MenuState extends State<Menu> {
     //define a rotação da tela
     await flameUtil.setOrientation(DeviceOrientation.portraitUp);
 
-    game = BoxGame(this);
-    TapGestureRecognizer tapper = TapGestureRecognizer();
-    // tapper.onTapDown = game.onTapDown;
-    tapper.onTapUp = game.onTapUp;
-    flameUtil.addGestureRecognizer(tapper); //adiciono o evento
+    // game = BoxGame(this);
+    // TapGestureRecognizer tapper = TapGestureRecognizer();
+    // // tapper.onTapDown = game.onTapDown;
+    // tapper.onTapUp = game.onTapUp;
+    // flameUtil.addGestureRecognizer(tapper); //adiciono o evento
 
-    gestureGame = Scaffold(
-        body: GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onPanStart: game.onPanStart,
-      onPanUpdate: game.onPanUpdate,
-      onPanEnd: game.onPanEnd,
-      child: game.widget,
-    ));
+    // gestureGame = Scaffold(
+    //     body: GestureDetector(
+    //   behavior: HitTestBehavior.opaque,
+    //   onPanStart: game.onPanStart,
+    //   onPanUpdate: game.onPanUpdate,
+    //   onPanEnd: game.onPanEnd,
+    //   child: game.widget,
+    // ));
   }
 
   @override

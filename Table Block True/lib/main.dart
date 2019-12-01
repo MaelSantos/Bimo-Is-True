@@ -25,6 +25,12 @@ void main() async {
     "bloco.png"
   ]);
 
+  // Flame.audio.loadAll([
+  //   "",
+  //   "",
+  //   ""
+  // ]);
+
   runApp(MyApp()); //rodo a aplicação
 }
 

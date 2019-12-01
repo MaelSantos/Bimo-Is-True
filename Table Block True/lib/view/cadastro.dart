@@ -9,17 +9,19 @@ class Cadastro extends StatelessWidget {
   GlobalKey<FormState> _formKey;
 
   Cadastro() {
-    tfdNome = TextCustom("Informe seu nome");
-    tfdEmail = TextCustom("Informe o email");
-    tfdLogin = TextCustom("Informe o login");
+    tfdNome = TextCustom("Informe seu nome", iconData: Icons.face,);
+    tfdEmail = TextCustom("Informe o email", iconData: Icons.mail_outline,);
+    tfdLogin = TextCustom("Informe o login", iconData: Icons.alternate_email);
     tfdSenha = TextCustom(
       "Informe a senha",
       isPassword: true,
+      iconData: Icons.lock_outline
     );
     tfdConfirmar = TextCustom(
       "Confirme sua senha",
       isPassword: true,
       mensagemErro: "Senhas diferentes",
+      iconData: Icons.lock_outline
     );
 
     _formKey = GlobalKey<FormState>();
@@ -83,8 +85,7 @@ class Cadastro extends StatelessWidget {
 
                                   _formKey.currentState.validate();
                                   // if (usuario.save() != null) {
-                                  if (WebService.cadastroUsuario(usuario) !=
-                                      null) {
+                                  if (WebService.cadastroUsuario(usuario) != null) {
                                         usuario.save();
                                         print(usuario);
                                     Navigator.pushReplacementNamed(

@@ -37,6 +37,7 @@ class BoxGame extends BaseGame {
   MenuState menu;
 
   BoxGame(this.menu) {
+    isGame = false;
     initialize();
   }
 

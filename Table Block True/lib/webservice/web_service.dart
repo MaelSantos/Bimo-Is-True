@@ -8,7 +8,6 @@ class WebService {
 
   static Future<Usuario> getUsuarioLoginSenha(Usuario usuario) async {
     http.Response responser = await http
-        // .get(URL + '/table/login/?login=${usuario.login}&senha=${usuario.senha}');
         .post(URL+"/table/login/",
      body: {"login": usuario.login, "senha" : usuario.senha},
      headers: {'Accept' : 'application/json'});
@@ -26,7 +25,6 @@ class WebService {
 
   static Future<Usuario> cadastroUsuario(Usuario usuario) async {
     http.Response responser = await http
-        // .get(URL + '/table/cadastro/?nome=${usuario.nome}&login=${usuario.login}&senha=${usuario.senha}');
     .post(URL+"/table/cadastro/",
      body: {"nome": usuario.nome, "login": usuario.login, "senha" : usuario.senha},
      headers: {'Accept' : 'application/json'});

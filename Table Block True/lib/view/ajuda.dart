@@ -20,7 +20,7 @@ class AjudaState extends State<Ajuda> {
 
   List tabela;
   TipoPreposicao tipoPreposicao = TipoPreposicao.e;
-  List e = ["X","Y","X^Y",
+  List e = ["X","Y","X&Y",
             "V","V","V",
             "V","F","F",
             "F","V","F",
