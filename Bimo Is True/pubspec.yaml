@@ -56,6 +56,7 @@ flutter:
     - assets/images/icons/velocidade.png
     - assets/images/icons/audioOn.png
     - assets/images/icons/audioOff.png
+    - assets/images/icons/estrela.png
     - assets/images/icons/bloqueado.png
     - assets/images/icons/livre.png
     - assets/images/icons/atencao.png

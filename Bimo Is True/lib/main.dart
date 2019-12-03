@@ -31,10 +31,10 @@ void main() async {
     "sakura.mp3",
   ]);
 
-  // Flame.audio.disableLog();
   runApp(MyApp()); //rodo a aplicação
 
   Flame.bgm.initialize();
+  Flame.audio.disableLog();
 }
 
 class MyApp extends StatelessWidget {

@@ -39,7 +39,7 @@ List<bool> gerarValores() {
   List<bool> valores = List();
 
   int aux = 0;
-  if (FaseUtil.faseJogar == 0) aux += 1;
+  if (FaseUtil.faseJogar == 0)  aux += FaseUtil.dificuldadeTreino;
 
   for (int i = 0; i <= FaseUtil.faseJogar + aux; i++)
     valores.add(Random().nextBool());

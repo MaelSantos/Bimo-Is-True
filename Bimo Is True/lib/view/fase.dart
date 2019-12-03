@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
 class Fase extends StatelessWidget {
@@ -42,10 +41,10 @@ class Fase extends StatelessWidget {
                   children: [
                     FlatButton(
                         onPressed: () {
-                          if(FaseUtil.faseAtual >= index){
-                          FaseUtil.pontuacao = 0;
-                          menu.transicao(Tela.jogo);
-                          FaseUtil.faseJogar = index;
+                          if (FaseUtil.faseAtual >= index) {
+                            FaseUtil.pontuacao = 0;
+                            FaseUtil.faseJogar = index;
+                            menu.transicao(Tela.jogo);
                           }
                         },
                         child: Image.asset(
@@ -60,6 +59,7 @@ class Fase extends StatelessWidget {
   }
 
   String imageFase(int index) {
+    if (index == 0) return "assets/images/icons/estrela.png";
     if (index <= FaseUtil.faseAtual)
       return "assets/images/icons/livre.png";
     else
@@ -68,7 +68,7 @@ class Fase extends StatelessWidget {
 
   String textoFase(int index) {
     if (index == 0)
-      return "Modo Loop";
+      return "Treino";
     else
       return "Fase $index";
   }

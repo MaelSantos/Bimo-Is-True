@@ -20,6 +20,7 @@ class ConfigState extends State<Config> {
   String musica;
   double get velocidade => FaseUtil.velocidade;
   double get volume => FaseUtil.volume;
+  int get treino => FaseUtil.dificuldadeTreino;
   bool inVolume;
   double volumeAnterior = 0;
 
@@ -94,10 +95,10 @@ class ConfigState extends State<Config> {
                     audio,
                     Slider(
                       activeColor: isAtivo(),
-                      label: (volume.toInt() * 10).toString() + "%",
+                      label: (volume * 100).toInt().toString() + "%",
                       value: volume,
-                      min: 0,
-                      max: 10,
+                      min: 0.0,
+                      max: 1.0,
                       divisions: 10,
                       onChanged: (va) {
                         setState(() {
@@ -149,24 +150,55 @@ class ConfigState extends State<Config> {
                       ),
                     ]),
               ),
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(top: 10),
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset("assets/images/icons/estrela.png"),
+                      Slider(
+                        activeColor: Colors.white,
+                        label: (treino).toString(),
+                        value: treino.toDouble(),
+                        min: 1,
+                        max: 4,
+                        divisions: 3,
+                        onChanged: (va) {
+                          setState(() {
+                            FaseUtil.dificuldadeTreino = va.toInt();
+                          });
+                        },
+                      ),
+                    ]),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   RoundButton(
                       onPressed: () {
-                        setState(() {});
-
-                        if (inVolume) {
-                          musica = "assets/images/icons/musicaOff.png";
-                          volumeAnterior = volume;
-                          FaseUtil.volume = 0;
-                          inVolume = false;
-                        } else {
-                          musica = "assets/images/icons/musicaOn.png";
-                          FaseUtil.volume = volumeAnterior;
-                          inVolume = true;
-                        }
+                        setState(() {
+                          if (inVolume) {
+                            musica = "assets/images/icons/musicaOff.png";
+                            audio =
+                                Image.asset("assets/images/icons/audioOff.png");
+                            volumeAnterior = volume;
+                            FaseUtil.volume = 0;
+                            inVolume = false;
+                          } else {
+                            musica = "assets/images/icons/musicaOn.png";
+                            audio =
+                                Image.asset("assets/images/icons/audioOn.png");
+                            FaseUtil.volume = volumeAnterior;
+                            inVolume = true;
+                          }
+                        });
                       },
                       sourceImage: musica,
                       division: 10),

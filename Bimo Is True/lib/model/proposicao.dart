@@ -85,8 +85,9 @@ class Proposicao extends SpriteComponent {
               game.menu.transicao(Tela.gameoverFalha);
             });
           }
+
+          Flame.bgm.stop();
         }
-        Flame.bgm.stop();
         return;
       }
     });
