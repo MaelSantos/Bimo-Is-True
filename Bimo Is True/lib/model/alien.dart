@@ -8,7 +8,12 @@ import 'package:tableblocktrue/model/entidade.dart';
 
 class Alien extends Entidade {
 
-  Alien(BoxGame game, double x, double y) : super(game) {
+  Alien(BoxGame game) : super(game) {
+
+    double x = game.screenSize.width * 0.15; //10% da largura
+    double y = game.screenSize.height * 0.05; //5% da altura
+    // double dimensao = game.screenSize.height * 0.05; //5% da altura
+    // entidadeRect = Rect.fromLTWH(x, y, dimensao, dimensao);
 
     entidadeRect = Rect.fromLTWH(x, y, 40, 40);
 

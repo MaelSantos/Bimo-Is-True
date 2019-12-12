@@ -40,26 +40,31 @@ class BoxGame extends BaseGame {
 
   BoxGame(this.menu) {
     isGame = false;
+    mapa = TiledComponent("map${FaseUtil.faseJogar}.tmx");
+    add(mapa);
     initialize();
   }
 
   void initialize() async {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-    alien = Alien(this, 50, 40);
-    mapa = TiledComponent("map${FaseUtil.faseJogar}.tmx");
-    add(mapa);
+    alien = Alien(this);
+
+    double y = screenSize.height * 0.81;
+    double x = screenSize.width * 0.75;
 
     btnVoltar =
-        ButtonComponent(this, 300, 630, "icons/voltar.png", onPressed: () {
+        ButtonComponent(this, x, y, "icons/voltar.png", onPressed: () {
       Flame.bgm.stop();
       menu.transicao(Tela.sair);
     });
 
-    btnSegurar = ButtonComponent(this, 50, 630, "icons/segurar.png",
+    x = screenSize.width * 0.1;
+
+    btnSegurar = ButtonComponent(this, x, y, "icons/segurar.png",
         onPressed: segurarBloco);
 
-    btnSoltar = ButtonComponent(this, 50, 630, "icons/soltar.png",
+    btnSoltar = ButtonComponent(this, x, y, "icons/soltar.png",
         onPressed: soltarBloco);
 
     joystick = Joystick(this);
@@ -81,6 +86,8 @@ class BoxGame extends BaseGame {
 
     Flame.audio.play("iniciofase.ogg", volume: FaseUtil.volume);
     Flame.bgm.play("sakura.mp3", volume: 0.5);
+
+    
   }
 
   @override
@@ -122,6 +129,7 @@ class BoxGame extends BaseGame {
 
   @override
   void resize(Size size) {
+    super.resize(size);
     screenSize = size;
     screenRect = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
     tileSize = screenSize.width / 9;

@@ -25,6 +25,11 @@ class Preposicao extends SpriteComponent {
   TextConfig config;
 
   Preposicao(this.game, this._alien, double x, double y, int tipo) {
+
+
+    // double dimensao = game.screenSize.height * 0.045; //4.5% da altura
+    // double dimensao = game.mapa.map.tileHeight.toDouble() * 0.045; //4.5% da altura
+    // ponto = Rect.fromLTWH(x, y, dimensao, dimensao);
     ponto = Rect.fromLTWH(x, y, 35, 35);
     simbolo = Sprite("bloco.png");
     paint = Paint();

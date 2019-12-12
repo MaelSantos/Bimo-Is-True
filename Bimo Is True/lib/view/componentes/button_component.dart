@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flame/position.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 import 'package:tableblocktrue/controller/game.dart';
 
 class ButtonComponent {
@@ -26,7 +27,6 @@ class ButtonComponent {
 
   void render(Canvas canvas) {
     sprite.renderRect(canvas, rect);
-    // sprite.renderPosition(canvas, Position(x, y));
   }
 
   void update(double t) {

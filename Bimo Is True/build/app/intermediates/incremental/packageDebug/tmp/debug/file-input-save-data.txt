@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Dec 03 09:53:03 BRT 2019
+#Sun Dec 08 16:12:00 BRT 2019
 56.path=flutter_assets/assets/images/icons/pausar.png
 5.base=/home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 42.base=/home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out

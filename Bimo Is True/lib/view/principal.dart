@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tableblocktrue/beans/usuario.dart';
 import 'package:tableblocktrue/util/configUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
+import 'package:tableblocktrue/view/alerta.dart';
 import 'package:tableblocktrue/view/componentes/round_button.dart';
 import 'package:tableblocktrue/view/menu.dart';
 
@@ -19,11 +21,11 @@ class Principal extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/back + logo.png"),
-                alignment: Alignment.topCenter,
-                fit: BoxFit.cover,
-                // repeat: ImageRepeat.repeat
-                )),
+          image: AssetImage("assets/back + logo.png"),
+          alignment: Alignment.topCenter,
+          fit: BoxFit.cover,
+          // repeat: ImageRepeat.repeat
+        )),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,12 +66,16 @@ class Principal extends StatelessWidget {
                 sourceImage: "assets/images/icons/info.png"),
             RoundButton(
                 onPressed: () {
-                  ConfigUtil.userLogado.ativo = false;
-                  ConfigUtil.userLogado.update();
+                  // ConfigUtil.userLogado.ativo = false;
+                  // ConfigUtil.userLogado.update();
+                  // Usuario.removeAll();
 
-                  Usuario.removeAll();
-                  
-                  menu.transicao(Tela.login);
+                  // menu.transicao(Tela.login);
+                  Alerta.alert(context, "Sair ?", "Deseja realmente sair?",
+                      function: () {
+                    SystemChannels.platform
+                        .invokeMethod('SystemNavigator.pop'); //sai da aplicação
+                  });
                 },
                 sourceImage: "assets/images/icons/porta.png"),
           ],

@@ -79,9 +79,7 @@ class MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: principal,
-    );
+    return principal;
   }
 
   //faz a mudança das telas
@@ -98,7 +96,10 @@ class MenuState extends State<Menu> {
         break;
       case 4:
         // game.iniciarFase();
-        Navigator.popAndPushNamed(context, "/Menu");
+        // Navigator.popAndPushNamed(context, "/Menu");
+        // Navigator.of(context)
+        //     .pushNamedAndRemoveUntil('/Menu', (Route<dynamic> route) => false);
+        // Navigator.of(context).pushReplacementNamed('/Menu');
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => gameInit()));
         break;
@@ -113,7 +114,8 @@ class MenuState extends State<Menu> {
         Navigator.push(context, MaterialPageRoute(builder: (context) => info));
         break;
       case 8:
-        Navigator.popAndPushNamed(context, "/Menu");
+        Navigator.of(context)
+            .pushNamedAndRemoveUntil('/Menu', (Route<dynamic> route) => false);
         break;
       case 9:
         Navigator.pop(context);

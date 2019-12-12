@@ -31,10 +31,12 @@ class Alerta {
           margin: EdgeInsets.only(
             left: 15,
             right: 15,
+            // top: 20,
+            // bottom: 20,
           ),
-          padding: EdgeInsets.only(top: 15),
+          padding: EdgeInsets.only(top: 20),
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.width - 80,
+          height: MediaQuery.of(context).size.width -60,
           decoration: BoxDecoration(
             color: Color(0xff269fbd),
             borderRadius: BorderRadius.all(
@@ -56,9 +58,9 @@ class Alerta {
                 ),
               ),
               Container(
-                  width: MediaQuery.of(context).size.width - 50,
-                  height: MediaQuery.of(context).size.height / 4,
-                  margin: EdgeInsets.only(left: 10, top: 5),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height/4,
+                  margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
