@@ -1,6 +1,7 @@
 //imports do flutter
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tableblocktrue/view/login.dart';
 
 //meus imports
@@ -22,7 +23,7 @@ void main() async {
     "icons/soltar.png",
     "joystick_background.png",
     "joystick_knob.png",
-    "bloco.png"
+    "bloco.png",
   ]);
 
   Flame.audio.loadAll([
@@ -31,10 +32,15 @@ void main() async {
     "sakura.mp3",
   ]);
 
+
   runApp(MyApp()); //rodo a aplicação
+
+  Flame.util.fullScreen();
+  Flame.util.setOrientation(DeviceOrientation.portraitUp);
 
   Flame.bgm.initialize();
   Flame.audio.disableLog();
+
 }
 
 class MyApp extends StatelessWidget {

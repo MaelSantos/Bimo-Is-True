@@ -33,7 +33,8 @@ class Proposicao extends SpriteComponent {
     altura = 50;
     largura = (_valores.length * 45.0) + 10;
     x = (game.screenSize.width / 2) - largura / 2;
-    y = (game.screenSize.height / 2) + altura * 2 - 5;
+    // y = (game.screenSize.height) - ((18 * 32)/2) - 5;
+    y = (18 * 32).toDouble() - 85;
 
     ponto = Rect.fromLTWH(x, y, largura, altura);
     resultado = _random.nextBool();
@@ -50,6 +51,9 @@ class Proposicao extends SpriteComponent {
 
   @override
   void update(double t) {
+
+    if(preposicoes == null) return;
+
     preposicoes.forEach((f) {
       if (ponto.overlaps(f.ponto)) {
         preposicoes.remove(f);

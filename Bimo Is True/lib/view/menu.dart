@@ -57,9 +57,6 @@ class MenuState extends State<Menu> {
     //tela jogo
     // game = BoxGame(this);
     flameUtil = Util();
-    await flameUtil.fullScreen(); //Tela cheia
-    //define a rotação da tela
-    await flameUtil.setOrientation(DeviceOrientation.portraitUp);
 
     // game = BoxGame(this);
     // TapGestureRecognizer tapper = TapGestureRecognizer();
@@ -168,7 +165,18 @@ class MenuState extends State<Menu> {
       onPanStart: game.onPanStart,
       onPanUpdate: game.onPanUpdate,
       onPanEnd: game.onPanEnd,
-      child: game.widget,
+      child: 
+          Container(
+            // width: 200,
+            // height: 300,
+            padding: EdgeInsets.all(5),
+            child: game.widget,
+          ),
+      //     Stack(
+      //   fit: StackFit.passthrough,
+      //   children: [
+      //     ],
+      // ),
     ));
   }
 }

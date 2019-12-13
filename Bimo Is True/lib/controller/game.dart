@@ -5,6 +5,7 @@ import 'package:flame/components/tiled_component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flame/position.dart';
+import 'package:flame/sprite.dart';
 import 'package:flame/text_config.dart';
 import 'package:flutter/gestures.dart';
 import 'package:tableblocktrue/model/alien.dart';
@@ -46,15 +47,14 @@ class BoxGame extends BaseGame {
   }
 
   void initialize() async {
-    rnd = Random();
     resize(await Flame.util.initialDimensions());
+    rnd = Random();
     alien = Alien(this);
 
     double y = screenSize.height * 0.81;
     double x = screenSize.width * 0.75;
 
-    btnVoltar =
-        ButtonComponent(this, x, y, "icons/voltar.png", onPressed: () {
+    btnVoltar = ButtonComponent(this, x, y, "icons/voltar.png", onPressed: () {
       Flame.bgm.stop();
       menu.transicao(Tela.sair);
     });
@@ -64,8 +64,8 @@ class BoxGame extends BaseGame {
     btnSegurar = ButtonComponent(this, x, y, "icons/segurar.png",
         onPressed: segurarBloco);
 
-    btnSoltar = ButtonComponent(this, x, y, "icons/soltar.png",
-        onPressed: soltarBloco);
+    btnSoltar =
+        ButtonComponent(this, x, y, "icons/soltar.png", onPressed: soltarBloco);
 
     joystick = Joystick(this);
 
@@ -74,7 +74,7 @@ class BoxGame extends BaseGame {
     _preposicoes = List();
     _addCollision(mapa);
 
-    camera.x = -5;
+    // camera.x = -5;
 
     config =
         TextConfig(fontSize: 19.0, fontFamily: "Special", color: Colors.white);
@@ -86,18 +86,45 @@ class BoxGame extends BaseGame {
 
     Flame.audio.play("iniciofase.ogg", volume: FaseUtil.volume);
     Flame.bgm.play("sakura.mp3", volume: 0.5);
-
-    
   }
 
   @override
   void render(Canvas canvas) {
     if (isGame) {
-      canvas.drawRect(screenRect, p);
+      canvas.drawRect(
+          Rect.fromLTWH(0, 0, screenSize.width, screenSize.height), p);
+
+        canvas.save();
+        // canvas.scale(screenSize.width.toInt() / tileSize.toInt() /10);
+        // double escalaX = ((11 - (390 / screenSize.width.toInt()) ) / 10);
+        double escalaX = (screenSize.width.toInt() / 392.72);
+        double escalaY = (screenSize.height.toInt() / 785.5);
+        // double escalaX = (500 / 390);
+        // print(escalaX);
+        // canvas.scale(0.8);
+        canvas.scale(escalaX, escalaY);
+        if(escalaX.toInt() < 1) 
+        canvas.translate(screenRect.center.dx-(200 * escalaX), 0.0);
+
+      // if(mapa.map.tileWidth != null) print(mapa.map.tileWidth*12);// 384
+      // if(mapa.map.tileHeight != null) print(mapa.map.tileHeight*18); 576
+      // print(screenSize.width);//392.72
+      // print(screenSize.height);//785.5
 
       super.render(canvas);
+
       config.render(canvas, "Pontos: ${FaseUtil.pontuacao}",
           Position(screenSize.width - 130, 580));
+
+      _proposicao.render(canvas);
+      if(_preposicoes == null) return;
+      _preposicoes.forEach((f) {
+        f.render(canvas);
+      });
+      alien.render(canvas);
+
+      canvas.restore();
+
       joystick.render(canvas);
       btnVoltar.render(canvas);
 
@@ -105,12 +132,6 @@ class BoxGame extends BaseGame {
         btnSoltar.render(canvas);
       else
         btnSegurar.render(canvas);
-
-      _proposicao.render(canvas);
-      _preposicoes.forEach((f) {
-        f.render(canvas);
-      });
-      alien.render(canvas);
     }
   }
 
@@ -131,7 +152,8 @@ class BoxGame extends BaseGame {
   void resize(Size size) {
     super.resize(size);
     screenSize = size;
-    screenRect = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
+    screenRect =
+        Rect.fromLTWH(5, 0, screenSize.width * 0.98, screenSize.height * 0.734);
     tileSize = screenSize.width / 9;
   }
 
@@ -171,6 +193,7 @@ class BoxGame extends BaseGame {
 
   void segurarBloco() {
     if (alien.escolhida == null) {
+      if(_preposicoes == null) return;
       _preposicoes.forEach((f) {
         if (f.colidionInPlay(alien)) {
           alien.escolhida = f;
@@ -238,6 +261,7 @@ class BoxGame extends BaseGame {
     if (obj == null) {
       return;
     }
+
     for (TmxObject obj in obj.tmxObjects) {
       Colisao colisao = Colisao(this,
           x: obj.x.toDouble(),

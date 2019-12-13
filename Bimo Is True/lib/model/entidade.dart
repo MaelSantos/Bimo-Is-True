@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:flame/components/animation_component.dart';
 import 'package:flame/components/component.dart';
-import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/model/colisao.dart';
@@ -48,6 +47,7 @@ class Entidade extends SpriteComponent {
 
   @override
   void update(double t) {
+
     super.update(t);
     if (move) {
       double nextX = (velocidade * t) * cos(angulo);
@@ -69,8 +69,7 @@ class Entidade extends SpriteComponent {
                   escolhida.ponto.center.dy + nextPoint.dy) -
               escolhida.ponto.center;
 
-          if (!collision(colisoes, diffEscolhido, escolhida.ponto, false) &&
-              !collision(colisoes, diffBase, entidadeRect, false)) {
+          if (!collision(colisoes, diffEscolhido, escolhida.ponto, false)) {
             entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
             direita.setByRect(entidadeRect);
             esquerda.setByRect(entidadeRect);
