@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tableblocktrue/util/configUtil.dart';
 import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/round_button.dart';
@@ -21,8 +22,7 @@ class ConfigState extends State<Config> {
   double get velocidade => FaseUtil.velocidade;
   double get volume => FaseUtil.volume;
   int get treino => FaseUtil.dificuldadeTreino;
-  bool inVolume;
-  double volumeAnterior = 0;
+  
 
   ConfigState(this.menu);
 
@@ -30,10 +30,7 @@ class ConfigState extends State<Config> {
   void initState() {
     super.initState();
 
-    // velocidade = 50.0;
-    inVolume = true;
-
-    if (inVolume)
+    if (ConfigUtil.inVolume)
       musica = "assets/images/icons/musicaOn.png";
     else
       musica = "assets/images/icons/musicaOff.png";
@@ -102,7 +99,7 @@ class ConfigState extends State<Config> {
                       divisions: 10,
                       onChanged: (va) {
                         setState(() {
-                          if (inVolume) {
+                          if (ConfigUtil.inVolume) {
                             FaseUtil.volume = va;
                             if (va != 0)
                               audio = Image.asset(
@@ -184,19 +181,19 @@ class ConfigState extends State<Config> {
                   RoundButton(
                       onPressed: () {
                         setState(() {
-                          if (inVolume) {
+                          if (ConfigUtil.inVolume) {
                             musica = "assets/images/icons/musicaOff.png";
                             audio =
                                 Image.asset("assets/images/icons/audioOff.png");
-                            volumeAnterior = volume;
+                            ConfigUtil.volumeAnterior = volume;
                             FaseUtil.volume = 0;
-                            inVolume = false;
+                            ConfigUtil.inVolume = false;
                           } else {
                             musica = "assets/images/icons/musicaOn.png";
                             audio =
                                 Image.asset("assets/images/icons/audioOn.png");
-                            FaseUtil.volume = volumeAnterior;
-                            inVolume = true;
+                            FaseUtil.volume = ConfigUtil.volumeAnterior;
+                            ConfigUtil.inVolume = true;
                           }
                         });
                       },
@@ -216,7 +213,7 @@ class ConfigState extends State<Config> {
   }
 
   Color isAtivo() {
-    if (inVolume)
+    if (ConfigUtil.inVolume)
       return Colors.white;
     else
       return Colors.grey;

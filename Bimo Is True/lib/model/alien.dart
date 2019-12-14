@@ -10,12 +10,12 @@ class Alien extends Entidade {
 
   Alien(BoxGame game) : super(game) {
 
-    double x = game.screenSize.width * 0.15; //10% da largura
-    double y = game.screenSize.height * 0.05; //5% da altura
+    // double x = game.screenSize.width * 0.15; //10% da largura
+    // double y = game.screenSize.height * 0.05; //5% da altura
     // double dimensao = game.screenSize.height * 0.05; //5% da altura
     // entidadeRect = Rect.fromLTWH(x, y, dimensao, dimensao);
 
-    entidadeRect = Rect.fromLTWH(x, y, 40, 40);
+    entidadeRect = Rect.fromLTWH(40, 40, 40, 40);
 
     sprites = [0,1,2].map((i) => new Sprite('sprite/play_$i.png')).toList();
     this.direita = AnimationComponent(40, 40, Animation.spriteList(sprites, stepTime: 0.07));

@@ -1,7 +1,7 @@
+import 'package:flame/flame.dart';
 import 'package:flame/util.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:tableblocktrue/controller/game.dart';
 import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
@@ -92,11 +92,6 @@ class MenuState extends State<Menu> {
         Navigator.push(context, MaterialPageRoute(builder: (context) => fase));
         break;
       case 4:
-        // game.iniciarFase();
-        // Navigator.popAndPushNamed(context, "/Menu");
-        // Navigator.of(context)
-        //     .pushNamedAndRemoveUntil('/Menu', (Route<dynamic> route) => false);
-        // Navigator.of(context).pushReplacementNamed('/Menu');
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => gameInit()));
         break;
@@ -161,22 +156,19 @@ class MenuState extends State<Menu> {
 
     return Scaffold(
         body: GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onPanStart: game.onPanStart,
-      onPanUpdate: game.onPanUpdate,
-      onPanEnd: game.onPanEnd,
-      child: 
-          Container(
-            // width: 200,
-            // height: 300,
-            padding: EdgeInsets.all(5),
-            child: game.widget,
-          ),
-      //     Stack(
-      //   fit: StackFit.passthrough,
-      //   children: [
-      //     ],
-      // ),
-    ));
+            behavior: HitTestBehavior.opaque,
+            onPanStart: game.onPanStart,
+            onPanUpdate: game.onPanUpdate,
+            onPanEnd: game.onPanEnd,
+            child: WillPopScope(
+              onWillPop: () {
+                Flame.bgm.stop();
+                return Future(() => true);
+              },
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: game.widget,
+              ),
+            )));
   }
 }

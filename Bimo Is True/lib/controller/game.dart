@@ -12,6 +12,7 @@ import 'package:tableblocktrue/model/alien.dart';
 import 'package:tableblocktrue/model/colisao.dart';
 import 'package:tableblocktrue/model/preposicao.dart';
 import 'package:tableblocktrue/model/proposicao.dart';
+import 'package:tableblocktrue/util/configUtil.dart';
 import 'package:tableblocktrue/util/faseUtil.dart';
 import 'package:tableblocktrue/util/tela.dart';
 import 'package:tableblocktrue/view/componentes/button_component.dart';
@@ -84,8 +85,10 @@ class BoxGame extends BaseGame {
 
     isGame = true;
 
-    Flame.audio.play("iniciofase.ogg", volume: FaseUtil.volume);
-    Flame.bgm.play("sakura.mp3", volume: 0.5);
+    if (ConfigUtil.inVolume) {
+      Flame.audio.play("iniciofase.ogg", volume: FaseUtil.volume);
+      Flame.bgm.play("sakura.mp3", volume: FaseUtil.volume);
+    }
   }
 
   @override
@@ -94,17 +97,17 @@ class BoxGame extends BaseGame {
       canvas.drawRect(
           Rect.fromLTWH(0, 0, screenSize.width, screenSize.height), p);
 
-        canvas.save();
-        // canvas.scale(screenSize.width.toInt() / tileSize.toInt() /10);
-        // double escalaX = ((11 - (390 / screenSize.width.toInt()) ) / 10);
-        double escalaX = (screenSize.width.toInt() / 392.72);
-        double escalaY = (screenSize.height.toInt() / 785.5);
-        // double escalaX = (500 / 390);
-        // print(escalaX);
-        // canvas.scale(0.8);
-        canvas.scale(escalaX, escalaY);
-        if(escalaX.toInt() < 1) 
-        canvas.translate(screenRect.center.dx-(200 * escalaX), 0.0);
+      canvas.save();
+      // canvas.scale(screenSize.width.toInt() / tileSize.toInt() /10);
+      // double escalaX = ((11 - (390 / screenSize.width.toInt()) ) / 10);
+      double escalaX = (screenSize.width.toInt() / 392.72);
+      double escalaY = (screenSize.height.toInt() / 785.5);
+      // double escalaX = (500 / 390);
+      // print(escalaX);
+      // canvas.scale(0.8);
+      canvas.scale(escalaX, escalaY);
+      if (escalaX.toInt() < 1)
+        canvas.translate(screenRect.center.dx - (200 * escalaX), 0.0);
 
       // if(mapa.map.tileWidth != null) print(mapa.map.tileWidth*12);// 384
       // if(mapa.map.tileHeight != null) print(mapa.map.tileHeight*18); 576
@@ -117,7 +120,7 @@ class BoxGame extends BaseGame {
           Position(screenSize.width - 130, 580));
 
       _proposicao.render(canvas);
-      if(_preposicoes == null) return;
+      if (_preposicoes == null) return;
       _preposicoes.forEach((f) {
         f.render(canvas);
       });
@@ -193,7 +196,7 @@ class BoxGame extends BaseGame {
 
   void segurarBloco() {
     if (alien.escolhida == null) {
-      if(_preposicoes == null) return;
+      if (_preposicoes == null) return;
       _preposicoes.forEach((f) {
         if (f.colidionInPlay(alien)) {
           alien.escolhida = f;

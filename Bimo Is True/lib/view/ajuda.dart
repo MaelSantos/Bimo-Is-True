@@ -34,7 +34,7 @@ class AjudaState extends State<Ajuda> {
 
   List nao = ["X","X~","-",
               "V","F","-",
-              "V","V", "-",];
+              "F","V", "-",];
 
   List se = ["X","Y","X->Y",
              "V","V","V",
