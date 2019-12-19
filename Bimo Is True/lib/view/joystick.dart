@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:math';
 
-import 'package:tableblocktrue/controller/game.dart';
+import 'package:bimo_is_true/controller/game.dart';
 
 class Joystick extends SpriteComponent {
   final BoxGame game;

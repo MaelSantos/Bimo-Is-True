@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/util/faseUtil.dart';
-import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/view/menu.dart';
+import 'package:bimo_is_true/util/faseUtil.dart';
+import 'package:bimo_is_true/util/tela.dart';
+import 'package:bimo_is_true/view/menu.dart';
 
 class Fase extends StatelessWidget {
   MenuState menu;

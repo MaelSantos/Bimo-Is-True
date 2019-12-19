@@ -2,16 +2,16 @@ import 'package:flame/flame.dart';
 import 'package:flame/util.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/controller/game.dart';
-import 'package:tableblocktrue/util/faseUtil.dart';
-import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/view/ajuda.dart';
-import 'package:tableblocktrue/view/alerta.dart';
+import 'package:bimo_is_true/controller/game.dart';
+import 'package:bimo_is_true/util/faseUtil.dart';
+import 'package:bimo_is_true/util/tela.dart';
+import 'package:bimo_is_true/view/ajuda.dart';
+import 'package:bimo_is_true/view/alerta.dart';
 
-import 'package:tableblocktrue/view/config.dart';
-import 'package:tableblocktrue/view/fase.dart';
-import 'package:tableblocktrue/view/info.dart';
-import 'package:tableblocktrue/view/principal.dart';
+import 'package:bimo_is_true/view/config.dart';
+import 'package:bimo_is_true/view/fase.dart';
+import 'package:bimo_is_true/view/info.dart';
+import 'package:bimo_is_true/view/principal.dart';
 
 class Menu extends StatefulWidget {
   MenuState menuState;

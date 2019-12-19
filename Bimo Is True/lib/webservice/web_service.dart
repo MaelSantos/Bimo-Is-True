@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:tableblocktrue/beans/usuario.dart';
+import '../beans/usuario.dart';
 
 class WebService {
   static final String URL = "http://192.168.1.107:8000";

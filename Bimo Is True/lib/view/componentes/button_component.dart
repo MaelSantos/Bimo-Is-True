@@ -3,7 +3,7 @@ import 'package:flame/position.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/controller/game.dart';
+import 'package:bimo_is_true/controller/game.dart';
 
 class ButtonComponent {
   final BoxGame game;

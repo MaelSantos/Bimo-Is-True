@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/view/componentes/round_button.dart';
+import 'package:bimo_is_true/util/tela.dart';
+import 'package:bimo_is_true/view/componentes/round_button.dart';
 
 import 'menu.dart';
 

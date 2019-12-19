@@ -1,14 +1,13 @@
-//imports do flutter
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tableblocktrue/view/login.dart';
 
-//meus imports
+import 'view/entrada.dart';
+import 'view/login.dart';
 import 'view/menu.dart';
-import 'package:tableblocktrue/view/entrada.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // carrega as imagens em cache
   Flame.images.loadAll(<String>[
     "sprite/play_0.png",
@@ -32,7 +31,6 @@ void main() async {
     "sakura.mp3",
   ]);
 
-
   runApp(MyApp()); //rodo a aplicação
 
   Flame.util.fullScreen();
@@ -40,7 +38,6 @@ void main() async {
 
   Flame.bgm.initialize();
   Flame.audio.disableLog();
-
 }
 
 class MyApp extends StatelessWidget {

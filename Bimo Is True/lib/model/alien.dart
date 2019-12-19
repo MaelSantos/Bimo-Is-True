@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flame/animation.dart';
 import 'package:flame/components/animation_component.dart';
 import 'package:flame/sprite.dart';
-import 'package:tableblocktrue/controller/game.dart';
-import 'package:tableblocktrue/model/entidade.dart';
+import 'package:bimo_is_true/controller/game.dart';
+import 'package:bimo_is_true/model/entidade.dart';
 
 class Alien extends Entidade {
 

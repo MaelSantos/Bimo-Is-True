@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:tableblocktrue/beans/usuario.dart';
-import 'package:tableblocktrue/util/configUtil.dart';
+import 'package:bimo_is_true/beans/usuario.dart';
+import 'package:bimo_is_true/util/configUtil.dart';
 
 class Entrada extends StatefulWidget {
   @override

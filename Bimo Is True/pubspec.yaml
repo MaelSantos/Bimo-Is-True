@@ -1,4 +1,4 @@
-name: tableblocktrue
+name: bimo_is_true
 description: Projeto para disciplina de Interface Homem-Maquina (IHM) e Deselvoldimento para dispositivos moveis (MOBILE)
 
 version: 1.0.0+1
@@ -65,7 +65,7 @@ flutter:
     - assets/images/icons/soltar.png
     - assets/icon.png
     - assets/back.png
-    - assets/back + logo.png
+    - assets/back_logo.png
     - assets/logo bimo.png
     - assets/tiles/mapa.tmx
     - assets/images/blocos.png

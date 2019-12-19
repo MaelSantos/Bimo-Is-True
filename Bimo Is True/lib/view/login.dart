@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tableblocktrue/beans/usuario.dart';
-import 'package:tableblocktrue/util/configUtil.dart';
-import 'package:tableblocktrue/view/alerta.dart';
-import 'package:tableblocktrue/view/cadastro.dart';
-import 'package:tableblocktrue/view/componentes/round_button.dart';
-import 'package:tableblocktrue/view/componentes/text_component.dart';
-import 'package:tableblocktrue/webservice/web_service.dart';
+import 'package:bimo_is_true/beans/usuario.dart';
+import 'package:bimo_is_true/util/configUtil.dart';
+import 'package:bimo_is_true/view/alerta.dart';
+import 'package:bimo_is_true/view/cadastro.dart';
+import 'package:bimo_is_true/view/componentes/round_button.dart';
+import 'package:bimo_is_true/view/componentes/text_component.dart';
+import 'package:bimo_is_true/webservice/web_service.dart';
 
 import 'menu.dart';
 

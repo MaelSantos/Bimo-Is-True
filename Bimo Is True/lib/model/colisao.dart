@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flame/components/component.dart';
-import 'package:tableblocktrue/controller/game.dart';
+import 'package:bimo_is_true/controller/game.dart';
 
 class Colisao extends PositionComponent{
 

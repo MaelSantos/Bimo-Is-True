@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/view/componentes/button_custom.dart';
+import 'package:bimo_is_true/view/componentes/button_custom.dart';
 
 class Alerta {
   static bool _retorno = false;

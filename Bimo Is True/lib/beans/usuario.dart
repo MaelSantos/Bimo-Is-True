@@ -1,6 +1,6 @@
 import 'package:sqflite/sqlite_api.dart';
-import 'package:tableblocktrue/util/Sqlite/SQLUtil.dart';
-import 'package:tableblocktrue/util/Sqlite/SqLite.dart';
+import 'package:bimo_is_true/util/Sqlite/SQLUtil.dart';
+import 'package:bimo_is_true/util/Sqlite/SqLite.dart';
 
 class Usuario {
   int id;

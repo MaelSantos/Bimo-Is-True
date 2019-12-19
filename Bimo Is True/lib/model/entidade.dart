@@ -4,10 +4,10 @@ import 'dart:ui';
 import 'package:flame/components/animation_component.dart';
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
-import 'package:tableblocktrue/controller/game.dart';
-import 'package:tableblocktrue/model/colisao.dart';
-import 'package:tableblocktrue/model/preposicao.dart';
-import 'package:tableblocktrue/util/faseUtil.dart';
+import 'package:bimo_is_true/controller/game.dart';
+import 'package:bimo_is_true/model/colisao.dart';
+import 'package:bimo_is_true/model/preposicao.dart';
+import 'package:bimo_is_true/util/faseUtil.dart';
 
 class Entidade extends SpriteComponent {
   bool isVivo = false;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/util/tipos_preposicao.dart';
-import 'package:tableblocktrue/view/componentes/round_button.dart';
 
+import '../util/tela.dart';
+import '../util/tipos_preposicao.dart';
+import 'componentes/round_button.dart';
 import 'menu.dart';
 
 class Ajuda extends StatefulWidget {

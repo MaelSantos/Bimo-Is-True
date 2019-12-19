@@ -5,12 +5,12 @@ import 'package:flame/position.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame/text_config.dart';
 import 'package:flutter/material.dart';
-import 'package:tableblocktrue/controller/game.dart';
-import 'package:tableblocktrue/model/alien.dart';
-import 'package:tableblocktrue/model/colisao.dart';
-import 'package:tableblocktrue/util/faseUtil.dart';
-import 'package:tableblocktrue/util/tipos_preposicao.dart';
-import 'package:tableblocktrue/util/valorUtil.dart';
+import 'package:bimo_is_true/controller/game.dart';
+import 'package:bimo_is_true/model/alien.dart';
+import 'package:bimo_is_true/model/colisao.dart';
+import 'package:bimo_is_true/util/faseUtil.dart';
+import 'package:bimo_is_true/util/tipos_preposicao.dart';
+import 'package:bimo_is_true/util/valorUtil.dart';
 
 class Preposicao extends SpriteComponent {
   final BoxGame game;

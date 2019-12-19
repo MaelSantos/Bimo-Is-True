@@ -1,10 +1,8 @@
-import 'package:tableblocktrue/beans/usuario.dart';
+import '../beans/usuario.dart';
 
-class ConfigUtil{
-
+class ConfigUtil {
   static Usuario userLogado;
 
   static bool inVolume = true;
   static double volumeAnterior = 0;
-
 }

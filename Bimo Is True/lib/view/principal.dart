@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tableblocktrue/beans/usuario.dart';
-import 'package:tableblocktrue/util/configUtil.dart';
-import 'package:tableblocktrue/util/tela.dart';
-import 'package:tableblocktrue/view/alerta.dart';
-import 'package:tableblocktrue/view/componentes/round_button.dart';
-import 'package:tableblocktrue/view/menu.dart';
+import 'package:bimo_is_true/beans/usuario.dart';
+import 'package:bimo_is_true/util/configUtil.dart';
+import 'package:bimo_is_true/util/tela.dart';
+import 'package:bimo_is_true/view/alerta.dart';
+import 'package:bimo_is_true/view/componentes/round_button.dart';
+import 'package:bimo_is_true/view/menu.dart';
 
 class Principal extends StatelessWidget {
   MenuState menu;
@@ -21,7 +21,7 @@ class Principal extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage("assets/back + logo.png"),
+          image: AssetImage("assets/back_logo.png"),
           alignment: Alignment.topCenter,
           fit: BoxFit.cover,
           // repeat: ImageRepeat.repeat

@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:tableblocktrue/util/faseUtil.dart';
-import 'package:tableblocktrue/util/tipos_preposicao.dart';
+import 'faseUtil.dart';
+import 'tipos_preposicao.dart';
 
 String boolInString(bool valor) {
   if (valor) return "V";
@@ -39,7 +39,7 @@ List<bool> gerarValores() {
   List<bool> valores = List();
 
   int aux = 0;
-  if (FaseUtil.faseJogar == 0)  aux += FaseUtil.dificuldadeTreino;
+  if (FaseUtil.faseJogar == 0) aux += FaseUtil.dificuldadeTreino;
 
   for (int i = 0; i <= FaseUtil.faseJogar + aux; i++)
     valores.add(Random().nextBool());
