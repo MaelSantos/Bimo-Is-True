@@ -1,3 +1,4 @@
+import 'package:bimo_is_true/view/introducao.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -43,10 +44,12 @@ void main() async {
 class MyApp extends StatelessWidget {
   Menu menu;
   Login login;
+  Introducao introducao;
 
   MyApp() {
     menu = Menu();
     login = Login();
+    introducao = Introducao();
   }
 
   @override
@@ -72,6 +75,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/Menu': (BuildContext context) => menu,
           '/Login': (BuildContext context) => login,
+          '/Intro': (BuildContext context) => introducao,
         });
   }
 }

@@ -67,6 +67,12 @@ flutter:
     - assets/back.png
     - assets/back_logo.png
     - assets/logo bimo.png
+    - assets/intro_1.jpg
+    - assets/intro_2.jpg
+    - assets/intro_3.jpg
+    - assets/intro_4.jpg
+    - assets/intro_5.jpg
+    - assets/intro_6.jpg
     - assets/tiles/mapa.tmx
     - assets/images/blocos.png
     - assets/images/bloco.png

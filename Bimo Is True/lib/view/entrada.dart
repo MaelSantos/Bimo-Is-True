@@ -18,7 +18,8 @@ class EntradaState extends State<Entrada> {
     //   ConfigUtil.userLogado = user;
     //   Navigator.pushReplacementNamed(context, '/Menu');
     // }
-    Navigator.pushReplacementNamed(context, '/Menu');
+    // Navigator.pushReplacementNamed(context, '/Menu');
+    Navigator.pushReplacementNamed(context, '/Intro');
   }
 
   startSplashScreenTimer() async {
