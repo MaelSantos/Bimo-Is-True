@@ -7,11 +7,10 @@ import 'package:flame/sprite.dart';
 import 'package:bimo_is_true/controller/game.dart';
 import 'package:bimo_is_true/model/colisao.dart';
 import 'package:bimo_is_true/model/preposicao.dart';
-import 'package:bimo_is_true/util/faseUtil.dart';
 
 class Entidade extends SpriteComponent {
   bool isVivo = false;
-  double get velocidade => FaseUtil.velocidade;
+  double get velocidade => game.configUtil.configuracao.velocidade;
 
   final BoxGame game;
 

@@ -1,30 +1,28 @@
+import 'package:bimo_is_true/util/configUtil.dart';
+
 class FaseUtil {
+
+  static ConfigUtil _configUtil = ConfigUtil();
+
   static int pontuacao = 0;
   static int faseJogar = 1;
-  static int dificuldadeTreino = 1;
-  static int get faseAtual => _getFase();
-
-  static int _atual = 1;
   static int _faseMaxima = 4;
 
+  static int get dificuldadeTreino => _configUtil.configuracao.dificuldadeTreino;
+  static int get faseAtual => _configUtil.configuracao.faseAtual;
   static bool get faseFinal => fim();
 
-  static double velocidade = 9;
-  static double volume = 1.0;
-
-  static _getFase() {
-    return _atual;
-  }
-
   static setFaseAtual(int valor) {
-    if (_atual >= _faseMaxima)
-      _atual = _faseMaxima;
+    if (_configUtil.configuracao.faseAtual >= _faseMaxima)
+      _configUtil.configuracao.faseAtual = _faseMaxima;
     else
-      _atual += valor;
+      _configUtil.configuracao.faseAtual += valor;
+
+      _configUtil.configuracao.update();
   }
 
   static bool fim() {
-    if (faseJogar >= _faseMaxima && _atual >= _faseMaxima)
+    if (faseJogar >= _faseMaxima && _configUtil.configuracao.faseAtual >= _faseMaxima)
       return true;
     else
       return false;

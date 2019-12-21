@@ -8,14 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:bimo_is_true/controller/game.dart';
 import 'package:bimo_is_true/model/alien.dart';
 import 'package:bimo_is_true/model/colisao.dart';
-import 'package:bimo_is_true/util/faseUtil.dart';
 import 'package:bimo_is_true/util/tipos_preposicao.dart';
 import 'package:bimo_is_true/util/valorUtil.dart';
 
 class Preposicao extends SpriteComponent {
   final BoxGame game;
   final Alien _alien;
-  double get velocidade => FaseUtil.velocidade;
+  double get velocidade => game.configUtil.configuracao.velocidade;
   Rect ponto;
   bool move = false;
   double angulo = 0.0;

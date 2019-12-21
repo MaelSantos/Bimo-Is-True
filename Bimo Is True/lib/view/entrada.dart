@@ -10,7 +10,10 @@ class Entrada extends StatefulWidget {
 }
 
 class EntradaState extends State<Entrada> {
-  void navigationToNextPage() async {
+
+  ConfigUtil c = ConfigUtil();
+
+  void navigationToNextPage(){
     // Usuario user = await Usuario.getAtivo();
     // if (user == null) {
     //   Navigator.pushReplacementNamed(context, '/Login');
@@ -18,8 +21,11 @@ class EntradaState extends State<Entrada> {
     //   ConfigUtil.userLogado = user;
     //   Navigator.pushReplacementNamed(context, '/Menu');
     // }
-    // Navigator.pushReplacementNamed(context, '/Menu');
-    Navigator.pushReplacementNamed(context, '/Intro');
+    
+    if (c.configuracao.introducao)
+      Navigator.pushReplacementNamed(context, '/Intro');
+    else
+      Navigator.pushReplacementNamed(context, '/Menu');
   }
 
   startSplashScreenTimer() async {

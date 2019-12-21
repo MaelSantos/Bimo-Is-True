@@ -1,3 +1,4 @@
+import 'package:bimo_is_true/util/configUtil.dart';
 import 'package:bimo_is_true/view/componentes/round_button.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,9 @@ class Introducao extends StatefulWidget {
 }
 
 class IntroducaoState extends State<Introducao> {
+  
+  ConfigUtil configUtil = ConfigUtil();
+
   PageController controll;
   String icone;
   int pagina;
@@ -17,7 +21,8 @@ class IntroducaoState extends State<Introducao> {
     pagina = 0;
     controll = PageController(initialPage: pagina);
     icone = "assets/images/icons/direita.png";
-    explicacao = "Mova o personagem utilizando o joystick até tocar em um bloco (preposição)";
+    explicacao =
+        "Mova o personagem utilizando o joystick até tocar em um bloco (preposição)";
     super.initState();
   }
 
@@ -110,11 +115,17 @@ class IntroducaoState extends State<Introducao> {
                               curve: Curves.easeInBack,
                               duration: Duration(seconds: 1));
                         else
-                          Navigator.pushReplacementNamed(context, '/Menu');
+                          fecharIntroducao();
                       },
                       sourceImage: icone),
                 )
               ],
             )));
+  }
+
+  void fecharIntroducao(){
+    configUtil.configuracao.introducao = false;
+    configUtil.configuracao.update();
+    Navigator.pushReplacementNamed(context, '/Menu');
   }
 }

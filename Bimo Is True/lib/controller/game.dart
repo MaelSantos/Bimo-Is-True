@@ -33,7 +33,8 @@ class BoxGame extends BaseGame {
   TiledComponent mapa;
   ButtonComponent btnVoltar, btnSegurar, btnSoltar;
   Joystick joystick;
-
+  
+  ConfigUtil configUtil = ConfigUtil();
   bool isGame;
   TextConfig config;
 
@@ -83,10 +84,10 @@ class BoxGame extends BaseGame {
     p.color = Color(0xff269fbd);
 
     isGame = true;
-
-    if (ConfigUtil.inVolume) {
-      Flame.audio.play("iniciofase.ogg", volume: FaseUtil.volume);
-      Flame.bgm.play("sakura.mp3", volume: FaseUtil.volume);
+    
+    if (configUtil.configuracao.inVolume) {
+      Flame.audio.play("iniciofase.ogg", volume: configUtil.configuracao.volume);
+      Flame.bgm.play("sakura.mp3", volume: configUtil.configuracao.volume);
     }
   }
 

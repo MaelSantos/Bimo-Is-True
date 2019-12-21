@@ -1,5 +1,5 @@
+import 'package:bimo_is_true/util/Sqlite/tabela_usuario.dart';
 import 'package:sqflite/sqlite_api.dart';
-import 'package:bimo_is_true/util/Sqlite/SQLUtil.dart';
 import 'package:bimo_is_true/util/Sqlite/SqLite.dart';
 
 class Usuario {
