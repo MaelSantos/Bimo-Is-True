@@ -166,7 +166,7 @@ class MenuState extends State<Menu> {
                 return Future(() => true);
               },
               child: Container(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(7),
                 child: game.widget,
               ),
             )));

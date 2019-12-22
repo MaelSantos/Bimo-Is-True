@@ -60,7 +60,7 @@ class Entidade extends SpriteComponent {
 
       //atualiza posição do personagem
       if (!collision(
-          colisoes, diffBase, entidadeRect, false)) // verifica as colisões
+          colisoes, diffBase, entidadeRect)) // verifica as colisões
       {
         if (escolhida != null) {
           Offset diffEscolhido = Offset(
@@ -68,7 +68,7 @@ class Entidade extends SpriteComponent {
                   escolhida.ponto.center.dy + nextPoint.dy) -
               escolhida.ponto.center;
 
-          if (!collision(colisoes, diffEscolhido, escolhida.ponto, false)) {
+          if (!collision(colisoes, diffEscolhido, escolhida.ponto)) {
             entidadeRect = entidadeRect.shift(diffBase); //movimenta a entidade
             direita.setByRect(entidadeRect);
             esquerda.setByRect(entidadeRect);
@@ -97,7 +97,13 @@ class Entidade extends SpriteComponent {
   void resize(Size size) {}
 
   bool collision(
-      List<Colisao> collision, Offset ponto, Rect rect, bool ignore) {
+      List<Colisao> collision, Offset ponto, Rect rect) {
+
+        // if (angulo > -2 && angulo < 1)
+        // direita.render(canvas);
+      // else
+        // esquerda.render(canvas);
+
     Rect deslocamento = rect.shift(ponto);
 
     for (Colisao r in collision) {
