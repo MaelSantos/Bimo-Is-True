@@ -10,12 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
-  path_provider: ^1.1.0
   flame: any
   tiled: any
-  http: ^0.12.0+2
   sqflite: any
-  audioplayers: 0.13.2
+  firebase_admob: any
+  url_launcher: any
 
 
 dev_dependencies:

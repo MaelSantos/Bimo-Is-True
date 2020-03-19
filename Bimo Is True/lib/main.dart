@@ -68,8 +68,8 @@ class MyApp extends StatelessWidget {
             fontFamily: "Special", //define a fonte familia do texto
             textTheme: TextTheme(
               //define a cor padrão dos textos
-              body1: TextStyle(color: Colors.white, fontSize: 19),
-              body2: TextStyle(color: Colors.white, fontSize: 19),
+              bodyText1: TextStyle(color: Colors.white, fontSize: 19),
+              bodyText2: TextStyle(color: Colors.white, fontSize: 19),
             )),
         home: Entrada(),
         routes: {

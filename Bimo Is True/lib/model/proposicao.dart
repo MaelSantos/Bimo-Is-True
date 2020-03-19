@@ -59,7 +59,6 @@ class Proposicao extends SpriteComponent {
         preposicoes.remove(f);
         game.alien.escolhida = null;
         bool valor = calcularProposicao(f.tipo, _valores);
-        print("AMADA???????${!FaseUtil.faseFinal}");
 
         if (_valores.length == 1) {
           if (_valores[0] == resultado) {

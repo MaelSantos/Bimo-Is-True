@@ -1,3 +1,4 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/util.dart';
 import 'package:flutter/gestures.dart';
@@ -12,6 +13,9 @@ import 'package:bimo_is_true/view/config.dart';
 import 'package:bimo_is_true/view/fase.dart';
 import 'package:bimo_is_true/view/info.dart';
 import 'package:bimo_is_true/view/principal.dart';
+
+import '../util/propaganda.dart';
+import '../util/propaganda.dart';
 
 class Menu extends StatefulWidget {
   MenuState menuState;
@@ -72,6 +76,14 @@ class MenuState extends State<Menu> {
     //   onPanEnd: game.onPanEnd,
     //   child: game.widget,
     // ));
+
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-4785348218475505~5161848991");
+  }
+
+  @override
+  void dispose() {
+    Propaganda.dispose();
+    super.dispose();
   }
 
   @override
@@ -142,6 +154,7 @@ class MenuState extends State<Menu> {
     setState(() {
       tela = valor;
       mudarTela();
+      Propaganda.popUp();
     });
   }
 

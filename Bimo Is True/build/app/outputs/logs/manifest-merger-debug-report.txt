@@ -1,14 +1,41 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
-MERGED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
+ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
 MERGED from [:audioplayers] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/audioplayers/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:firebase_admob] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_admob/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_core_web] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_macos] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher_macos/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_web] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/41f38d1cf0a42a2d5389e8d8551e61be/firebase-ads-18.1.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/f72c14a73e9e88bb51f6acaeee9a9adb/jetified-play-services-ads-18.1.1/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.firebase:firebase-analytics:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/e08e5a49b22fda55ad036bf311a3ff30/firebase-analytics-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/58c14de5606ff18eab542e1acce5686b/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/aa3b847ee486858536723d4d6eab4453/play-services-ads-identifier-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-gass:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/eaa8ce4aa24dcec165fa121c3fa30384/play-services-gass-18.1.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-measurement-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52da1fefed22b2c6da96f70aa2e14510/play-services-measurement-base-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/92853f1f358dd59a805616e511afbdee/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8ac004b53dd72ce47d72b1036c5676b3/firebase-iid-interop-17.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/10631bb3012ccad9c5c9285264903a3d/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f9ea6dac07c9a9125302baab7c530035/firebase-measurement-connector-18.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/b8b68c04ee72209a3beca37e17f7088d/fragment-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/6eadc30b5d3d9b103652e8dca2d14aad/browser-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f046f38cf99e9cbe4891b184ce64db19/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/0f0610cdcf96e6cfa9529b6a3246e3f6/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/e1bbce6b0d79e8479b70e7bd729bb743/loader-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -31,38 +58,83 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/mael/.gradle/cach
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/35bca835e72502cae5588ee7a59cf4b0/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/bce9999f881bb3993a5b24e08740cbbf/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/6b1132090a8a1ffc60b82d3452ca52ad/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-ads-base:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/cee248fd52f727e09c5eda88566957f6/play-services-ads-base-18.1.1/AndroidManifest.xml:2:1-9:12
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:2:5-39
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:2:5-34
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-30:12
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:1-33:12
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:1:11-69
 application
-ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:8:5-29:19
+ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:8:5-32:19
+MERGED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [com.google.firebase:firebase-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/41f38d1cf0a42a2d5389e8d8551e61be/firebase-ads-18.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/41f38d1cf0a42a2d5389e8d8551e61be/firebase-ads-18.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/e08e5a49b22fda55ad036bf311a3ff30/firebase-analytics-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/e08e5a49b22fda55ad036bf311a3ff30/firebase-analytics-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:26:5-40:19
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:26:5-40:19
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/58c14de5606ff18eab542e1acce5686b/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/58c14de5606ff18eab542e1acce5686b/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/aa3b847ee486858536723d4d6eab4453/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/aa3b847ee486858536723d4d6eab4453/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-gass:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/eaa8ce4aa24dcec165fa121c3fa30384/play-services-gass-18.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-gass:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/eaa8ce4aa24dcec165fa121c3fa30384/play-services-gass-18.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52da1fefed22b2c6da96f70aa2e14510/play-services-measurement-base-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52da1fefed22b2c6da96f70aa2e14510/play-services-measurement-base-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/92853f1f358dd59a805616e511afbdee/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/92853f1f358dd59a805616e511afbdee/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8ac004b53dd72ce47d72b1036c5676b3/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8ac004b53dd72ce47d72b1036c5676b3/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/10631bb3012ccad9c5c9285264903a3d/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/10631bb3012ccad9c5c9285264903a3d/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f9ea6dac07c9a9125302baab7c530035/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f9ea6dac07c9a9125302baab7c530035/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52d4fecae8c1eb4103beef9198e64f51/versionedparcelable-1.0.0/AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52d4fecae8c1eb4103beef9198e64f51/versionedparcelable-1.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-ads-base:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/cee248fd52f727e09c5eda88566957f6/play-services-ads-base-18.1.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/cee248fd52f727e09c5eda88566957f6/play-services-ads-base-18.1.1/AndroidManifest.xml:7:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:10:9-37
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:10:9-38
 	android:icon
 		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:11:9-45
 	android:name
 		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:9:9-57
-activity#com.example.bimo_is_true.MainActivity
+activity#com.br.bimo_is_true.MainActivity
 ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:12:9-23:20
 	android:launchMode
 		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:14:13-43
@@ -86,24 +158,84 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:21:17-76
 	android:name
 		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:21:27-74
-meta-data#flutterEmbedding
-ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:26:9-28:33
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:26:9-28:69
 	android:value
-		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:28:13-30
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:28:13-67
 	android:name
-		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:27:13-44
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:27:13-69
+meta-data#flutterEmbedding
+ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:29:9-31:33
+	android:value
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:31:13-30
+	android:name
+		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml:30:13-44
 uses-sdk
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml
 MERGED from [:audioplayers] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/audioplayers/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-44
 MERGED from [:audioplayers] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/audioplayers/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-44
+MERGED from [:firebase_admob] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_admob/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_admob] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_admob/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core_web] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core_web] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_macos] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher_macos/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_macos] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher_macos/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_web] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_web] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/41f38d1cf0a42a2d5389e8d8551e61be/firebase-ads-18.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/41f38d1cf0a42a2d5389e8d8551e61be/firebase-ads-18.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/f72c14a73e9e88bb51f6acaeee9a9adb/jetified-play-services-ads-18.1.1/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/f72c14a73e9e88bb51f6acaeee9a9adb/jetified-play-services-ads-18.1.1/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.firebase:firebase-analytics:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/e08e5a49b22fda55ad036bf311a3ff30/firebase-analytics-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/e08e5a49b22fda55ad036bf311a3ff30/firebase-analytics-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/58c14de5606ff18eab542e1acce5686b/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/58c14de5606ff18eab542e1acce5686b/play-services-measurement-sdk-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/aa3b847ee486858536723d4d6eab4453/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/aa3b847ee486858536723d4d6eab4453/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gass:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/eaa8ce4aa24dcec165fa121c3fa30384/play-services-gass-18.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-gass:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/eaa8ce4aa24dcec165fa121c3fa30384/play-services-gass-18.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52da1fefed22b2c6da96f70aa2e14510/play-services-measurement-base-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/52da1fefed22b2c6da96f70aa2e14510/play-services-measurement-base-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/92853f1f358dd59a805616e511afbdee/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/92853f1f358dd59a805616e511afbdee/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8ac004b53dd72ce47d72b1036c5676b3/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8ac004b53dd72ce47d72b1036c5676b3/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/10631bb3012ccad9c5c9285264903a3d/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/10631bb3012ccad9c5c9285264903a3d/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f9ea6dac07c9a9125302baab7c530035/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f9ea6dac07c9a9125302baab7c530035/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/b8b68c04ee72209a3beca37e17f7088d/fragment-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/b8b68c04ee72209a3beca37e17f7088d/fragment-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/6eadc30b5d3d9b103652e8dca2d14aad/browser-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/6eadc30b5d3d9b103652e8dca2d14aad/browser-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f046f38cf99e9cbe4891b184ce64db19/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f046f38cf99e9cbe4891b184ce64db19/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/0f0610cdcf96e6cfa9529b6a3246e3f6/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
@@ -148,8 +280,12 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/m
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/bce9999f881bb3993a5b24e08740cbbf/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/6b1132090a8a1ffc60b82d3452ca52ad/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/6b1132090a8a1ffc60b82d3452ca52ad/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/cee248fd52f727e09c5eda88566957f6/play-services-ads-base-18.1.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/cee248fd52f727e09c5eda88566957f6/play-services-ads-base-18.1.1/AndroidManifest.xml:5:5-44
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
 INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.google.android.gms:play-services-ads:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/f72c14a73e9e88bb51f6acaeee9a9adb/jetified-play-services-ads-18.1.1/AndroidManifest.xml:23:9-49
 	android:targetSdkVersion
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
@@ -158,5 +294,197 @@ INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/an
 		INJECTED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml:6:5-66
+MERGED from [:firebase_admob] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_admob/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
+MERGED from [:firebase_admob] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_admob/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/android/app/src/debug/AndroidManifest.xml:6:22-64
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_core] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] /home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:24:22-76
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:29:9-33:64
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:32:13-37
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:31:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:33:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:30:13-65
+provider#com.google.android.gms.ads.MobileAdsInitProvider
+ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:35:9-39:39
+	android:authorities
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:37:13-73
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:38:13-37
+	android:initOrder
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:39:13-36
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:18.1.1] /home/mael/.gradle/caches/transforms-2/files-2.1/308e406a2c2599976d3216d7f662d5cf/play-services-ads-lite-18.1.1/AndroidManifest.xml:36:13-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:25:22-65
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:30:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:34:9-42:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/cc89cd16e6d399dc76e9fb0aac7de11c/play-services-measurement-impl-17.0.0/AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/f4f85c7f1c10ab5dc82dc61b3760f140/play-services-measurement-sdk-api-17.0.0/AndroidManifest.xml:29:9-37:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:36:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:38:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:35:13-100
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:39:13-41:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:40:17-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:40:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:44:9-47:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:46:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:45:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:48:9-52:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:51:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:52:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5f0f9e48cadb62c39f87066fc1b8e1e0/play-services-measurement-17.0.0/AndroidManifest.xml:49:13-87
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/8bc95e08fe02ce145cad2ba2eb11e663/play-services-measurement-api-17.0.0/AndroidManifest.xml:31:17-139
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/422ff6a4e338884792e3e0248177c18a/firebase-iid-19.0.0/AndroidManifest.xml:42:25-78
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:12:9-16:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:14:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:18.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/a7451b3566e7138ca8b3537a7d8d8d4d/firebase-common-18.0.0/AndroidManifest.xml:13:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/mael/.gradle/caches/transforms-2/files-2.1/2f9a5ea41a2c79284bbf4109a14ef880/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58

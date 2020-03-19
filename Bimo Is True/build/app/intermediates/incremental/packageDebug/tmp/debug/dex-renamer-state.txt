@@ -1,4 +1,4 @@
-#Sun Dec 22 12:51:12 BRT 2019
+#Mon Mar 16 17:47:48 BRT 2020
 base.0=/home/mael/Documentos/Projetos Mobile/Bimo-Is-True/Bimo Is True/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

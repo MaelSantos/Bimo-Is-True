@@ -201,7 +201,6 @@ class BoxGame extends BaseGame {
         if (f.colidionInPlay(alien)) {
           alien.escolhida = f;
           alien.escolhida.paint.color = Color(0xff269fbd);
-          print("segurando ${alien.escolhida.tipo}");
           return;
         }
       });
@@ -210,7 +209,6 @@ class BoxGame extends BaseGame {
 
   void soltarBloco() {
     if (alien.escolhida != null) {
-      print("soltando ${alien.escolhida.tipo}");
       alien.escolhida.paint.color = Colors.black;
       alien.escolhida = null;
     }

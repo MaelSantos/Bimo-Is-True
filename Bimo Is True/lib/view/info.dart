@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bimo_is_true/util/tela.dart';
 import 'package:bimo_is_true/view/componentes/round_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'menu.dart';
 
@@ -43,18 +44,37 @@ class Info extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 10,),
-            padding: EdgeInsets.all(10),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              // color: Color(0xff269fbd),
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-                "Disciplina: Interface Homem Máquina (IHM) e Desenvolvimento de Projetos Mobile (MOBILE) \nDiscente: Abimael Jonas \nDocente: Richarlyson e Heldon \nUniversidade: UAST-UFRPE \nTurma: 2019.2",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
-          ),
+              margin: EdgeInsets.only(
+                bottom: 10,
+              ),
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                // color: Color(0xff269fbd),
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Wrap(
+                children: [
+                  Text("Desenvolvedor: MaelSantos"),
+                  Row(
+                    children: [
+                      Text("Contato: "),
+                      InkWell(
+                          child: Text("maelsantos777@gmail.com",
+                              style: TextStyle(
+                                  decorationColor: Colors.black,
+                                  shadows: [
+                                    Shadow(color: Colors.black, blurRadius: 1)
+                                  ],
+                                  color: Color(0xff269fbd),
+                                  decoration: TextDecoration.underline)),
+                          onTap: () =>
+                              launch("mailto: maelsantos777@gmail.com"))
+                    ],
+                  ),
+                ],
+              )),
           RoundButton(
               onPressed: () {
                 menu.transicao(Tela.principal);
